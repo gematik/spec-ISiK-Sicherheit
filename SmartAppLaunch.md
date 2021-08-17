@@ -17,18 +17,22 @@ TODO: Bild SMART authorization sequence
 TODO: Bild SMART authorization sequence
 TODO: Bild SMART retrieval and refresh sequence
 
+Eine Beschreibung der Übersicht des Smart App Launch ist Abschnitt [1.0.4 - SMART authorization & FHIR access: overview](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#smart-authorization--fhir-access-overview) zu entnehmen.
+
 Die weiteren Unterkapitel geben eine Einführung in die jeweiligen Abschnitte des Smart App Launch. Bestätigungsrelevante Inhalte werden als solche markiert mit entsprechenden Verweisen auf die Smart App Launch Spezifikation.
 
 # Kategorisierung Clients
 
-Die SMART on FHIR Spezifikation enthält teilweise optionale Anforderungen abhänig davon ob ein Client als "confidential app" oder "public app" klassifiziert wird. Diese Differenzierung erfolgt auf Basis von Kriterien nach [RFC6749 - The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749#section-2.1). Bestätigungsrelevante Systeme MÜSSEN einen SMART App Launch für sowohl "Confidential Apps", als auch "Public Apps" unterstützen. Weitere Details werden durch den Abschnitt ["1.0.2.2 Support for “public” and “confidential” apps"](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#support-for-public-and-confidential-apps) definiert.
+Die SMART on FHIR Spezifikation enthält teilweise optionale Anforderungen abhänig davon ob ein Client als "confidential app" oder "public app" klassifiziert wird. Diese Differenzierung erfolgt auf Basis von Kriterien nach [RFC6749 - The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749#section-2.1). Bestätigungsrelevante Systeme MÜSSEN einen SMART App Launch für sowohl "Confidential Apps", als auch "Public Apps" unterstützen. Weitere Details wird durch den Abschnitt ["1.0.2.2 Support for “public” and “confidential” apps"](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#support-for-public-and-confidential-apps) definiert.
 
 # EHR Launch / Standalone Launch
 
-Eine weitere Differenzierung der Funktionalität eines Smart App Launch erfolgt durch die Einteilung in eine "EHR launch sequence" und "Standalone launch sequence"
+Eine weitere Differenzierung der Funktionalität eines Smart App Launch erfolgt durch die Einteilung aus welchem Kontext der Client gestartet wird:
 
-- EHR Launch:
+- [EHR Launch](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#ehr-launch-sequence):
 Ein Client kann aus dem Kontext des bestätigungsrelevanten System direkt innerhalb einer bestehenden User Session gestartet werden. Beispielsweise indem der eingeloggte Benutzer den Client startet und durch das System eine neue Browser Instanz geöffnet wird oder das System einen iframe darstellt.
 
-- Standalone Launch:
+- [Standalone Launch](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence):
 Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein bestehender gemeinsamer Kontext zwischen bestätigungsrelevanten System und Client.
+
+Bestätigungsrelevante Systeme MÜSSEN einen EHR Launch und einen Standalone Launch unterstützen.
