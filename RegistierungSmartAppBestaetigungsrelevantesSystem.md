@@ -1,0 +1,1 @@
+# Registierung einer SMART App mit dem bestätigungsrelevanten System
