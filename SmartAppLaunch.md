@@ -13,6 +13,10 @@ Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatibl
 1. FHIR Restful Interaktion abgesichert durch Zugangstoken
 1. Austellung eines "Refresh"-Zugangstoken
 
+TODO: Bild SMART authorization sequence
+TODO: Bild SMART authorization sequence
+TODO: Bild SMART retrieval and refresh sequence
+
 Die weiteren Unterkapitel geben eine Einführung in die jeweiligen Abschnitte des Smart App Launch. Bestätigungsrelevante Inhalte werden als solche markiert mit entsprechenden Verweisen auf die Smart App Launch Spezifikation.
 
 # Kategorisierung Clients
@@ -27,6 +31,4 @@ Eine weitere Differenzierung der Funktionalität eines Smart App Launch erfolgt 
 Ein Client kann aus dem Kontext des bestätigungsrelevanten System direkt innerhalb einer bestehenden User Session gestartet werden. Beispielsweise indem der eingeloggte Benutzer den Client startet und durch das System eine neue Browser Instanz geöffnet wird oder das System einen iframe darstellt.
 
 - Standalone Launch:
-Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es besteht kein bestehender gemeinsamer Kontext.
-
-# SMART “launch sequence”
+Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein bestehender gemeinsamer Kontext zwischen bestätigungsrelevanten System und Client.
