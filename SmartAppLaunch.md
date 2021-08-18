@@ -48,6 +48,6 @@ Eine weitere Differenzierung der Funktionalität eines Smart App Launch erfolgt 
 Ein Client kann aus dem Kontext des bestätigungsrelevanten System direkt innerhalb einer bestehenden User Session gestartet werden. Beispielsweise indem der eingeloggte Benutzer den Client startet und durch das System eine neue Browser Instanz geöffnet wird oder das System einen iframe darstellt.
 
 - [Standalone Launch](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence):
-Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein bestehender gemeinsamer Kontext zwischen bestätigungsrelevanten System und Client.
+Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein gemeinsamer Kontext zwischen bestätigungsrelevanten System und Client.
 
 Bestätigungsrelevante Systeme MÜSSEN einen EHR Launch und einen Standalone Launch unterstützen.
