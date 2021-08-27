@@ -1,6 +1,6 @@
 # App bittet um Autorisierung
 
-Abhängig davon ob der Client durch einen EHR Launch oder Standalone Launch gestartet wird, existieren unterschiedliche Schritte für die Abfrage eines Authorisierungscodes.
+Abhängig davon ob der Client durch einen EHR Launch oder Standalone Launch gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Authorisierungscodes.
 
 ## EHR Launch
 
