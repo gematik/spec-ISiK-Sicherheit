@@ -4,7 +4,7 @@ Die nachfolgende Spezifikation basiert auf dem [HL7 Standard "Smart App Launch -
 
 Der vorliegende ImplementationGuide dient zur Erläuterung des Ablaufs eines Smart App Launchs, sowie Anmerkungen, welche Teile der Spezifikation bestätigungsrelevant sind.
 
-Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatiblen Authorisierungsserver zu erhalten mittels dessen eine FHIR Restful API Interaktion durchgeführt werden kann. Um ein Zugangstoken zu erhalten sind folgende sechs Schritte notwendig:
+Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatiblen Authorisierungsserver zu erhalten mittels dessen eine FHIR Restful API Interaktion durchgeführt werden kann. Dies erfolgt unter Berücksichtigung der Zugriffsrechte der BenuterIn im bestätigungsrelevanten System. Um ein Zugangstoken zu erhalten sind folgende sechs Schritte notwendig:
 
 1. Registrierung einer SMART App mit dem bestätigungsrelevanten System
 1. App bittet um Autorisierung
