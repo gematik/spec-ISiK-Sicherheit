@@ -1,4 +1,6 @@
-# Schritt 2: App bittet um Autorisierung
+# Schritt 2: App bittet um Authorisierung
+
+Im nachfolgenden Schritt wird durch den Client am "authorize"-Endpunkt des Authorisierungsservers ein Authorisierungscode angefragt, welcher innerhalb eines Authorization Code Flows (vgl. [RFC6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)) durch ein OAuth 2.0 Access Token ersetzt werden kann.
 
 Abhängig davon ob der Client durch einen EHR Launch oder Standalone Launch gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Authorisierungscodes.
 
