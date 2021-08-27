@@ -1,4 +1,4 @@
-# Registrierung einer SMART App mit dem bestätigungsrelevanten System
+# Schritt 1: Registrierung einer SMART App mit dem bestätigungsrelevanten System
 
 Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann MUSS der Client beim Authorisierungsserver des bestätigungsrelevanten Systems registriert werden. Per Abschnitt [1.0.3 Registering a SMART App with an EHR](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#registering-a-smart-app-with-an-ehr) ist er freigestellt wie diese Registrierung durchgeführt wird.
 
