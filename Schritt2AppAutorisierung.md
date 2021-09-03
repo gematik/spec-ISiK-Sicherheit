@@ -35,3 +35,5 @@ Um Informationen über den authentifizierten Endbenutzer zu erhalten kann ein Cl
 ## Hinweise zu Access Scopes
 
 Innerhalb des Scope Parameters welcher als Teil der Autorisierungsanfrage versendet wird, kann der Client dem Server mitteilen welche Scopes zur korrekten Ausführung notwendig sind. Diese Scopes repräsentieren die Menge aller Scopes welche durch den Client gewünscht werden, jedoch nicht notwendigerweise durch den Server unterstüzt und/oder erlaubt werden. Es steht dem Autorisierungsserver frei diese Scopes einzuschränken, falls der Client für die Anforderung der Scopes nicht berechtigt ist. Weitere Details zur Syntax der Access Scopes siehe [SMART on FHIR Access Scope Syntax - TODO Link]().
+
+## Beispiel
