@@ -19,7 +19,8 @@ Kein direkter Bezug zum KHZG
 
 ## Stakeholder
 
-* bvitg 
+* bvitg
+* Endandwender der bestätigungsrelevanten Systeme in den Krankenhäusern
 
 ## Relevante Spezifikationen
 * [SMART App Launch Framework](http://hl7.org/fhir/smart-app-launch/index.html)
