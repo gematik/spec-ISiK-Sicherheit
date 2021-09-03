@@ -7,3 +7,7 @@ Der Authorisierungsserver MUSS die [Anforderungen an die Registrierung von Launc
 - Private-Use URI Scheme Redirection
 - Claimed "https" Scheme URI Redirection
 - Loopback Interface Redirection
+
+Der Authorisierungsserver vergibt auf Basis der Registrierung ein Client Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client Id MUSS während der Authentifizierung des Clients bei einer Access Token Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden.
+
+## Beispiel
