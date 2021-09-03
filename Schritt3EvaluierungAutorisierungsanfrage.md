@@ -6,3 +6,5 @@ Sowohl die Smart App Launch Spezifikation als auch der vorliegende Implementieru
 Im Falle einer erfolgreichen Authentifizierung MUSS der Autorisierungsserver die Parameter, welche unter [1.0.6.1.2 Step-2: EHR evaluates authorization request, asking for end-user input](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#step-2-ehr-evaluates-authorization-request-asking-for-end-user-input) dokumentiert sind an den Client zurückliefern. Die Hinweise zur Gültigkeitsdauer des Authorisierungscodes MÜSSEN implementiert werden.
 
 Als Ergebnis dieses Schritts erhält der Client einen einmalig gültigen Authorisierungscode, welcher im weitere Verlauf gegen ein Authorisierungstoken getauscht werden kann.
+
+## Beispiel
