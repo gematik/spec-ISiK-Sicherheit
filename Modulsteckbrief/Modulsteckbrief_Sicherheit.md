@@ -45,18 +45,18 @@ Kein direkter Bezug zum KHZG
 ### Anwendungsfälle Sicherheit
 
 * Patientenportale / Zuweiserportale als SaaS
-- (1) Beispielsweise könnten Termine über externe Systeme über das Appointment-Modul angefragt und bestätigt werden
-- (2) Patientenportale könnten im Auftrag der PatientIn die Daten in ein externen System übertragen
+    * (1) Beispielsweise könnten Termine über externe Systeme über das Appointment-Modul angefragt und bestätigt werden
+    * (2) Patientenportale könnten im Auftrag der PatientIn die Daten in ein externen System übertragen
 
 * ISiP
-- (3) Anfrage von ambulanten Behandlungsdaten aus dem stationären Kontext heraus
-- (4) Pflegeüberleitungsbogen übertragen (PULL anstatt PUSH)
+    * (3) Anfrage von ambulanten Behandlungsdaten aus dem stationären Kontext heraus
+    * (4) Pflegeüberleitungsbogen übertragen (PULL anstatt PUSH)
 
 * Interne Kommunikation absichern
-- (5) Innerhalb des stationären Kontexts sollten die FHIR-Endpunkte abgesichert sein
+    * (5) Innerhalb des stationären Kontexts sollten die FHIR-Endpunkte abgesichert sein
 
 * Machine-To-Machine-Kommunikation
-- (6) Abgleich von Behandlungsdaten ohne zentrales Repository (z.B. zwischen LIS / KIS)
+    * (6) Abgleich von Behandlungsdaten ohne zentrales Repository (z.B. zwischen LIS / KIS)
 
 * Rollen- / Rechtekonzepte
 
