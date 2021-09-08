@@ -4,7 +4,7 @@ Sowohl für Public als auch Confidential Client erfolgt durch den SMART App Laun
 
 ## Authentifizierung der Clients
 
-Für Confidential Clients besteht die Pflicht sich gegenüber dem "Token"-Endpunkt des Authorisierungsserver zu authentifizieren. Hierfür MÜSSEN folgende beide Möglichkeiten untersützt werden:
+Für Confidential Clients besteht die Pflicht sich gegenüber dem "Token"-Endpunkt des Authorisierungsserver zu authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten untersützt werden:
 
 1. HTTP Basic authentication:
 
@@ -32,13 +32,13 @@ Folgende Anforderungen werden an den JSON Web Key gestellt:
 
 (2) Das JSON Web Key Set KANN dem Authorisierungsserver direkt mitgeteilt werden. In diesem Fall SOLLTE das JSON Web Key Set min. zwei Schlüssel enthalten, sodass eine unterbrechnungsfreie Schlusselrotation durchgeführt werden kann. Nachteile dieser Option sind in [4 - Registering a SMART Backend Service (communicating public keys)](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html) zusammengefasst.
 
-Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden um einem Schlüsselmisbrauch vorzubeugen.
+Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem Schlüsselmisbrauch vorzubeugen.
 
 3. Der Client erzeut ein JSON Web Token entsprechend der Vorgaben definiert in [MART Backend Services: Authorization Guide - 5.0.1 - Protocol details](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html#protocol-details) und verwendet dies als "client_assertion".
 
 ## Austausch des Authorisierungscodes für ein Zugangstoken
 
-In Abschnitt [1.0.6.1.3 - Step-3: App exchanges authorization code for access token](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#step-3-app-exchanges-authorization-code-for-access-token) werden alle notwendigen Parameter definiert durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am /token-Endpunkt des Authorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter "id_token" und "refresh_token" untersützt werden müssen. Ein id_token MUSS ausgestellt werden, wenn der Client einen "openid fhirUser" Scope als erhalten möchte. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im bestätigungsrelevanten System nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext). 
+In Abschnitt [1.0.6.1.3 - Step-3: App exchanges authorization code for access token](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#step-3-app-exchanges-authorization-code-for-access-token) werden alle notwendigen Parameter definiert durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Authorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter "id_token" und "refresh_token" untersützt werden MÜSSEN. Ein id_token MUSS ausgestellt werden, wenn der Client einen "openid fhirUser" Scope erhalten möchte. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im bestätigungsrelevanten System nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext). 
 
 Alle verpflichtenden Implementierungsdetails aus [1.0.6.1.3 - Step-3: App exchanges authorization code for access token](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#step-3-app-exchanges-authorization-code-for-access-token) MÜSSEN unterstüzt werden durch den Authorisierungsserver.
 
