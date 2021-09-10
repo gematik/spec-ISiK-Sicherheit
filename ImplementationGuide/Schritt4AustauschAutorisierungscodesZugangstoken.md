@@ -34,7 +34,7 @@ Folgende Anforderungen werden an den JSON Web Key gestellt:
 
 Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem Schlüsselmisbrauch vorzubeugen.
 
-3. Der Client erzeut ein JSON Web Token entsprechend der Vorgaben definiert in [MART Backend Services: Authorization Guide - 5.0.1 - Protocol details](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html#protocol-details) und verwendet dies als "client_assertion".
+3. Der Client erzeut ein JSON Web Token entsprechend der Vorgaben definiert in [SMART Backend Services: Authorization Guide - 5.0.1 - Protocol details](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html#protocol-details) und verwendet dies als "client_assertion".
 
 ## Austausch des Authorisierungscodes für ein Zugangstoken
 
