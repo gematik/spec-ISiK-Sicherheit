@@ -2,7 +2,7 @@
 
 Die nachfolgende Spezifikation basiert auf dem [HL7 Standard "Smart App Launch - v1.1"](http://build.fhir.org/ig/HL7/smart-app-launch/index.html). Ziel der Spezifikation ist, bestehende Best Practices zur Authorisierung- und Authentifikation für FHIR-Server wiederzuverwenden. Es werden keine Anpassungen innerhalb dieser Spezifikation veröffentlicht, welche dazu führen würden, dass eine Implementierung nicht mehr konform zum ursprünglichen Standard ist.
 
-Der vorliegende ImplementationGuide dient zur Erläuterung des Ablaufs eines Smart App Launchs, sowie Anmerkungen, welche Teile der Spezifikation bestätigungsrelevant sind.
+Der vorliegende Implementierungsleitfaden dient zur Erläuterung des Ablaufs eines Smart App Launchs, sowie Anmerkungen, welche Teile der Spezifikation bestätigungsrelevant sind.
 
 Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatiblen Authorisierungsserver zu erhalten mittels dessen eine FHIR Restful API Interaktion durchgeführt werden kann. Dies erfolgt unter Berücksichtigung der Zugriffsrechte der BenuterIn im bestätigungsrelevanten System. Um ein Zugangstoken zu erhalten sind folgende sechs Schritte notwendig:
 
@@ -19,24 +19,28 @@ Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatibl
 
 Beschreibung Smart launch sequence, siehe [1.0.5.2 - Standalone launch sequence](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence).
 
-{{render:smartlaunchsequence}} SMART launch sequence
+{{render:smartlaunchsequence}}
 
 -------
 
 <br><br>
 
-{{render:smartauthorizationsequence}} SMART authorization sequence
-
-<br><br>
-
 Beschreibung Smart authorization sequence, siehe [1.0.6.1 - SMART authorization sequence](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence).
 
+{{render:smartauthorizationsequence}}
 
-{{render:SMART retrieval and refresh sequence.svg}} SMART retrieval and refresh sequence
+-------
 
 <br><br>
 
 Beschreibung Smart retrieval and refresh sequence, siehe [1.0.6.1.4 - SMART retrieval and refresh sequence](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence).
+
+
+{{render:SMART retrieval and refresh sequence.svg}}
+
+-------
+
+<br><br>
 
 Eine Übersicht des zusammenhängenden Smart App Launch ist Abschnitt [1.0.4 - SMART authorization & FHIR access: overview](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#smart-authorization--fhir-access-overview) zu entnehmen.
 
