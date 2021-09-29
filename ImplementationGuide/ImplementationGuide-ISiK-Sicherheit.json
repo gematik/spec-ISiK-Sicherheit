@@ -15,64 +15,28 @@
       "generation": "markdown",
       "page": [
         {
-          "nameUrl": "ImplementationGuide/Methodik.md",
-          "title": "Methodik",
-          "generation": "markdown"
-        },
-        {
           "nameUrl": "ImplementationGuide/Motivation.md",
           "title": "Motivation",
           "generation": "markdown"
         },
         {
-          "nameUrl": "ImplementationGuide/BestaetigungsrelevanteSysteme.md",
-          "title": "BestätigungsrelevanteSysteme",
+          "nameUrl": "ImplementationGuide/UebergreifendeFestlegungen.md",
+          "title": "Übergreifende Festlegungen",
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Methodik.md",
+              "nameUrl": "ImplementationGuide/Methodik.md",
               "title": "Methodik",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md",
+              "nameUrl": "ImplementationGuide/BestaetigungsrelevanteSysteme.md",
               "title": "Bestätigungsrelevante Systeme",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/KompatibilitaetDerGematikSpezifikation.md",
+              "nameUrl": "ImplementationGuide/KompatibilitaetDerGematikSpezifikation.md",
               "title": "Kompatibilität der gematik-Spezifikation",
-              "generation": "markdown",
-              "page": [            
-              {
-                "nameUrl": "ImplementationGuide_Stufe1-1.0.0/KompatibilitaetDerGematikSpezifikation_IHE.md",
-                "title": "IHE-Profile",
-                "generation": "markdown"
-              },
-              {
-                "nameUrl": "ImplementationGuide_Stufe1-1.0.0/KompatibilitaetDerGematikSpezifikation_Andere.md",
-                "title": "Nationale FHIR-Spezifikationen",
-                "generation": "markdown"
-              }]
-            },
-            {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Must-Support-Flags.md",
-              "title": "Must-Support-Flags",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Repraesentationsformate.md",
-              "title": "Repräsentationsformate",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Suchparameter.md",
-              "title": "Suchparameter",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Rest.md",
-              "title": "REST-API",
               "generation": "markdown"
             }
           ]
