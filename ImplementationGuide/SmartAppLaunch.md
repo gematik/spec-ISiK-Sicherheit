@@ -36,7 +36,7 @@ Beschreibung Smart authorization sequence, siehe [SMART App Launch - 1.0.6.1 - S
 Beschreibung Smart retrieval and refresh sequence, siehe [1.0.6.1.4 - SMART retrieval and refresh sequence](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence).
 
 
-{{render:SMART retrieval and refresh sequence.svg}}
+{{render:smartretrievalandrefreshsequence}}
 
 -------
 
