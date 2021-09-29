@@ -13,11 +13,17 @@ Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatibl
 1. FHIR Restful Interaktion abgesichert durch Zugangstoken
 1. Austellung eines "Refresh"-Zugangstoken
 
-{{render:smartlaunchsequence}} SMART launch sequence
+-------
 
 <br><br>
 
 Beschreibung Smart launch sequence, siehe [1.0.5.2 - Standalone launch sequence](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence).
+
+{{render:smartlaunchsequence}} SMART launch sequence
+
+-------
+
+<br><br>
 
 {{render:smartauthorizationsequence}} SMART authorization sequence
 
