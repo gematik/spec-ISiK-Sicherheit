@@ -1,0 +1,113 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "ImplementationGuide-ISiK-Sicherheit",
+  "url": "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Sicherheit",
+  "name": "Implementierungsleitfaden ISiK-Sicherheit",
+  "status": "active",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "packageId": "de.gematik.isik-sicherheit",
+  "definition": {
+    "page": {
+      "nameUrl": "ImplementationGuide/Einfuehrung.md",
+      "title": "Einführung",
+      "generation": "markdown",
+      "page": [
+        {
+          "nameUrl": "ImplementationGuide/Methodik.md",
+          "title": "Methodik",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/Motivation.md",
+          "title": "Motivation",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/BestaetigungsrelevanteSysteme.md",
+          "title": "BestätigungsrelevanteSysteme",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Methodik.md",
+              "title": "Methodik",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_BestaetigungsrelevanteSysteme.md",
+              "title": "Bestätigungsrelevante Systeme",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/KompatibilitaetDerGematikSpezifikation.md",
+              "title": "Kompatibilität der gematik-Spezifikation",
+              "generation": "markdown",
+              "page": [            
+              {
+                "nameUrl": "ImplementationGuide_Stufe1-1.0.0/KompatibilitaetDerGematikSpezifikation_IHE.md",
+                "title": "IHE-Profile",
+                "generation": "markdown"
+              },
+              {
+                "nameUrl": "ImplementationGuide_Stufe1-1.0.0/KompatibilitaetDerGematikSpezifikation_Andere.md",
+                "title": "Nationale FHIR-Spezifikationen",
+                "generation": "markdown"
+              }]
+            },
+            {
+              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Must-Support-Flags.md",
+              "title": "Must-Support-Flags",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Repraesentationsformate.md",
+              "title": "Repräsentationsformate",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Suchparameter.md",
+              "title": "Suchparameter",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/UebergreifendeFestlegungen_Rest.md",
+              "title": "REST-API",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "ImplementationGuide/SmartAppLaunch.md",
+          "title": "Datenobjekte",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide/Schritt1RegistierungSmartAppBestaetigungsrelevantesSystem.md",
+              "title": "CapabilityStatement",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt2AppAutorisierung.md",
+              "title": "Patient (Patient)",
+              "generation": "markdown",
+              "page": [
+                {
+                  "nameUrl": "ImplementationGuide/Schritt3EvaluierungAutorisierungsanfrage.md",
+                  "title": "Motivation",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Schritt4AustauschAutorisierungscodesZugangstoken.md",
+                  "title": "Kompatibilität",
+                  "generation": "markdown"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+
