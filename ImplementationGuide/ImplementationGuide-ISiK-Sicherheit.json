@@ -43,30 +43,28 @@
         },
         {
           "nameUrl": "ImplementationGuide/SmartAppLaunch.md",
-          "title": "Datenobjekte",
+          "title": "Smart App Launch",
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide/Schritt1RegistierungSmartAppBestaetigungsrelevantesSystem.md",
-              "title": "CapabilityStatement",
+              "nameUrl": "ImplementationGuide/Schritt1RegistierungClient.md",
+              "title": "Schritt 1 - Registierung Client",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide/Schritt2AppAutorisierung.md",
-              "title": "Patient (Patient)",
-              "generation": "markdown",
-              "page": [
-                {
-                  "nameUrl": "ImplementationGuide/Schritt3EvaluierungAutorisierungsanfrage.md",
-                  "title": "Motivation",
-                  "generation": "markdown"
-                },
-                {
-                  "nameUrl": "ImplementationGuide/Schritt4AustauschAutorisierungscodesZugangstoken.md",
-                  "title": "Kompatibilität",
-                  "generation": "markdown"
-                }
-              ]
+              "nameUrl": "ImplementationGuide/Schritt2ClientAutorisierung.md",
+              "title": "Schritt2 - Client Autorisierung",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt3EvaluierungAutorisierungsanfrage.md",
+              "title": "Schritt 3 - Evaluierung Autorisierungsanfrage",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt4AustauschAutorisierungscodesZugangstoken.md",
+              "title": "Schritt 4 - Austausch - Autorisierungscodes Zugangstoken",
+              "generation": "markdown"
             }
           ]
         }
