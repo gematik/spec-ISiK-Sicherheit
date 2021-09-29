@@ -18,10 +18,10 @@ Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](ht
 
 Folgender Request stellt beispielhaft dar welche Parameter bei einer Anfrage an einen Dynamic-Client-Registration-Endpunkt vorhanden sein können:
 
-POST /register HTTP/1.1
-Content-Type: application/json
-Accept: application/json
-Host: server.example.com
+POST /register HTTP/1.1<br>
+Content-Type: application/json<br>
+Accept: application/json<br>
+Host: server.example.com<br>
 
 ```json
 {
@@ -36,10 +36,10 @@ Host: server.example.com
 
 Response:
 
-HTTP/1.1 201 Created
-Content-Type: application/json
-Cache-Control: no-store
-Pragma: no-cache
+HTTP/1.1 201 Created<br>
+Content-Type: application/json<br>
+Cache-Control: no-store<br>
+Pragma: no-cache<br>
 
 ```json
 {
