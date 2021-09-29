@@ -23,6 +23,7 @@ Content-Type: application/json
 Accept: application/json
 Host: server.example.com
 
+```json
 {
     "redirect_uris": ["https://example.org/redirect_uri/fhir/client/exampleId/"],
     "token_endpoint_auth_method": ["client_secret_basic", "client_secret_post", "private_key_jwt"],
@@ -31,6 +32,7 @@ Host: server.example.com
     "client_name": "MyFhirClientName",
     "jwks_uri": "https://example.org/jwks/fhir/client/exampleId/jwks.json"
 }
+```
 
 Response:
 
@@ -39,6 +41,7 @@ Content-Type: application/json
 Cache-Control: no-store
 Pragma: no-cache
 
+```json
 {
     "client_id": "TestClientId",
     "redirect_uris": ["https://example.org/redirect_uri/fhir/client/exampleId/"],
@@ -48,3 +51,4 @@ Pragma: no-cache
     "client_name": "MyFhirClientName",
     "jwks_uri": "https://example.org/jwks/fhir/client/exampleId/jwks.json"
 }
+```
