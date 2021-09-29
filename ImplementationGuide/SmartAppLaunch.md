@@ -19,7 +19,7 @@ Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatibl
 
 Beschreibung Smart launch sequence, siehe [1.0.5.2 - Standalone launch sequence](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#standalone-launch-sequence).
 
-{{render:SMART authorization sequence.svg}} SMART authorization sequence
+{{render:smartauthorizationsequence}} SMART authorization sequence
 
 <br><br>
 
