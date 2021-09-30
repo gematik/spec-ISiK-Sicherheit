@@ -6,11 +6,9 @@ Sowohl für Public als auch Confidential Client erfolgt durch den SMART App Laun
 
 Confidential Clients müssen sich gegenüber dem "Token"-Endpunkt des Authorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten untersützt werden:
 
-1. HTTP Basic authentication:
+-----
 
-Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Client erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Das Password MUSS das vorher ausgetauschte Client Secret verwendet werden.
-
-2. JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)
+1. JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)
 
 Die präferierte Variante für die Authentifizierung des Clients erfolgt per [RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523). Hierzu MÜSSEN folgende Schritte untersützt werden:
 
@@ -35,6 +33,12 @@ Folgende Anforderungen werden an den JSON Web Key gestellt:
 Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem Schlüsselmisbrauch vorzubeugen.
 
 3. Der Client erzeut ein JSON Web Token entsprechend der Vorgaben definiert in [SMART Backend Services: Authorization Guide - 5.0.1 - Protocol details](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html#protocol-details) und verwendet dies als "client_assertion".
+
+-----
+
+2. HTTP Basic authentication:
+
+Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Das Password MUSS das vorher ausgetauschte Client Secret verwendet werden.
 
 ## Austausch des Authorisierungscodes für ein Zugangstoken
 
