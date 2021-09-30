@@ -7,6 +7,8 @@ Im Falle einer erfolgreichen Authentifizierung MUSS der Autorisierungsserver die
 
 Als Ergebnis dieses Schritts erhält der Client einen einmalig gültigen Authorisierungscode, welcher im weitere Verlauf gegen ein Authorisierungstoken getauscht werden kann.
 
+----
+
 ## Beispiel
 
 Response:

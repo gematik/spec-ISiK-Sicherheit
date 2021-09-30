@@ -2,11 +2,11 @@
 
 Sowohl für Public als auch Confidential Client erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet um die in [Implicit Grant - OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2) dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierte Anfrage der Authorization Code durch ein Access Token ausgetauscht.
 
+----
+
 ## Authentifizierung der Clients
 
 Confidential Clients müssen sich gegenüber dem "Token"-Endpunkt des Authorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten untersützt werden:
-
------
 
 ### JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)
 
@@ -34,11 +34,11 @@ Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem S
 
 3. Der Client erzeut ein JSON Web Token entsprechend der Vorgaben definiert in [SMART Backend Services: Authorization Guide - 5.0.1 - Protocol details](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html#protocol-details) und verwendet dies als "client_assertion".
 
------
-
 ### HTTP Basic authentication:
 
 Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Das Password MUSS das vorher ausgetauschte Client Secret verwendet werden.
+
+----
 
 ## Austausch des Authorisierungscodes für ein Zugangstoken
 
@@ -47,5 +47,7 @@ In Abschnitt [1.0.6.1.3 - Step-3: App exchanges authorization code for access to
 Alle verpflichtenden Implementierungsdetails aus [1.0.6.1.3 - Step-3: App exchanges authorization code for access token](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#step-3-app-exchanges-authorization-code-for-access-token) MÜSSEN unterstüzt werden durch den Authorisierungsserver.
 
 Es sei explizit drauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen um ein Token Revocation Mechanismus effizient implementieren zu können. Siehe [Token Revocation - ToDo Link]().
+
+----
 
 ## Beispiel

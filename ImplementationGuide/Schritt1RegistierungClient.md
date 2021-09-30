@@ -14,6 +14,8 @@ Der Authorisierungsserver vergibt auf Basis der Registrierung ein Client Id, wel
 
 Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) wird ausdrücklich empfohlen, ist jedoch optional und nicht bestätigungsrelevant. Es ist zu beachten, dass derzeitig keine standartisierte Metadata Extension für die Registrierung der Launch Urls existiert. Diese kann beliebig gewählt werden.
 
+----
+
 ## Beispiel
 
 Folgender Request stellt beispielhaft dar welche Parameter bei einer Anfrage an einen Dynamic-Client-Registration-Endpunkt vorhanden sein können:
