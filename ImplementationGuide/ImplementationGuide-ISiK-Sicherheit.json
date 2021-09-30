@@ -67,6 +67,11 @@
               "generation": "markdown"
             }
           ]
+        },
+        {
+          "nameUrl": "ImplementationGuide/ScopesAndLaunchContext.md",
+          "title": "Scopes & Launch Context",
+          "generation": "markdown"
         }
       ]
     }
