@@ -65,6 +65,16 @@
               "nameUrl": "ImplementationGuide/Schritt4AustauschAutorisierungscodesZugangstoken.md",
               "title": "Schritt 4 - Austausch - Autorisierungscodes Zugangstoken",
               "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt5FhirRestInteraktion.md",
+              "title": "Schritt 5 - FHIR Restful Interaktion",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt6RefreshToken.md",
+              "title": "Schritt 6 - Refresh Token & Revocation",
+              "generation": "markdown"
             }
           ]
         },
