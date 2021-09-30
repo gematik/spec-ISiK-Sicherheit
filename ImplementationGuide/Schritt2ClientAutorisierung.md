@@ -26,7 +26,7 @@ Alle Authorisierungsendpunkte MÜSSEN per HTTPS (TLS-Verschlüsselung) erreichba
 
 ## Abruf SMART Configuration
 
-Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR Endpunktes bekannt gegeben werden. Anschließend erfolgt eine Abfrage des ".well-known/smart-configuration" Dokumentes, welche durch den FHIR Endpunkt bereitgestellt werden MUSS. Vorgaben zum Format sind dem Abschnitt [Smart Configuration - TODO Link]() zu entnehmen. Hierdurch erhält der Client dynamisch die Adresse der Authorisierungsservers inkl. "authorize" und "token" Endpunkt. Falls durch das bestätigungsrelevante System OAuth 2.0 Endpunkte optional über das CapabilityStatement des FHIR-Endpunktes zur Verfügung gestellt werden MÜSSEN diese Inhalte indentisch sein zu den Inhalten des ".well-known/smart-configuration" Dokumentes.
+Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR Endpunktes bekannt gegeben werden. Anschließend erfolgt eine Abfrage des ".well-known/smart-configuration" Dokumentes, welche durch den FHIR Endpunkt bereitgestellt werden MUSS. Vorgaben zum Format sind dem Abschnitt {{pagelink:Conformance, text:Smart Configuration}} zu entnehmen. Hierdurch erhält der Client dynamisch die Adresse der Authorisierungsservers inkl. "authorize" und "token" Endpunkt. Falls durch das bestätigungsrelevante System OAuth 2.0 Endpunkte optional über das CapabilityStatement des FHIR-Endpunktes zur Verfügung gestellt werden MÜSSEN diese Inhalte indentisch sein zu den Inhalten des ".well-known/smart-configuration" Dokumentes.
 
 ## Hinweise zu Identity Scopes
 
