@@ -12,7 +12,7 @@ Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Pa
 
 ## Standalone launch sequence
 
-Aufgrund des fehlenden Kontexts zwischen Client und bestätigungsrelevanten System KANN der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Authorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN. Beispielsweise kann, äquivalent zum zum EHR Launch, der Patienten und/oder Kontakt/Fall Kontext angefordert werden. Genaue Details für die Syntax der Launch Context Scope siehe [SMART on FHIR Launch Context Scope Syntax - TODO Link]().
+Aufgrund des fehlenden Kontexts zwischen Client und bestätigungsrelevanten System KANN der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Authorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN. Beispielsweise kann, äquivalent zum zum EHR Launch, der Patienten und/oder Kontakt/Fall Kontext angefordert werden. Genaue Details für die Syntax der Launch Context Scope siehe {{pagelink:ScopesAndLaunchContext, text:SMART on FHIR Launch Context Scope Syntax}}.
 
 ## Parameter Authorisierungsanfrage
 
