@@ -18,7 +18,7 @@ Aufgrund des fehlenden Kontexts zwischen Client und bestätigungsrelevanten Syst
 
 Der Aufruf des Clients MUSS alle in [1.0.6.1.1 - Step 1: App asks for authorization](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#ehr-launch-sequence) dokumentierten Parameter enthalten. Inbesondere gilt dies für die Untersützung von HTTP POST-basierten Autorisierunganfragen und der Untersützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636).
 
-Zu beachten ist, dass durch SMART App Launch der "state"-Parameter abweichend von RFC6749 verpflichtend ist.
+Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichend von RFC6749 verpflichtend ist.
 
 ## TLS
 
