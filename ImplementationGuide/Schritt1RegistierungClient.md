@@ -44,7 +44,7 @@ Pragma: no-cache<br>
 ```json
 {
     "client_id": "TestClientId",
-    "redirect_uris": ["https://example.org/redirect_uri/fhir/client/exampleId/"],
+    "redirect_uris": ["https://example.org/redirect_uri/fhir/client/exampleId"],
     "token_endpoint_auth_method": ["client_secret_basic", "client_secret_post", "private_key_jwt"],
     "grant_types": ["authorization_code", "refresh_token"],
     "response_types": ["code"],

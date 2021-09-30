@@ -36,4 +36,23 @@ Um Informationen über den authentifizierten Endbenutzer zu erhalten kann ein Cl
 
 Innerhalb des Scope Parameters welcher als Teil der Autorisierungsanfrage versendet wird, kann der Client dem Server mitteilen welche Scopes zur korrekten Ausführung notwendig sind. Diese Scopes repräsentieren die Menge aller Scopes welche durch den Client gewünscht werden, jedoch nicht notwendigerweise durch den Server unterstüzt und/oder erlaubt werden. Es steht dem Autorisierungsserver frei diese Scopes einzuschränken, falls der Client für die Anforderung der Scopes nicht berechtigt ist. Weitere Details zur Syntax der Access Scopes siehe {{pagelink:ScopesAndLaunchContext, text:SMART on FHIR Access Scope Syntax}}.
 
+Hieraus folgt, dass die angeforderten Scopes nur die Kategorien an Rechten repräsentieren, die an den anfragenden Client delegiert werden dürfen. Somit können generell bestimmte Rechte ausgeschlossen werden. Eine Anfrage an den FHIR-REST-API-Endpunkt kann jedoch trotz validem Token mit den spezifizierten Scopes abgelehnt werden, falls während der Evaluierung der Anfrage seitens des Servers festgestellt wird, dass der Benutzer die gewünschten Ressourcen nicht verarbeiten darf.
+
 ## Beispiel
+
+POST /authorize HTTP/1.1<br>
+Content-Type: application/x-www-form-urlencoded<br>
+Host: server.example.com<br>
+
+response_type=code&<br>
+client_id=TestClientId&<br>
+redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&<br>
+scope=user/*.rs openid fhirUser&<br>
+state=df01f5f8-5bf2-45ea-ab7a-706361da0515&<br>
+aud=http://example.org/fhir/&<br>
+code_challenge=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&<br>
+code_challenge_method=S256
+
+Response:
+
+Location: https://example.org/redirect_uri/fhir/client/exampleId?code=123abc&state=df01f5f8-5bf2-45ea-ab7a-706361da0515
