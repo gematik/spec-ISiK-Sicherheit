@@ -72,6 +72,16 @@
           "nameUrl": "ImplementationGuide/ScopesAndLaunchContext.md",
           "title": "Scopes & Launch Context",
           "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/Conformance.md",
+          "title": "Conformance",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/Token Introspection.md",
+          "title": "Token Introspection",
+          "generation": "markdown"
         }
       ]
     }
