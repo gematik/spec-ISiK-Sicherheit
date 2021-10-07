@@ -2,7 +2,7 @@
 
 Die Gültigkeitsdauer eines Access-Tokens kann beliebig durch das bestätigungsrelevante System gewählt werden. Mit Hinblick auf [RFC6819 -  OAuth 2.0 Threat Model and Security Considerations - Limited Access Token Lifetime](https://datatracker.ietf.org/doc/html/rfc6819#section-3.1.2) SOLLTE die Gültigkeitsdauer beschränkt werden auf Minuten oder Stunden. Das Gültikgkeitsdatum wird im Access Token durch den Parameter "expires_in" angegeben. Alternativ kann die Gültigkeit des Tokens über den {{pagelink:TokenIntrospection, text:Introsepection-Endpunkt}} abgefragt werden.
 
-Um eine häufige Authentifizierung des Benutzers und/oder des Clients zu vermeiden MUSS das besätigungsrelevante System die Austellung von Refresh Tokens unterstützen.
+Um eine häufige Authentifizierung der BenutzerIn und/oder des Clients zu vermeiden MUSS das besätigungsrelevante System die Austellung von Refresh Tokens unterstützen.
 
 Folgende Anforderungen aus [SMART App Launch - 2.0.12 - Refresh access token](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#refresh-access-token) sind zu beachten:
 

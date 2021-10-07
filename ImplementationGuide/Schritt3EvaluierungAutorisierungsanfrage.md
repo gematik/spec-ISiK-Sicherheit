@@ -1,6 +1,6 @@
 # Schritt 3: Bestätigungsrelevanten System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer
 
-Um die Entscheidung zu treffen ob eine Authorisierungsanfrage eines Clients zu akzeptieren oder abzulehnen ist, KANN der Autorisierungsserver eine Authentifizierung des Benutzers verlangen.
+Um die Entscheidung zu treffen ob eine Authorisierungsanfrage eines Clients zu akzeptieren oder abzulehnen ist, KANN der Autorisierungsserver eine Authentifizierung der BenutzerIn verlangen.
 Sowohl die Smart App Launch Spezifikation als auch der vorliegende Implementierungsleifaden legen keine Vorgaben diesbezüglich fest. Es ist darauf zu achten, dass bei einer fehlgeschlagenen Authentifizierung dem Endnutzer ein eindeutiger Fehlerhinweis angezeigt wird. Ein Redirect zum Client mit einem entsprechenden Fehlercode ist optional.
 
 Im Falle einer erfolgreichen Authentifizierung MUSS der Autorisierungsserver die Parameter, welche unter [SMART App Launch - 2.0.9 - Obtain authorization code](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-4-authorization-code) dokumentiert sind an den Client zurückliefern. Die Hinweise zur Gültigkeitsdauer des Authorisierungscodes MÜSSEN implementiert werden.

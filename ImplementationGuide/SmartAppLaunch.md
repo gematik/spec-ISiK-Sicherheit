@@ -55,7 +55,7 @@ Die SMART on FHIR Spezifikation enthält teilweise optionale Anforderungen abhä
 Eine weitere Differenzierung der Funktionalität eines Smart App Launch erfolgt durch die Einteilung aus welchem Kontext der Client gestartet wird:
 
 - [SMART App Launch - EHR Launch](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-2-launch-ehr):
-Ein Client kann aus dem Kontext des bestätigungsrelevanten System direkt innerhalb einer bestehenden User Session gestartet werden. Beispielsweise indem der eingeloggte Benutzer den Client startet und durch das System eine neue Browser Instanz geöffnet wird oder das System einen iframe darstellt.
+Ein Client kann aus dem Kontext des bestätigungsrelevanten System direkt innerhalb einer bestehenden User Session gestartet werden. Beispielsweise indem die eingeloggte BenutzerIn den Client startet und durch das System eine neue Browser Instanz geöffnet wird oder das System einen iframe darstellt.
 
 - [SMART App Launch - Standalone Launch](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#launch-app-standalone-launch):
 Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein gemeinsamer Kontext zwischen bestätigungsrelevanten System und Client.
