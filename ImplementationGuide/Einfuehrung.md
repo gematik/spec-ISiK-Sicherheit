@@ -2,9 +2,9 @@
 
 ----
 
-Version: 0.1.0
+Version: 0.2.0
 
-Datum: 17.08.2021
+Datum: 07.10.2021
 
 Status: Draft
 
