@@ -7,3 +7,7 @@ Bestätigungsrelevant sind die Anforderungen nach [SMART App Launch - 2.0.11 - A
 - Validierung ob das Token abgelaufen ist oder zurückgezogen wurde
 - Validierung ob der "aud"-Parameter des Tokens übereinstimmt mit dem angefragten Endpunkt
 - Validierung ob alle angefragten Restful-Interaktionen abgedeckt sind durch die Scopes innerhalb des Tokens
+
+## Break The Glass
+
+In klinischen Notfällen kann es erforderlich sein um die Sicherheit der PatientInnen zu gewährleisten, dass ein Benutzer auf die Daten des bestätigungsrelevanten Systems zugreifen muss ohne entsprechende Rechte hierfür zu besitzen. Die vorliegende Spezifikation macht diesbezüglich keine Vorgaben und vereweist auf die [FHIR Kernspezifikation - Break The Glass](https://www.hl7.org/fhir/security-labels.html#break-the-glass). Eine grundlegende Betrachtung der resultierenden Problemstellung findet sich in ["Healthcare Requirements for Emergency Access"](http://www.hl7.org/search/viewSearchResult.cfm?search_id=393442&search_result_url=%2Fdocumentcenter%2Fpublic%2Fwg%2Fsecure%2FHL7%20Emergency%20Access%2Edoc).
