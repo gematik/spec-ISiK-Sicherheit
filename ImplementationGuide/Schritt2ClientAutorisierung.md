@@ -8,7 +8,7 @@ Abhängig davon ob der Client durch einen EHR Launch oder Standalone Launch gest
 
 ## EHR Launch
 
-Das bestätigungsrelevante System MUSS in der Lage sein durch einen externen Kontextaufruf den Client zu starten. Im Kontext des derzeitig eingeloggten Benutzers wird der Client gestartet, vgl. {{pagelink:SmartAppLaunch, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [EHR launch sequence](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#ehr-launch-sequence) dokumentierten Parameter enthalten.
+Das bestätigungsrelevante System MUSS in der Lage sein durch einen externen Kontextaufruf den Client zu starten. Im Kontext des derzeitig eingeloggten Benutzers wird der Client gestartet, vgl. {{pagelink:SmartAppLaunch, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [EHR launch sequence](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
 
 Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Parameter zu assoziieren ist. Dieser Parameter dient dient dazu, dass der Client das Access Token verknüpfen kann mit dem Kontext aus dem der Client gestartet worden ist und kann beliebig gewählt werden (z.B. eine UUID). Der Kontext kann beispielsweise Informationen zum Patienten oder Kontakt/Fall enthalten welcher dem Anwender zuvor präsentiert worde. Dieser Kontext wird dem Client durch sogenannte [Launch Context Claims](http://build.fhir.org/ig/HL7/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data) vermittelt. Diese Claims enthalten IDs der FHIR-Ressourcen welche die zuvorgenannten Datenobjekte repräsentieren. Es ist notwendig innerhalb der SMART authorization sequence die angeforderten [Launch Context Claims](http://build.fhir.org/ig/HL7/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data) an den Client zurückzugeben, vgl. Abschnitt {{pagelink:Schritt4AustauschAutorisierungscodesZugangstoken, text:Austausch des Autorisierungscodes für ein Zugangstoken}}. Der Client kann Hinweise geben welche Kontextparameter gewünscht sind. Sollten diese jedoch nicht verfügbar sein (z.B. der Client wurde ohne Patientekontext aufgerufen), können die zurückgegebenen Launch Context Claims von den gewünschten Scopes abweichen.
 
@@ -22,7 +22,7 @@ Aufgrund des fehlenden Kontexts zwischen Client und bestätigungsrelevanten Syst
 
 ## Parameter Authorisierungsanfrage
 
-Der Aufruf des Clients MUSS alle in [SMART App Launch - 1.0.6.1.1 - Step 1: App asks for authorization](http://build.fhir.org/ig/HL7/smart-app-launch/index.html#ehr-launch-sequence) dokumentierten Parameter enthalten. Inbesondere gilt dies für die Untersützung von HTTP POST-basierten Autorisierunganfragen und der Untersützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636).
+Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.9 - Obtain authorization code](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-4-authorization-code) dokumentierten Parameter enthalten. Inbesondere gilt dies für die Untersützung von HTTP POST-basierten Autorisierunganfragen und der Untersützung von [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636).
 
 Zu beachten ist, dass durch den SMART App Launch der "state"-Parameter abweichend von RFC6749 verpflichtend ist.
 
