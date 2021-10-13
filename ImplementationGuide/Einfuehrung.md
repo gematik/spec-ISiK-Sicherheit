@@ -26,6 +26,6 @@ isik@gematik.de
 
 Herausgeber
 
-Gesellschaft für Telematikanwendungen der Gesundheitskarte GmbH (gematik)
+gematik GmbH
 
 [Impressum](https://www.gematik.de/impressum/)

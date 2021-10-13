@@ -6,17 +6,17 @@ Sowohl für Public als auch Confidential Client erfolgt durch den SMART App Laun
 
 ## Authentifizierung der Clients
 
-Confidential Clients müssen sich gegenüber dem "Token"-Endpunkt des Authorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten untersützt werden:
+Confidential Clients müssen sich gegenüber dem "Token"-Endpunkt des Autorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten unterstützt werden:
 
 ### JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)
 
 Die präferierte Variante für die Authentifizierung des Clients erfolgt per [RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523). Hierzu MÜSSEN folgende Schritte untersützt werden:
 
-1. Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder [RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)](https://datatracker.ietf.org/doc/html/rfc8017) oder [ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))](https://datatracker.ietf.org/doc/html/rfc6979) als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Authorisierungsserver als [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) eingebettet in einem [JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517#section-5) übermittelt. 
+1. Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder [RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)](https://datatracker.ietf.org/doc/html/rfc8017) oder [ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))](https://datatracker.ietf.org/doc/html/rfc6979) als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Autorisierungsserver als [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) eingebettet in einem [JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517#section-5) übermittelt. 
 
 Folgende Anforderungen werden an den JSON Web Key gestellt:
 
-- Als Signaturalgorithmus MUSS durch den Authorisierungsserver mindestens RS256, ES256, RS384, sowie ES384 akzeptiert werden [Siehe RFC7518 - "alg" (Algorithm) Header Parameter Values for JWS](https://datatracker.ietf.org/doc/html/rfc7518#section-3.1). Weitere Signaturalgorithmen KÖNNEN unterstützt werden.
+- Als Signaturalgorithmus MUSS durch den Autorisierungsserver mindestens RS256, ES256, RS384, sowie ES384 akzeptiert werden [Siehe RFC7518 - "alg" (Algorithm) Header Parameter Values for JWS](https://datatracker.ietf.org/doc/html/rfc7518#section-3.1). Weitere Signaturalgorithmen KÖNNEN unterstützt werden.
 
 - Der JSON Web Key MUSS mindestens folgende Parameter enthalten:
     - ["kty" (Key Type) Parameter](https://datatracker.ietf.org/doc/html/rfc7517#section-4.1)
@@ -26,13 +26,13 @@ Folgende Anforderungen werden an den JSON Web Key gestellt:
 
 2. Ein Austausch des JSON Web Key MUSS durch eine der nachfolgenden Optionen implementiert werden. Option 1) wird aufgrund der in [4 - Registering a SMART Backend Service (communicating public keys)](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html) aufgeführten Vorteile empfohlen.
 
-(1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Authorisierungsserver SOLLTE prüfen, dass diese URL übereinstimmt mit dem ["jku" Parameter](https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2) der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token.
+(1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Autorisierungsserver SOLLTE prüfen, dass diese URL übereinstimmt mit dem ["jku" Parameter](https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2) der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token.
 
-(2) Das JSON Web Key Set KANN dem Authorisierungsserver direkt mitgeteilt werden. In diesem Fall SOLLTE das JSON Web Key Set min. zwei Schlüssel enthalten, sodass eine unterbrechungsfreie Schlüsselrotation durchgeführt werden kann. Nachteile dieser Option sind in [4 - Registering a SMART Backend Service (communicating public keys)](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html) zusammengefasst.
+(2) Das JSON Web Key Set KANN dem Autorisierungsserver direkt mitgeteilt werden. In diesem Fall SOLLTE das JSON Web Key Set min. zwei Schlüssel enthalten, sodass eine unterbrechungsfreie Schlüsselrotation durchgeführt werden kann. Nachteile dieser Option sind in [4 - Registering a SMART Backend Service (communicating public keys)](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html) zusammengefasst.
 
 Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem Schlüsselmissbrauch vorzubeugen.
 
-3. Der Client erzeut ein JSON Web Token entsprechend der in [SMART Backend Services: Authorization Guide - 5.0.1 - Protocol details](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html#protocol-details) definierten Vorgaben und verwendet dies als "client_assertion".
+3. Der Client erzeugt ein JSON Web Token entsprechend der in [SMART Backend Services: Authorization Guide - 5.0.1 - Protocol details](http://build.fhir.org/ig/HL7/bulk-data-export/authorization/index.html#protocol-details) definierten Vorgaben und verwendet dies als "client_assertion".
 
 ### HTTP Basic authentication:
 
@@ -40,11 +40,11 @@ Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1Registie
 
 ----
 
-## Austausch des Authorisierungscodes für ein Zugangstoken
+## Austausch des Autorisierungscodes für ein Zugangstoken
 
-In Abschnitt [SMART App Launch - 2.0.10 - Obtain access token](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-5-access-token) werden alle notwendigen Parameter definiert durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Authorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter "id_token" und "refresh_token" unterstützt werden MÜSSEN. Ein id_token MUSS ausgestellt werden, wenn der Client einen "openid fhirUser" Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im bestätigungsrelevanten System nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext). 
+In Abschnitt [SMART App Launch - 2.0.10 - Obtain access token](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-5-access-token) werden alle notwendigen Parameter definiert durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Autorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter "id_token" und "refresh_token" unterstützt werden MÜSSEN. Ein id_token MUSS ausgestellt werden, wenn der Client einen "openid fhirUser" Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im bestätigungsrelevanten System nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext). 
 
-Alle verpflichtenden Implementierungsdetails aus [SMART App Launch - 2.0.10 - Obtain access token](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-5-access-token) MÜSSEN durch den Authorisierungsserver unterstützt werden.
+Alle verpflichtenden Implementierungsdetails aus [SMART App Launch - 2.0.10 - Obtain access token](http://build.fhir.org/ig/HL7/smart-app-launch/app-launch.html#step-5-access-token) MÜSSEN durch den Autorisierungsserver unterstützt werden.
 
 Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen um ein Token Revocation Mechanismus effizient implementieren zu können. Siehe {{pagelink:Schritt6RefreshToken, text:Schritt 6: Refresh Token & Revocation}}.
 
