@@ -1,7 +1,7 @@
 # Modul-Name Sicherheit
 
 ## Kurzbeschreibung
-Das Modul Sicherheit umfasst zwei verschiedene Use Cases die eine Authentifizierung und Authorisierung von verschiedenen Akteueren innerhalb des Krankenhauses ermöglichen, sodass gesichert Daten von einem IsiK-FHIR-Endpunkt gelesen bzw. dort gespeichert werden können.
+Das Modul Sicherheit umfasst zwei verschiedene Use Cases die eine Authentifizierung und Autorisierung von verschiedenen Akteueren innerhalb des Krankenhauses ermöglichen, sodass gesichert Daten von einem IsiK-FHIR-Endpunkt gelesen bzw. dort gespeichert werden können.
 
 1. Benutzer einer Drittanbieter-Software (Patient/Practitioner) möchte Zugang zum einem IsiK-FHIR-Endpunkt erhalten (Lese/- und/oder Schreibrechte).
 
