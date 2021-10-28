@@ -7,4 +7,5 @@ Das Modul Sicherheit ist bestätigungsrelevant für alle Systeme welche eine ISi
 - ISiK-Modul Pflege
 - ISiK-Modul Medikation
 - ISiK-Modul Dokumentenaustausch
+- ISiK-Modul Terminplannung
 - ISiP-Basismodul
