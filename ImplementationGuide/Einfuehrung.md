@@ -2,11 +2,11 @@
 
 ----
 
-Version: 0.2.0
+Version: 1.0.0
 
-Datum: 07.10.2021
+Datum: 07.02.2022
 
-Status: Draft
+Status: In Ballotierung
 
 Realm: Deutschland
 
