@@ -17,3 +17,11 @@ Die "Clinical Scope Syntax" MUSS durch einen Authorisierungsserver vollständig 
 Die Möglichkeit von [Wildcard-Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden.
 
 # Launch-Context
+
+Clients können über die zurvor beschriebenen Access-Scopes hinaus sogenannte Launch-Context-Scopes beim Authorisierungsserver anfordern. Launch Claims werden nicht als Teil des Access-Tokens, sondern als Teil des JSON-Dokumentes als Antwort auf die Anfrage eines Access-Tokens zurückgeliefert. Diese Claims enthalten entweder spezifische IDs oder URIs die FHIR-Referenzen abbilden, um kontext-relevante Informationen vorab zu übermitteln, sodass der Client entsprechend einen "Einstiegspunkt" in das System erhält.
+
+Launch-Scopes besitzen die Syntax ```launch/<resourcen-typ>```. Der "<resourcen-typ>" Teil des Scopes ist case-senstive und MUSS kleingeschrieben werden. Der Authorisierungsserver MUSS einen Patienten- (launch/patient) und Fallkontext (launch/encounter) herstellen können. Weitere Kontexte KÖNNEN durch den Authorisierungsserver etabliert werden - [vgl. SMART App Launch - 3.0.3.3.1 - fhirContext](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#fhircontext).
+
+Die Kontextinformationen sind durch den Authorisierungsserver beim Ressourcen-Server anzufordern. Als Implementierungsunterstützung können die Informationen durch den "launch"-Parameter, welcher während durch einen EHR-Launch ausgetauscht wurde, abgeleitet werden. Im Falle eines Standalone Launch können die Informationen manuell durch die Benutzer*in ausgewählt werden oder durch sonstige geeignete Maßnahmen bestimmt werden. Hierzu bestehen seitens der Spezifikation keine Vorgaben.
+
+Die Vorgaben zur Kodierung der [Patient-, Encounter- und fhirContext- Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#launch-context-arrives-with-your-access_token) MÜSSEN implementiert werden.
