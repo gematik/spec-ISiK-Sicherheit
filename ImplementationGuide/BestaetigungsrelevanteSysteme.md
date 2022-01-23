@@ -1,11 +1,4 @@
 # Bestätigungsrelevante Systeme
 
-Das Modul Sicherheit ist bestätigungsrelevant für alle Systeme welche eine ISiK-konforme Schnittstelle für eines der nachfolgenden Module implementieren:
-
-- ISiK-Basismodul
-- ISiK-Modul Vitalwerte und Körpermaße
-- ISiK-Modul Pflege
-- ISiK-Modul Medikation
-- ISiK-Modul Dokumentenaustausch
-- ISiK-Modul Terminplannung
-- ISiP-Basismodul
+Das Modul Sicherheit ist bestätigungsrelevant sind alle Systeme, welche im Rahmen eines weiteren ISiK- oder ISiP-Moduls als bestätigungsrelevant eingestuft werden.
+Diese Systeme gelten im Sinne der vorliegenden Spezifikation als "Ressource-Server" und müssen ein Authentifizierungs-/Authorisierungssystem entsprechend der Vorgaben des Modul "Sicherheit" implementieren und externen Systemen zur Verfügung stellen.
