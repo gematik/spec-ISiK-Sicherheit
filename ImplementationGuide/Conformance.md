@@ -39,10 +39,10 @@ Bestimmte SMART-Funktionalitäten werden zusammengefasst in SMART Capability Set
 
 Aus den verpflichtenden Capability Sets ergibt sich, dass folgende Angaben zudem in den SMART Capabilities angegeben werden MÜSSEN:
 
-* ```issuer``
-* ```jwks_uri``
-* ```authorization_endpoint``
-* ```grant_types_supported``
-* ```token_endpoint``
-* ```capabilities``
-* ```code_challenge_methods_supported``
+* ```issuer```
+* ```jwks_uri```
+* ```authorization_endpoint```
+* ```grant_types_supported```
+* ```token_endpoint```
+* ```capabilities```
+* ```code_challenge_methods_supported```
