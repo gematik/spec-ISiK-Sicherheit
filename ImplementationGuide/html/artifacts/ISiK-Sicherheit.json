@@ -1,0 +1,95 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "ImplementationGuide-ISiK-Sicherheit",
+  "url": "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Sicherheit",
+  "name": "Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung",
+  "status": "active",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "packageId": "de.gematik.isik-sicherheit",
+  "definition": {
+    "page": {
+      "nameUrl": "ImplementationGuide/Einfuehrung.md",
+      "title": "Einführung",
+      "generation": "markdown",
+      "page": [
+        {
+          "nameUrl": "ImplementationGuide/Motivation.md",
+          "title": "Motivation",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/UebergreifendeFestlegungen.md",
+          "title": "Übergreifende Festlegungen",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide/Methodik.md",
+              "title": "Methodik",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/BestaetigungsrelevanteSysteme.md",
+              "title": "Bestätigungsrelevante Systeme",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/KompatibilitaetDerGematikSpezifikation.md",
+              "title": "Kompatibilität der gematik-Spezifikation",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "ImplementationGuide/SmartAppLaunch.md",
+          "title": "Smart App Launch",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide/Schritt1RegistierungClient.md",
+              "title": "Schritt 1 - Registrierung Client",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt2ClientAutorisierung.md",
+              "title": "Schritt 2 - Client Autorisierung",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt3EvaluierungAutorisierungsanfrage.md",
+              "title": "Schritt 3 - Evaluierung Autorisierungsanfrage",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt4AustauschAutorisierungscodesZugangstoken.md",
+              "title": "Schritt 4 - Austausch - Autorisierungscodes Zugangstoken",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt5FhirRestInteraktion.md",
+              "title": "Schritt 5 - FHIR Restful Interaktion",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/Schritt6RefreshToken.md",
+              "title": "Schritt 6 - Refresh Token & Revocation",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "ImplementationGuide/ScopesAndLaunchContext.md",
+          "title": "Scopes & Launch Context",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide/Conformance.md",
+          "title": "Conformance",
+          "generation": "markdown"
+        }
+      ]
+    }
+  }
+}
+

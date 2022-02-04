@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung</title>
+
+        <link rel="icon" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/favicon.ico" />
+
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/jquery/jquery.min.js"></script>
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/main.min.css" />
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/rendering.min.css" />
+
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/twolevelmenu/style.css?v=1d8112c52093900" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Smart App Launch <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="SmartAppLaunch.html">
+                                            Smart App Launch
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Schritt1RegistierungClient.html">
+                                            Schritt 1 - Registrierung Client
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt2ClientAutorisierung.html">
+                                            Schritt 2 - Client Autorisierung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt3EvaluierungAutorisierungsanfrage.html">
+                                            Schritt 3 - Evaluierung Autorisierungsanfrage
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt4AustauschAutorisierungscodesZugangstoken.html">
+                                            Schritt 4 - Austausch - Autorisierungscodes Zugangstoken
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt5FhirRestInteraktion.html">
+                                            Schritt 5 - FHIR Restful Interaktion
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt6RefreshToken.html">
+                                            Schritt 6 - Refresh Token &amp; Revocation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ScopesAndLaunchContext.html">
+                                Scopes &amp; Launch Context
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Conformance.html">
+                                Conformance
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <h1 id="motivation">Motivation</h1>
+<p>Innerhalb des <a href="https://simplifier.net/guide/ImplementierungsleitfadenISiK-Basismodul/Einfuehrung">ISiK Basismoduls</a> erfolgt eine Erörterung der <a href="https://simplifier.net/guide/ImplementierungsleitfadenISiK-Basismodul/Motivation">Motivation für den Einsatz einer ISiK-konformen Schnittstelle</a>. Ein entsprechender Fokus liegt hierbei auf der Integration von spezialisierten Subsystemen, welche entweder Informationen am Krankenhausinformationssystem (KIS) oder Klinischen Arbeitsplatzsystem (KAS) abrufen möchten oder Informationen an die zuvorgenannten Systeme zurückliefern. Hervorgehoben sei hier die Integration von mobilen Anwendungen.</p>
+<p>Das ISiK-Modul 'Sicherheit' ist auf die Anforderungen an eine Autorisierung- und Authentifikation für die ISiK-Endpunkte fokussiert, sodass alle bestätigungsrelevanten Systeme in der Lage sind die Zugriffsrechte eines Benutzers an einen Client (z.B. Klinische Subsysteme, Patientenportale, Terminverwaltungsysteme, Mobile Apps zur Erfassung von Messwerten) zu delegieren. Hiermit soll erreicht werden, dass alle zulässigen Informationen ISiK-konform am FHIR-Endpunkt abgerufen werden können und gleichzeitig gewährleistet wird, dass bestehende Rollen- und Rechtekonzepte weiterverwendet werden können.</p>
+<p>Aus der Sicht eines Clients ermöglicht das Modul des Weiteren, dass eine Autorisierung- und Authentifikation gegenüber dem KIS / KAS-System durch eine standardisierte Schnittstelle erfolgen kann. Neben externen Clients soll das Modul zudem ermöglichen, dass Applikationen aus dem Kontext des KIS / KAS-System gestartet werden können und sich entsprechend gegenüber dem System autorisieren und authentifizieren.</p>
+<p><strong>Es ist zu beachten, dass durch das Erlangen einer Bestätigung für das vorliegende ISiK-Modul keine Aussagen über die Sicherheit der Implementierung im jeweiligen bestätigungsrelevanten System abgeleitet werden können. Die Bestätigung bezieht sich alleinig auf die Konformität zu der Spezifikation. Weitere Sicherheit-Audits werden ausdrücklich empfohlen.</strong></p>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
