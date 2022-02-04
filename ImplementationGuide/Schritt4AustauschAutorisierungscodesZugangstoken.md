@@ -12,7 +12,7 @@ Confidential Clients müssen sich gegenüber dem "Token"-Endpunkt des Autorisier
 
 Die präferierte Variante für die Authentifizierung des Clients erfolgt per [RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants](https://datatracker.ietf.org/doc/html/rfc7523). Hierzu MÜSSEN folgende Schritte untersützt werden:
 
-1. Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder [RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)](https://datatracker.ietf.org/doc/html/rfc8017) oder [ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))](https://datatracker.ietf.org/doc/html/rfc6979) als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Autorisierungsserver als [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) eingebettet in einem [JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517#section-5) übermittelt. 
+1. Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder [RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)](https://datatracker.ietf.org/doc/html/rfc8017) oder [ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))](https://datatracker.ietf.org/doc/html/rfc6979) als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Autorisierungsserver als [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) eingebettet in einem [JSON Web Key Set](https://datatracker.ietf.org/doc/html/rfc7517#section-5) übermittelt. Angaben zur Schlüssellänge sind den Abschnitten [RFC7518 - Abschnitt 3.3 - Digital Signature with RSASSA-PKCS1-v1_](https://datatracker.ietf.org/doc/html/rfc7518#section-3.3) und [RFC7518 - Abschnitt 3.4 - Digital Signature with ECDSA](https://datatracker.ietf.org/doc/html/rfc7518#section-3.4) zu entnehmen.
 
 Folgende Anforderungen werden an den JSON Web Key gestellt:
 
@@ -51,3 +51,77 @@ Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikati
 ----
 
 ## Beispiel
+
+1. Generierung Public/Private Key:
+
+```json
+{
+    "p": "xmB9u3-YZG9wQudAA0lrSxfPMrzdyRg9_ucaXVVXmBfEkP4B0TJf4Qy3PElekRpRwQQzkTGru06uJZr3C-FnnjbVyzGjSJovWP5S4vBm7zWVGMMhdLDCRtGqx2qC0MGLV7aAGg7XN590US_8XRqtMiMv4RHwj5mzMK-S-4-G_dc",
+    "kty": "RSA",
+    "q": "vrKETfeUnSZY7eMy0E1UfY8wwE0tFC5r63hpXMqvBKKORXd4XOdqVPUoGeWg-tk4g7aQWW5SJIYk72EGaRuZ-S1giFo724fbJ0lxMxM-HOqMrxhCEDFNOzsjS-tZzbq8krXOp8yAPMENx3bvMFyk2N84qFVaD4gkibIPR6QM_fM",
+    "d": "iuoCvT6rbu0ME2V61cw9OSxafD6Fbk2rL4IwkS2AfiMnoEeHpII36oHjU-OYRCRtOGoj8Hes0NkBTffXocYbyXKAxpdzogh1WqPyCraIDJSNR_Wv2ebHdtmie_3ZOdPntYN6MN8y7rinlZBWNgXH8d7GCo48UnT4zu66gyqN7gWVN90it4B0Xcy_3RdHpIO3e1ES-zDWDkP8APL8NPxMAqX7NL5sYtWxKCdFXfMi456iZ_THMu4dJC9QtqTkzphwtsbSrGTTMZXHuqw92fH7NRRhc17vyanNzMXbPJ6Wiy8DoI_1Gopz9HFOWzK7RiQeJtes136vTRXKa3vcnZFB4Q",
+    "e": "AQAB",
+    "use": "sig",
+    "kid": "t0xPKRRKap5FF6TItqt-ANoiSysWce7vAGL8vCXRBXQ",
+    "qi": "cl61xViRvryTB6ZpIlxd_4Iqj7P27TUVg5foJ3OfzoqwMdCHzxqdmUkc5_hvZB18eUTxu6hj1f4tw63r61D84SdOxJ8YC7b7Cu1sc2sh4YvlrpeGjKFZfHQCCxQigXJID4XBElxxqoiTWnCrUQPq6cMo3An9h-_w0AjtJAA2i2Y",
+    "dp": "dNWDd5hQYmaXkW-s7cKh5Fojd9hwLu2OJcBqcKnAqxzkchiHbXPjsCHTETiM75y2pZ0Z2duNLwXJ3vADrAWXB0F4bPHRHwNf-2Pd4TaBCUVfiHP0EkvAQAFgOY5reRNkQ8aCb9ZpvqK02NQQJ618b9j1a_Mq4Qg-1t-xC2Oet4U",
+    "alg": "RS384",
+    "dq": "i-nGkL3Z2ANOtBtCKPrTxtvMVQtKy8fTfox2IZLEHo51_BnPwbo4leTZa0bDecjuYhUMi9EZi5qwdsGlRnDt45ibfu9Vg5iF_qkv2N2BcQ3V8pHFxsOlepPFLeqblQoxWSLzYMH2RJ0QUwy8KauPd18v3rHgxgyJYk22UEXZEmk",
+    "n": "k8Xy7sDGlI_8R1hAVnWw1skyzANUyctiJzcVQYNIBKtJ-otzokwcPhI1Nj9HEjyBw-2ikPw7eQ9VbcVzOZmJY57XcuMFl0UkR8acGdTt5VNQMxKdbzk3RbbFv9fuadT9nMjZfXZ1Z1UX9dxYt51T-Ay7Qpo0_cczxlKMBmdScZOiQCCyfUW4rVwDQZ5-Vnjk8AkmhChjidrsnu_aVj8P4A_g6Ik-XIyhGwFmXHFWyqAANgZdV-kypdaXwGjgrNBjw0AbDC90AghYhjY1nslWFgZIeI-DDqUyS6X8NX3CIPQsTs2iSXBQTeoOmSmLHAjC4rgiajtCM7cMdlY0SBRuFQ"
+}
+```
+
+2. JSON Web Key Set mit öffenlichem Schlüsselteil erzeugen:
+
+```json
+{
+    "keys": [
+        {
+            "kty": "RSA",
+            "e": "AQAB",
+            "use": "sig",
+            "kid": "t0xPKRRKap5FF6TItqt-ANoiSysWce7vAGL8vCXRBXQ",
+            "alg": "RS384",
+            "n": "k8Xy7sDGlI_8R1hAVnWw1skyzANUyctiJzcVQYNIBKtJ-otzokwcPhI1Nj9HEjyBw-2ikPw7eQ9VbcVzOZmJY57XcuMFl0UkR8acGdTt5VNQMxKdbzk3RbbFv9fuadT9nMjZfXZ1Z1UX9dxYt51T-Ay7Qpo0_cczxlKMBmdScZOiQCCyfUW4rVwDQZ5-Vnjk8AkmhChjidrsnu_aVj8P4A_g6Ik-XIyhGwFmXHFWyqAANgZdV-kypdaXwGjgrNBjw0AbDC90AghYhjY1nslWFgZIeI-DDqUyS6X8NX3CIPQsTs2iSXBQTeoOmSmLHAjC4rgiajtCM7cMdlY0SBRuFQ"
+        }
+    ]
+}
+```
+
+3. Bereitstellung des JSON Web Key Sets unter einer ohne weitere Authtentifizierung erreichbare URL (https abgesichert) ODER Übermittelung des JSON Web Key Sets an den Authorisierungsserver (keine weiteren Vorgaben).
+
+4. Erzeugung eines JSON Web Tokens signiert mit dem oben genannten Private/Public Key Pair:
+
+```json
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ
+```
+
+Dekodierte Form:
+
+```json
+{
+  "typ": "JWT",
+  "alg": "RS384"
+}.{
+  "iss": "Example Issuer",
+  "iat": null,
+  "exp": 1643986970,
+  "aud": "https://example.org/auth/token",
+  "sub": "TestClientId",
+  "jti": "76a5e086-e9a7-44fe-9728-7121615c6291"
+}.[Signature]
+```
+
+5. 
+
+POST /token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+client_assertion_type: urn:ietf:params:oauth:client-assertion-type:jwt-bearer
+client_assertion: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ
+Host: server.example.com
+
+grant_type=authorization_code&
+code=<Authorisierungscode aus Schritt 3>&
+redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&
+code_verifier=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&
+client_id=TestClientId
