@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung</title>
+
+        <link rel="icon" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/favicon.ico" />
+
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/jquery/jquery.min.js"></script>
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/main.min.css" />
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/rendering.min.css" />
+
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/twolevelmenu/style.css?v=1d8112c52093900" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Smart App Launch <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="SmartAppLaunch.html">
+                                            Smart App Launch
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Schritt1RegistierungClient.html">
+                                            Schritt 1 - Registrierung Client
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt2ClientAutorisierung.html">
+                                            Schritt 2 - Client Autorisierung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt3EvaluierungAutorisierungsanfrage.html">
+                                            Schritt 3 - Evaluierung Autorisierungsanfrage
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt4AustauschAutorisierungscodesZugangstoken.html">
+                                            Schritt 4 - Austausch - Autorisierungscodes Zugangstoken
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt5FhirRestInteraktion.html">
+                                            Schritt 5 - FHIR Restful Interaktion
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt6RefreshToken.html">
+                                            Schritt 6 - Refresh Token &amp; Revocation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ScopesAndLaunchContext.html">
+                                Scopes &amp; Launch Context
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Conformance.html">
+                                Conformance
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <h1 id="schritt-1-registrierung-eines-smart-clients-mit-dem-bestatigungsrelevanten-system">Schritt 1: Registrierung eines SMART Clients mit dem bestätigungsrelevanten System</h1>
+<p>Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann MUSS der Client beim Autorisierungsserver des bestätigungsrelevanten Systems registriert werden. Per Abschnitt <a href="https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-1-register">SMART App Launch - 2.0.5 - Register App with EHR</a> ist er freigestellt wie diese Registrierung durchgeführt wird.</p>
+<p>Der Autorisierungsserver MUSS die <a href="https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#request">Anforderungen an die Registrierung von Launch Urls und Redirect Uris - SMART App Launch - 2.0.5.1 - Request</a> unterstützen. Es wird besonders auf die Anforderungen aus RFC8252 - Abschnitt <a href="https://datatracker.ietf.org/doc/html/rfc8252#section-7">7.  Receiving the Authorization Response in a Native App</a> hingewiesen. Für Redirect Uris sind folgende Schemata zu untersützen:</p>
+<ul>
+<li>Private-Use URI Scheme Redirection</li>
+<li>Claimed &quot;https&quot; Scheme URI Redirection</li>
+<li>Loopback Interface Redirection</li>
+</ul>
+<p>Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect Urls (während Schritt 3 - &quot;Bestätigungsrelevanten System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer&quot;) nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.</p>
+<p>Der Autorisierungsserver vergibt auf Basis der Registrierung ein Client Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access Token Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden.</p>
+<p>Die Verwendung von <a href="https://datatracker.ietf.org/doc/html/rfc7591">RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol</a> wird ausdrücklich empfohlen, ist jedoch optional und nicht bestätigungsrelevant. Es ist zu beachten, dass derzeitig keine standardisierte Metadata Extension für die Registrierung der Launch Urls existiert. Diese kann beliebig gewählt werden.</p>
+<hr />
+<h2 id="beispiel">Beispiel</h2>
+<p>Folgender Request stellt beispielhaft dar welche Parameter bei einer Anfrage an einen Dynamic-Client-Registration-Endpunkt vorhanden sein können:</p>
+<p>POST /register HTTP/1.1<br>
+Content-Type: application/json<br>
+Accept: application/json<br>
+Host: server.example.com<br></p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+    <span style="color:#A31515;">&quot;redirect_uris&quot;</span>: [<span style="color:#A31515;">&quot;https://example.org/redirect_uri/fhir/client/exampleId/&quot;</span>],
+    <span style="color:#A31515;">&quot;token_endpoint_auth_method&quot;</span>: [<span style="color:#A31515;">&quot;client_secret_basic&quot;</span>, <span style="color:#A31515;">&quot;client_secret_post&quot;</span>, <span style="color:#A31515;">&quot;private_key_jwt&quot;</span>],
+    <span style="color:#A31515;">&quot;grant_types&quot;</span>: [<span style="color:#A31515;">&quot;authorization_code&quot;</span>, <span style="color:#A31515;">&quot;refresh_token&quot;</span>],
+    <span style="color:#A31515;">&quot;response_types&quot;</span>: [<span style="color:#A31515;">&quot;code&quot;</span>],
+    <span style="color:#A31515;">&quot;client_name&quot;</span>: <span style="color:#A31515;">&quot;MyFhirClientName&quot;</span>,
+    <span style="color:#A31515;">&quot;jwks_uri&quot;</span>: <span style="color:#A31515;">&quot;https://example.org/jwks/fhir/client/exampleId/jwks.json&quot;</span>
+}
+
+</pre></div>
+</div>
+<p>Response:</p>
+<p>HTTP/1.1 201 Created<br>
+Content-Type: application/json<br>
+Cache-Control: no-store<br>
+Pragma: no-cache<br></p>
+<div class="lang-json editor-colors"><div style="color:Black;background-color:White;"><pre>
+{
+    <span style="color:#A31515;">&quot;client_id&quot;</span>: <span style="color:#A31515;">&quot;TestClientId&quot;</span>,
+    <span style="color:#A31515;">&quot;redirect_uris&quot;</span>: [<span style="color:#A31515;">&quot;https://example.org/redirect_uri/fhir/client/exampleId&quot;</span>],
+    <span style="color:#A31515;">&quot;token_endpoint_auth_method&quot;</span>: [<span style="color:#A31515;">&quot;client_secret_basic&quot;</span>, <span style="color:#A31515;">&quot;client_secret_post&quot;</span>, <span style="color:#A31515;">&quot;private_key_jwt&quot;</span>],
+    <span style="color:#A31515;">&quot;grant_types&quot;</span>: [<span style="color:#A31515;">&quot;authorization_code&quot;</span>, <span style="color:#A31515;">&quot;refresh_token&quot;</span>],
+    <span style="color:#A31515;">&quot;response_types&quot;</span>: [<span style="color:#A31515;">&quot;code&quot;</span>],
+    <span style="color:#A31515;">&quot;client_name&quot;</span>: <span style="color:#A31515;">&quot;MyFhirClientName&quot;</span>,
+    <span style="color:#A31515;">&quot;jwks_uri&quot;</span>: <span style="color:#A31515;">&quot;https://example.org/jwks/fhir/client/exampleId/jwks.json&quot;</span>
+}
+
+</pre></div>
+</div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung</title>
+
+        <link rel="icon" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/favicon.ico" />
+
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/jquery/jquery.min.js"></script>
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/main.min.css" />
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/rendering.min.css" />
+
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="guide/ImplementierungsleitfadenISiK-Sicherheit/files/styles/twolevelmenu/style.css?v=1d8112c52093900" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Smart App Launch <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="SmartAppLaunch.html">
+                                            Smart App Launch
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="Schritt1RegistierungClient.html">
+                                            Schritt 1 - Registrierung Client
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt2ClientAutorisierung.html">
+                                            Schritt 2 - Client Autorisierung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt3EvaluierungAutorisierungsanfrage.html">
+                                            Schritt 3 - Evaluierung Autorisierungsanfrage
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt4AustauschAutorisierungscodesZugangstoken.html">
+                                            Schritt 4 - Austausch - Autorisierungscodes Zugangstoken
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt5FhirRestInteraktion.html">
+                                            Schritt 5 - FHIR Restful Interaktion
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Schritt6RefreshToken.html">
+                                            Schritt 6 - Refresh Token &amp; Revocation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ScopesAndLaunchContext.html">
+                                Scopes &amp; Launch Context
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Conformance.html">
+                                Conformance
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <h1 id="schritt-4-austausch-des-autorisierungscodes-fur-ein-zugangstoken">Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken</h1>
+<p>Sowohl für Public als auch Confidential Client erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet um die in <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2">Implicit Grant - OAuth 2.0 Security Best Current Practice</a> dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierte Anfrage der Authorization Code durch ein Access Token ausgetauscht.</p>
+<hr />
+<h2 id="authentifizierung-der-clients">Authentifizierung der Clients</h2>
+<p>Confidential Clients müssen sich gegenüber dem &quot;Token&quot;-Endpunkt des Autorisierungsservers authentifizieren. Hierfür MÜSSEN folgende Möglichkeiten unterstützt werden:</p>
+<h3 id="json-web-token-jwt-profile-for-oauth-2.0-client-authentication-and-authorization-grants-empfehlung">JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants (Empfehlung)</h3>
+<p>Die präferierte Variante für die Authentifizierung des Clients erfolgt per <a href="https://datatracker.ietf.org/doc/html/rfc7523">RFC 7523 - JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants</a>. Hierzu MÜSSEN folgende Schritte untersützt werden:</p>
+<ol>
+<li>Der Client generiert ein Private/Public Key Pair. Hierzu kann entweder <a href="https://datatracker.ietf.org/doc/html/rfc8017">RSA (vgl. RFC8017 - PKCS #1: RSA Cryptography Specifications Version 2.2)</a> oder <a href="https://datatracker.ietf.org/doc/html/rfc6979">ECDSA (vgl. RFC6979 - Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA))</a> als Algorithmus verwendet werden. Der öffentliche Schlüsselteil wird dem Autorisierungsserver als <a href="https://datatracker.ietf.org/doc/html/rfc7517">JSON Web Key</a> eingebettet in einem <a href="https://datatracker.ietf.org/doc/html/rfc7517#section-5">JSON Web Key Set</a> übermittelt.</li>
+</ol>
+<p>Folgende Anforderungen werden an den JSON Web Key gestellt:</p>
+<ul>
+<li><p>Als Signaturalgorithmus MUSS durch den Autorisierungsserver mindestens RS256, ES256, RS384, sowie ES384 akzeptiert werden <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-3.1">Siehe RFC7518 - &quot;alg&quot; (Algorithm) Header Parameter Values for JWS</a>. Weitere Signaturalgorithmen KÖNNEN unterstützt werden.</p>
+</li>
+<li><p>Der JSON Web Key MUSS mindestens folgende Parameter enthalten:</p>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7517#section-4.1">&quot;kty&quot; (Key Type) Parameter</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7517#section-4.5">&quot;kid&quot; (Key ID) Parameter</a></li>
+<li>Für einen öffentlichen RSA Web Key: &quot;n&quot; (Modulus) Parameter, &quot;e&quot; (Exponent) Parameter (Siehe <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-6.3">RFC7518 - 6.3 Parameters for RSA Keys</a>)</li>
+<li>Für einen öffentlichen Elliptic Curve Web Key: &quot;crv&quot; (Curve) Parameter, &quot;x&quot; (X Coordinate) Parameter, &quot;y&quot; (Y Coordinate) Parameter (Siehe <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-6.2">RFC7518 - 6.2 Parameters for RSA Keys</a>)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Ein Austausch des JSON Web Key MUSS durch eine der nachfolgenden Optionen implementiert werden. Option 1) wird aufgrund der in <a href="https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#client-authentication-asymmetric-public-key">SMART App Launch - 5 - Client Authentication: Asymmetric (public key)</a> aufgeführten Vorteile empfohlen.</li>
+</ol>
+<p>(1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Autorisierungsserver SOLLTE prüfen, dass diese URL übereinstimmt mit dem <a href="https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2">&quot;jku&quot; Parameter</a> der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token.</p>
+<p>(2) Das JSON Web Key Set KANN dem Autorisierungsserver direkt mitgeteilt werden. In diesem Fall SOLLTE das JSON Web Key Set min. zwei Schlüssel enthalten, sodass eine unterbrechungsfreie Schlüsselrotation durchgeführt werden kann. Nachteile dieser Option sind in <a href="https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#registering-a-client-communicting-public-keys">SMART App Launch - 5.0.4 - Registering a SMART Backend Service (communicating public keys)</a> zusammengefasst.</p>
+<p>Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem Schlüsselmissbrauch vorzubeugen.</p>
+<ol start="3">
+<li>Der Client erzeugt ein JSON Web Token entsprechend der in <a href="https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint">SMART App Launch - 5.0.5 - Authenticating to the Token endpoint</a> definierten Vorgaben und verwendet dies als &quot;client_assertion&quot;.</li>
+</ol>
+<h3 id="http-basic-authentication">HTTP Basic authentication:</h3>
+<p>Der Client tauscht während der Registrierung (siehe <a href="Schritt1RegistierungClient.html" title=''>Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System</a>) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per <a href="https://datatracker.ietf.org/doc/html/rfc7617">RFC7617 - The 'Basic' HTTP Authentication Scheme</a>. Als &quot;username&quot; MUSS die Client Id verwendet werden. Das Password MUSS das vorher ausgetauschte Client Secret verwendet werden.</p>
+<hr />
+<h2 id="austausch-des-autorisierungscodes-fur-ein-zugangstoken">Austausch des Autorisierungscodes für ein Zugangstoken</h2>
+<p>In Abschnitt <a href="https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#obtain-access-token">SMART App Launch - 2.0.10 - Obtain access token</a> werden alle notwendigen Parameter definiert durch die der Client mittels einer HTTP POST Anfrage (application/x-www-form-urlencoded kodiert) am token-Endpunkt des Autorisierungsservers ein Zugangstoken erhalten kann. Zu beachten ist, dass neben den in der Kernspezifikation gekennzeichneten Pflichtparametern, die Parameter &quot;id_token&quot; und &quot;refresh_token&quot; unterstützt werden MÜSSEN. Ein id_token MUSS ausgestellt werden, wenn der Client einen &quot;openid fhirUser&quot; Scope anfragt. Durch den Client angefragte Launch Context Claims MÜSSEN zurückgegeben werden. Eine Ausnahme ergibt sich durch den Fall, dass der Kontext im bestätigungsrelevanten System nicht vorliegt (z.B. es besteht kein Fall/Patientenkontext).</p>
+<p>Alle verpflichtenden Implementierungsdetails aus <a href="https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#obtain-access-token">SMART App Launch - 2.0.10 - Obtain access token</a> MÜSSEN durch den Autorisierungsserver unterstützt werden.</p>
+<p>Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen um ein Token Revocation Mechanismus effizient implementieren zu können. Siehe <a href="Schritt6RefreshToken.html" title=''>Schritt 6</a>.</p>
+<hr />
+<h2 id="beispiel">Beispiel</h2>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
