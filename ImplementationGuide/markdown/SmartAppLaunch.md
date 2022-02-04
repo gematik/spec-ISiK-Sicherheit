@@ -7,15 +7,15 @@ Der vorliegende Implementierungsleitfaden dient zur Erläuterung des Ablaufs ein
 Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatiblen Autorisierungsserver zu erhalten mittels dessen eine FHIR Restful API Interaktion durchgeführt werden kann. Dies erfolgt unter Berücksichtigung der Zugriffsrechte der Benutzer*in im bestätigungsrelevanten System. Um ein Zugangstoken zu erhalten sind folgende sechs Schritte notwendig:
 
 1. Registrierung eines SMART Clients mit dem bestätigungsrelevanten System
-3. Client bittet um Autorisierung
-4. Bestätigungsrelevanten System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer
-5. Austausch des Autorisierungscodes für ein Zugangstoken
-6. FHIR Restful Interaktion abgesichert durch Zugangstoken
-7. Ausstellung eines "Refresh"-Zugangstoken
+2. Client bittet um Autorisierung
+3. Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer
+4. Austausch des Autorisierungscodes für ein Zugangstoken
+5. FHIR Restful Interaktion abgesichert durch Zugangstoken
+6. Ausstellung eines "Refresh"-Zugangstoken
 
 Eine Übersicht des zusammenhängenden Smart App Launch ist Abschnitt [SMART App Launch - 2.0.3 - SMART authorization & FHIR access: overview](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#smart-authorization--fhir-access-overview) zu entnehmen.
 
-Die weiteren Unterkapitel geben eine Einführung in die jeweiligen Abschnitte des Smart App Launch. Bestätigungsrelevante Inhalte werden als solche markiert mit entsprechenden Verweisen auf die Smart App Launch Spezifikation.
+Die weiteren Unterkapitel enthalten eine Einführung in die jeweiligen Abschnitte des Smart App Launch. Bestätigungsrelevante Inhalte werden mit entsprechenden Verweisen auf die Smart App Launch Spezifikation als solche markiert.
 
 -------
 
@@ -24,10 +24,10 @@ Die weiteren Unterkapitel geben eine Einführung in die jeweiligen Abschnitte de
 Eine weitere Differenzierung der Funktionalität eines Smart App Launch erfolgt durch die Einteilung aus welchem Kontext der Client gestartet wird:
 
 - [SMART App Launch - EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr):
-Ein Client kann aus dem Kontext des bestätigungsrelevanten System direkt innerhalb einer bestehenden User Session gestartet werden. Beispielsweise indem die eingeloggte Benutzer*in den Client startet und durch das System eine neue Browser Instanz geöffnet wird oder das System einen iframe darstellt.
+Ein Client kann aus dem Kontext des bestätigungsrelevanten Systems direkt innerhalb einer bestehenden User Session gestartet werden. Beispielsweise indem die eingeloggte Benutzer*in den Client startet und durch das System eine neue Browser Instanz geöffnet wird oder das System einen iframe darstellt.
 
 - [SMART App Launch - Standalone Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#launch-app-standalone-launch):
-Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein gemeinsamer Kontext zwischen bestätigungsrelevanten System und Client.
+Clients welche außerhalb des bestätigungsrelevanten System gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein gemeinsamer Kontext zwischen dem bestätigungsrelevantem System und Client.
 
 Bestätigungsrelevante Systeme MÜSSEN einen EHR Launch und einen Standalone Launch unterstützen.
 
@@ -42,7 +42,7 @@ Die SMART on FHIR Spezifikation enthält teilweise optionale Anforderungen abhä
 # Kurzzusammenfassung
 
 Zu Illustrationszwecken findet sich nachfolgend eine Zusammenfassung der einzelnen Interaktionen, welche notwendig sind um einen SMART App Launch durchzuführen.
-Eine auführlichere Beschreinbung ist den verlinkten Abschnitten zu entnehmen.
+Eine auführlichere Beschreibung ist den verlinkten Abschnitten zu entnehmen.
 
 Beschreibung Smart launch sequence, siehe [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr).
 

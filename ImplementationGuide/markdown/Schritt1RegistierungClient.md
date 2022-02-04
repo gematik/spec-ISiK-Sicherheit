@@ -8,9 +8,9 @@ Der Autorisierungsserver MUSS die [Anforderungen an die Registrierung von Launch
 - Claimed "https" Scheme URI Redirection
 - Loopback Interface Redirection
 
-Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect Urls (während Schritt 3 - "Bestätigungsrelevanten System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
+Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect Urls (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
 
-Der Autorisierungsserver vergibt auf Basis der Registrierung ein Client Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access Token Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden.
+Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access Token Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden.
 
 Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) wird ausdrücklich empfohlen, ist jedoch optional und nicht bestätigungsrelevant. Es ist zu beachten, dass derzeitig keine standardisierte Metadata Extension für die Registrierung der Launch Urls existiert. Diese kann beliebig gewählt werden.
 

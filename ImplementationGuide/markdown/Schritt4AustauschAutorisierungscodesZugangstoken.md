@@ -1,6 +1,6 @@
 # Schritt 4: Austausch des Autorisierungscodes für ein Zugangstoken
 
-Sowohl für Public als auch Confidential Client erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet um die in [Implicit Grant - OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2) dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierte Anfrage der Authorization Code durch ein Access Token ausgetauscht.
+Sowohl für Public als auch Confidential Clients erfolgt durch den SMART App Launch ein Authorization Code Flow. Dieser Ablauf wird verwendet um die in [Implicit Grant - OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-09#section-2.1.2) dokumentierten Sicherheitsrisiken zu minimieren. Im folgenden Schritt wird somit mittels einer vom Client initiierten Anfrage der Authorization Code durch ein Access Token ausgetauscht.
 
 ----
 
@@ -16,7 +16,7 @@ Die präferierte Variante für die Authentifizierung des Clients erfolgt per [RF
 
 Folgende Anforderungen werden an den JSON Web Key gestellt:
 
-- Als Signaturalgorithmus MUSS durch den Autorisierungsserver mindestens RS256, ES256, RS384, sowie ES384 akzeptiert werden [Siehe RFC7518 - "alg" (Algorithm) Header Parameter Values for JWS](https://datatracker.ietf.org/doc/html/rfc7518#section-3.1). Weitere Signaturalgorithmen KÖNNEN unterstützt werden.
+- Als Signaturalgorithmus MUSS durch den Autorisierungsserver mindestens RS256, ES256, RS384, sowie ES384 akzeptiert werden, [siehe RFC7518 - "alg" (Algorithm) Header Parameter Values for JWS](https://datatracker.ietf.org/doc/html/rfc7518#section-3.1). Weitere Signaturalgorithmen KÖNNEN unterstützt werden.
 
 - Der JSON Web Key MUSS mindestens folgende Parameter enthalten:
     - ["kty" (Key Type) Parameter](https://datatracker.ietf.org/doc/html/rfc7517#section-4.1)
@@ -26,9 +26,9 @@ Folgende Anforderungen werden an den JSON Web Key gestellt:
 
 2. Ein Austausch des JSON Web Key MUSS durch eine der nachfolgenden Optionen implementiert werden. Option 1) wird aufgrund der in [SMART App Launch - 5 - Client Authentication: Asymmetric (public key)](https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#client-authentication-asymmetric-public-key) aufgeführten Vorteile empfohlen.
 
-(1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Autorisierungsserver SOLLTE prüfen, dass diese URL übereinstimmt mit dem ["jku" Parameter](https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2) der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token.
+(1) Austausch einer TLS-abgesicherten URL über die das oben genannte JSON Web Key Set abgerufen werden kann. Der Autorisierungsserver SOLLTE prüfen, dass diese URL mit dem ["jku" Parameter](https://datatracker.ietf.org/doc/html/rfc7515#section-4.1.2) der Signatur des für die Authentifizierung des Clients verwendeten JSON Web Token übereinstimmt.
 
-(2) Das JSON Web Key Set KANN dem Autorisierungsserver direkt mitgeteilt werden. In diesem Fall SOLLTE das JSON Web Key Set min. zwei Schlüssel enthalten, sodass eine unterbrechungsfreie Schlüsselrotation durchgeführt werden kann. Nachteile dieser Option sind in [SMART App Launch - 5.0.4 - Registering a SMART Backend Service (communicating public keys)](https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#registering-a-client-communicting-public-keys) zusammengefasst.
+(2) Das JSON Web Key Set KANN dem Autorisierungsserver direkt mitgeteilt werden. In diesem Fall SOLLTE das JSON Web Key Set mindestens zwei Schlüssel enthalten, sodass eine unterbrechungsfreie Schlüsselrotation durchgeführt werden kann. Nachteile dieser Option sind in [SMART App Launch - 5.0.4 - Registering a SMART Backend Service (communicating public keys)](https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#registering-a-client-communicting-public-keys) zusammengefasst.
 
 Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem Schlüsselmissbrauch vorzubeugen.
 
@@ -36,7 +36,7 @@ Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem S
 
 ### HTTP Basic authentication:
 
-Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Das Password MUSS das vorher ausgetauschte Client Secret verwendet werden.
+Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Das Passwort MUSS das vorher ausgetauschte Client Secret verwendet werden.
 
 ----
 
