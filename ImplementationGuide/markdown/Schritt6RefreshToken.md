@@ -27,10 +27,10 @@ Es MUSS sichergestellt werden, dass kein zeitlicher Verzug zwischen der Bestäti
 ----
 
 ### Beispiel
-GET /fhir/Patient
-Content-Type: application/x-www-form-urlencoded
+GET /fhir/Patient<br>
+Content-Type: application/x-www-form-urlencoded<br>
 Host: server.example.com
 
-grant_type=refresh_token&
-refresh_token=<Refresh Token aus Schritt 4>&
+grant_type=refresh_token&<br>
+refresh_token=<Refresh Token aus Schritt 4>&<br>
 scope=<Scopes aus Schritt 2>

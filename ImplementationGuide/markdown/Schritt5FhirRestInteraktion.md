@@ -16,7 +16,7 @@ In klinischen Notfällen kann es erforderlich sein, dass eine Benutzer*in auf di
 
 ## Beispiel
 
-GET /fhir/Patient
-Accept: application/fhir+json;fhirVersion=4.0
-Host: server.example.com
+GET /fhir/Patient<br>
+Accept: application/fhir+json;fhirVersion=4.0<br>
+Host: server.example.com<br>
 Bearer: <Token aus Antwort von Schritt 4>
