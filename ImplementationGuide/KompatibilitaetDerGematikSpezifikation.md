@@ -1,1 +1,0 @@
-# Kompatibilität zu IHE-Profilen

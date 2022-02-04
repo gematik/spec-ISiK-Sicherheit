@@ -1,0 +1,9 @@
+# Motivation
+
+Innerhalb des [ISiK Basismoduls](https://simplifier.net/guide/ImplementierungsleitfadenISiK-Basismodul/Einfuehrung) erfolgt eine Erörterung der [Motivation für den Einsatz einer ISiK-konformen Schnittstelle](https://simplifier.net/guide/ImplementierungsleitfadenISiK-Basismodul/Motivation). Ein entsprechender Fokus liegt hierbei auf der Integration von spezialisierten Subsystemen, welche entweder Informationen am Krankenhausinformationssystem (KIS) oder Klinischen Arbeitsplatzsystem (KAS) abrufen oder Informationen an die zuvorgenannten Systeme zurückliefern. Hervorgehoben sei hier die Integration von mobilen Anwendungen. 
+
+Das ISiK-Modul 'Sicherheit' ist auf die Anforderungen an eine Autorisierung und Authentifikation für die ISiK-Endpunkte fokussiert, sodass alle bestätigungsrelevanten Systeme in der Lage sind die Zugriffsrechte eines Benutzers an einen Client (z.B. Klinische Subsysteme, Patientenportale, Terminverwaltungsysteme, Mobile Apps zur Erfassung von Messwerten) zu delegieren. Hiermit soll erreicht werden, dass alle zulässigen Informationen ISiK-konform an dem FHIR-Endpunkt abgerufen und bestehende Rollen- und Rechtekonzepte weiterverwendet werden können.
+
+Aus der Sicht eines Clients ermöglicht das Modul des Weiteren, dass eine Autorisierung und Authentifikation gegenüber dem KIS / KAS-System durch eine standardisierte Schnittstelle erfolgen kann. Neben externen Clients soll das Modul zudem ermöglichen, dass Applikationen aus dem Kontext des KIS / KAS-System gestartet werden können und sich entsprechend gegenüber dem System autorisieren und authentifizieren.
+
+**Es ist zu beachten, dass durch das Erlangen einer Bestätigung für das vorliegende ISiK-Modul keine Aussagen über die Sicherheit der Implementierung im jeweiligen bestätigungsrelevanten System abgeleitet werden können. Die Bestätigung bezieht sich alleinig auf die Konformität zu der Spezifikation. Weitere Sicherheit-Audits werden ausdrücklich empfohlen.**
