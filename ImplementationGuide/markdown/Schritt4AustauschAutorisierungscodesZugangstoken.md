@@ -88,7 +88,7 @@ Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikati
 }
 ```
 
-3. Bereitstellung des JSON Web Key Sets unter einer ohne weitere Authtentifizierung erreichbare URL (https abgesichert) ODER Übermittelung des JSON Web Key Sets an den Authorisierungsserver (keine weiteren Vorgaben).
+3. Bereitstellung des JSON Web Key Sets unter einer ohne weitere Authtentifizierung erreichbare URL (https abgesichert) ODER Übermittelung des JSON Web Key Sets an den Autorisierungsserver (keine weiteren Vorgaben).
 
 4. Erzeugung eines JSON Web Tokens signiert mit dem oben genannten Private/Public Key Pair:
 
@@ -121,7 +121,7 @@ client_assertion: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc
 Host: server.example.com
 
 grant_type=authorization_code&<br>
-code=<Authorisierungscode aus Schritt 3>&<br>
+code=<Autorisierungscode aus Schritt 3>&<br>
 redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&<br>
 code_verifier=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&<br>
 client_id=TestClientId

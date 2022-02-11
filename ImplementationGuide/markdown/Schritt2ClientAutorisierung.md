@@ -16,7 +16,7 @@ Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Pa
 
 ## Standalone launch sequence
 
-Aufgrund des fehlenden Kontexts zwischen Client und dem bestätigungsrelevantem System KANN der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN. Beispielsweise kann, äquivalent zum EHR Launch, der Patienten und/oder Kontakt/Fall Kontext angefordert werden. Genaue Details für die Syntax der Launch Context Scope finden sich im Kapitel {{pagelink:ScopesAndLaunchContext, text:SMART on FHIR Launch Context Scope Syntax}}.
+Aufgrund des fehlenden Kontexts zwischen Client und dem bestätigungsrelevanten System KANN der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN. Beispielsweise kann, äquivalent zum EHR Launch, der Patienten und/oder Kontakt/Fall Kontext angefordert werden. Genaue Details für die Syntax der Launch Context Scope finden sich im Kapitel {{pagelink:ScopesAndLaunchContext, text:SMART on FHIR Launch Context Scope Syntax}}.
 
 ----
 
@@ -52,7 +52,7 @@ Innerhalb des Scope Parameters welcher als Teil der Autorisierungsanfrage versen
 
 Hieraus folgt, dass die angeforderten Scopes nur die Kategorien an Rechten repräsentieren, die an den anfragenden Client delegiert werden dürfen. Somit können generell bestimmte Rechte ausgeschlossen werden. Eine Anfrage an den FHIR-REST-API-Endpunkt kann jedoch trotz validem Token mit den spezifizierten Scopes abgelehnt werden, falls während der Evaluierung der Anfrage seitens des Servers festgestellt wird, dass die Benutzer*in die gewünschten Ressourcen nicht verarbeiten darf.
 
-Der Authorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client unterstützen.
+Der Autorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client unterstützen.
 
 ----
 

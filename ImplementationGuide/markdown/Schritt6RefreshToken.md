@@ -2,7 +2,7 @@
 
 ## Refresh Tokens
 
-Die Gültigkeitsdauer eines Access-Tokens kann beliebig durch das bestätigungsrelevante System gewählt werden. Mit Hinblick auf [RFC6819 -  OAuth 2.0 Threat Model and Security Considerations - Limited Access Token Lifetime](https://datatracker.ietf.org/doc/html/rfc6819#section-3.1.2) SOLLTE die Gültigkeitsdauer auf Minuten oder Stunden beschränkt werden. Das Gültigkeitsdatum wird im Access Token durch den Parameter "expires_in" angegeben. Alternativ kann die Gültigkeit des Tokens über den Introspection-Endpunkt abgefragt werden.
+Die Gültigkeitsdauer eines Access-Tokens kann beliebig durch das bestätigungsrelevante System gewählt werden. Mit Hinblick auf [RFC6819 - OAuth 2.0 Threat Model and Security Considerations - Limited Access Token Lifetime](https://datatracker.ietf.org/doc/html/rfc6819#section-3.1.2) SOLLTE die Gültigkeitsdauer auf Minuten oder Stunden beschränkt werden. Das Gültigkeitsdatum wird im Access Token durch den Parameter "expires_in" angegeben. Alternativ kann die Gültigkeit des Tokens über den Introspection-Endpunkt abgefragt werden.
 
 Um eine häufige Authentifizierung der Benutzer*in und/oder des Clients zu vermeiden MUSS das bestätigungsrelevante System die Ausstellung von Refresh Tokens unterstützen.
 
