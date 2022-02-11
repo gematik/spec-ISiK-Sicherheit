@@ -12,7 +12,7 @@ Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Va
 
 Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access Token Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden.
 
-Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) wird ausdrücklich empfohlen, ist jedoch optional und nicht bestätigungsrelevant. Es ist zu beachten, dass derzeitig keine standardisierte Metadata Extension für die Registrierung der Launch Urls existiert. Diese kann beliebig gewählt werden.
+Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) wird ausdrücklich empfohlen, ist jedoch optional und nicht bestätigungsrelevant. Es wird hier die Verwendung des [Protected Dynamic Client Registration Prozesses](https://datatracker.ietf.org/doc/html/rfc7591#appendix-A.1.2) empfohlen, um ein unkontrolliertes Registrieren von Clients zu verhindern. Es ist zu beachten, dass derzeitig keine standardisierte Metadata Extension für die Registrierung der Launch Urls existiert. Diese kann beliebig gewählt werden.
 
 ----
 
