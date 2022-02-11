@@ -1,6 +1,6 @@
 # Kompatibilität zu IHE-Profilen
 
-Das IHE Technical Framework Supplement "Internet User Authorization (IUA)" bietet, ähnlich wie SMART on FHIR, Möglichkeiten zur Authorisierung von Transaktionen einer RESTful HTTP API.
+Das [IHE Technical Framework Supplement "Internet User Authorization (IUA)"](https://profiles.ihe.net/ITI/IUA/index.html) bietet, ähnlich wie SMART on FHIR, Möglichkeiten zur Authorisierung von Transaktionen einer RESTful HTTP API.
 Nachfolgend werden Unterschiede zwischen SMART on FHIR und IHE IUA aufgelistet, um hervorzuheben auf welche Details zu achten ist, sodass eine Implementierung konform zu beiden Standards ist.
 
 * [IHE IUA - Abschnitt 34.1.1.3 Resource Server](https://profiles.ihe.net/ITI/IUA/index.html#34113-resource-server): Der Ressourcen-Server MUSS im CapabilityStatement im Elememt "CapabilityStatement.rest.security.service" angegeben werden, dass IHE IUA unterstüzt wird.
