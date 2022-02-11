@@ -12,5 +12,9 @@ Als Ergebnis dieses Schritts erhält der Client einen einmalig gültigen Autoris
 ## Beispiel
 
 Response:
-
-Location: https://example.org/redirect_uri/fhir/client/exampleId?code=123abc&state=df01f5f8-5bf2-45ea-ab7a-706361da0515
+```
+Location: 
+https://example.org/redirect_uri/fhir/client/exampleId?
+code=123abc&
+state=df01f5f8-5bf2-45ea-ab7a-706361da0515
+```

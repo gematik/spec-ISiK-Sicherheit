@@ -60,13 +60,15 @@ Der Autorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client
 
 POST /authorize HTTP/1.1<br>
 Content-Type: application/x-www-form-urlencoded<br>
-Host: server.example.com<br>
+Host: server.example.com
 
-response_type=code&<br>
-client_id=TestClientId&<br>
-redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&<br>
-scope=user/*.rs openid fhirUser&<br>
-state=df01f5f8-5bf2-45ea-ab7a-706361da0515&<br>
-aud=http://example.org/fhir/&<br>
-code_challenge=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&<br>
+```
+response_type=code&
+client_id=TestClientId&
+redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&
+scope=user/*.rs openid fhirUser&
+state=df01f5f8-5bf2-45ea-ab7a-706361da0515&
+aud=http://example.org/fhir/&
+code_challenge=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&
 code_challenge_method=S256
+```
