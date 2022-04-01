@@ -10,7 +10,7 @@
   "packageId": "de.gematik.isik-sicherheit",
   "definition": {
     "page": {
-      "nameUrl": "ImplementationGuide/markdown/markdown/Einfuehrung.md",
+      "nameUrl": "ImplementationGuide/markdown/Einfuehrung.md",
       "title": "Einführung",
       "generation": "markdown",
       "page": [
