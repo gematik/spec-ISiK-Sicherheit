@@ -8,13 +8,13 @@ Abhängig davon ob der Client durch einen EHR Launch oder Standalone Launch gest
 
 ## EHR Launch
 
-Das bestätigungsrelevante System MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten. Im Kontext der derzeitig eingeloggten Benutzer*in wird der Client gestartet, vgl. {{pagelink:SmartAppLaunch, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
+Das bestätigungsrelevante System MUSS in der Lage sein, den Client durch einen externen Kontextaufruf zu starten. Im Kontext der derzeitig eingeloggten Benutzer:in wird der Client gestartet, vgl. {{pagelink:SmartAppLaunch, text:EHR Launch / Standalone Launch}}. Der Aufruf des Clients MUSS alle in [SMART App Launch - 2.0.7 - Launch App: EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr) dokumentierten Parameter enthalten.
 
 Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Parameter zu assoziieren ist. Mit diesem beliebig gewählten Parameter (z.B. eine UUID) kann der Client das Access Token mit dem Kontext, aus dem der Client gestartet worden ist, verknüpfen. Der Kontext kann beispielsweise Informationen zum Patienten oder Kontakt/Fall enthalten, welcher dem Anwender zuvor präsentiert wurde. Dieser Kontext wird dem Client durch sogenannte [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) vermittelt. Diese Claims enthalten IDs der FHIR-Ressourcen welche die zuvor genannten Datenobjekte repräsentieren. Es ist notwendig innerhalb der SMART authorization sequence die angeforderten [Launch Context Claims](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-context-data) an den Client zurückzugeben, vgl. Abschnitt {{pagelink:Schritt4AustauschAutorisierungscodesZugangstoken, text:Austausch des Autorisierungscodes für ein Zugangstoken}}. Der Client kann spezifische Kontextparameter anfragen. Sollten diese jedoch nicht verfügbar sein (z.B. der Client wurde ohne Patientenkontext aufgerufen), können die zurückgegebenen Launch Context Claims von den gewünschten Scopes abweichen.
 
 ----
 
-## Standalone launch sequence
+## Standalone Launch Sequence
 
 Aufgrund des fehlenden Kontexts zwischen Client und dem bestätigungsrelevanten System KANN der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden MÜSSEN. Beispielsweise kann, äquivalent zum EHR Launch, der Patienten und/oder Kontakt/Fall Kontext angefordert werden. Genaue Details für die Syntax der Launch Context Scope finden sich im Kapitel {{pagelink:ScopesAndLaunchContext, text:SMART on FHIR Launch Context Scope Syntax}}.
 
@@ -42,7 +42,7 @@ Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR
 
 ## Hinweise zu Identity Scopes
 
-Um Informationen über die authentifizierten Endbenutzer*in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. Zu bestätigende Systeme MÜSSEN die Vorgaben nach [2.0.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen. Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden. Die Unterstützung des "profile" claims ist optional. Die Vorgaben zur Umsetzung der OpenID Connect Core Spezifikation zur Erzeugung eines ID-Tokens sind bestätigungsrelevant.
+Um Informationen über die authentifizierten Endbenutzer:in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. Zu bestätigende Systeme MÜSSEN die Vorgaben nach [2.0.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen. Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden. Die Unterstützung des "profile" claims ist optional. Die Vorgaben zur Umsetzung der OpenID Connect Core Spezifikation zur Erzeugung eines ID-Tokens sind bestätigungsrelevant.
 
 ----
 
@@ -50,7 +50,7 @@ Um Informationen über die authentifizierten Endbenutzer*in zu erhalten, kann ei
 
 Innerhalb des Scope Parameters welcher als Teil der Autorisierungsanfrage versendet wird, kann der Client dem Server mitteilen, welche Scopes zur korrekten Ausführung notwendig sind, d.h. welche FHIR-Restful Interaktionen vom Client benötigt werden. Diese Scopes repräsentieren die Menge aller Scopes welche durch den Client gewünscht werden, jedoch nicht notwendigerweise durch den Server unterstüzt und/oder erlaubt werden. Es steht dem Autorisierungsserver frei diese Scopes einzuschränken, falls der Client für die Anforderung der Scopes nicht berechtigt ist. Weitere Details zur Syntax der Access Scopes siehe {{pagelink:ScopesAndLaunchContext, text:SMART on FHIR Access Scope Syntax}}.
 
-Hieraus folgt, dass die angeforderten Scopes nur die Kategorien an Rechten repräsentieren, die an den anfragenden Client delegiert werden dürfen. Somit können generell bestimmte Rechte ausgeschlossen werden. Eine Anfrage an den FHIR-REST-API-Endpunkt kann jedoch trotz validem Token mit den spezifizierten Scopes abgelehnt werden, falls während der Evaluierung der Anfrage seitens des Servers festgestellt wird, dass die Benutzer*in die gewünschten Ressourcen nicht verarbeiten darf.
+Hieraus folgt, dass die angeforderten Scopes nur die Kategorien an Rechten repräsentieren, die an den anfragenden Client delegiert werden dürfen. Somit können generell bestimmte Rechte ausgeschlossen werden. Eine Anfrage an den FHIR-REST-API-Endpunkt kann jedoch trotz validem Token mit den spezifizierten Scopes abgelehnt werden, falls während der Evaluierung der Anfrage seitens des Servers festgestellt wird, dass die Benutzer:in die gewünschten Ressourcen nicht verarbeiten darf.
 
 Der Autorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client unterstützen.
 
