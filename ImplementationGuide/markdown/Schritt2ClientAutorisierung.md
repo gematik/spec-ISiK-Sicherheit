@@ -42,7 +42,7 @@ Als Einstiegspunkt für einen Standalone Launch MUSS dem Client die Url des FHIR
 
 ## Hinweise zu Identity Scopes
 
-Um Informationen über die authentifizierten EndbenutzerIn zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. Zu bestätigende Systeme MÜSSEN die Vorgaben nach [2.0.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen. Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden. Die Unterstützung des "profile" claims ist optional. Die Vorgaben zur Umsetzung der OpenID Connect Core Spezifikation zur Erzeugung eines ID-Tokens sind bestätigungsrelevant.
+Um Informationen über die authentifizierten Endbenutzer:in zu erhalten, kann ein Client per OpenID Connect ein Identitätstoken zusammen mit einem Zugangstoken anfragen. Hierzu sind in Kombination die Scopes "openid" und "fhirUser" zu verwenden. Zu bestätigende Systeme MÜSSEN die Vorgaben nach [2.0.4 - Scopes for requesting identity data](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#scopes-for-requesting-identity-data) umsetzen. Anstatt dem Claim "fhirUser" kann - aus Gründen der Rückwärtskompatibilität - auch der Claim "profile" verwendet werden. Die Unterstützung des "profile" claims ist optional. Die Vorgaben zur Umsetzung der OpenID Connect Core Spezifikation zur Erzeugung eines ID-Tokens sind bestätigungsrelevant.
 
 ----
 
