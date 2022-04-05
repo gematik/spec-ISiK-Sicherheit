@@ -4,7 +4,7 @@ Die nachfolgende Spezifikation basiert auf dem [HL7 Standard "Smart App Launch -
 
 Der vorliegende Implementierungsleitfaden dient zur Erläuterung des Ablaufs eines Smart App Launchs, sowie Anmerkungen, welche Teile der Spezifikation bestätigungsrelevant sind.
 
-Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatiblen Autorisierungsserver zu erhalten mittels dessen eine FHIR Restful API Interaktion durchgeführt werden kann. Dies erfolgt unter Berücksichtigung der Zugriffsrechte der BenutzerIn im bestätigungsrelevanten System. Um ein Zugangstoken zu erhalten sind folgende sechs Schritte notwendig:
+Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatiblen Autorisierungsserver zu erhalten mittels dessen eine FHIR Restful API Interaktion durchgeführt werden kann. Dies erfolgt unter Berücksichtigung der Zugriffsrechte der Benutzer:in im bestätigungsrelevanten System. Um ein Zugangstoken zu erhalten sind folgende sechs Schritte notwendig:
 
 1. Registrierung eines SMART Clients mit dem bestätigungsrelevanten System
 2. Client bittet um Autorisierung
@@ -24,7 +24,7 @@ Die weiteren Unterkapitel enthalten eine Einführung in die jeweiligen Abschnitt
 Eine weitere Differenzierung der Funktionalität eines Smart App Launch erfolgt durch die Einteilung aus welchem Kontext der Client gestartet wird:
 
 - [SMART App Launch - EHR Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr):
-Ein Client kann aus dem Kontext des bestätigungsrelevanten Systems direkt innerhalb einer bestehenden User Session gestartet werden, beispielsweise indem die eingeloggte BenutzerIn den Client startet und durch das System eine neue Browserinstanz geöffnet wird oder das System einen iframe darstellt.
+Ein Client kann aus dem Kontext des bestätigungsrelevanten Systems direkt innerhalb einer bestehenden User Session gestartet werden, beispielsweise indem die eingeloggte Benutzer:in den Client startet und durch das System eine neue Browserinstanz geöffnet wird oder das System einen iframe darstellt.
 
 - [SMART App Launch - Standalone Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#launch-app-standalone-launch):
 Clients welche außerhalb des bestätigungsrelevanten Systems gestartet werden (z.B. Mobile Apps welche Daten vom bestätigungsrelevanten System abfragen möchten). Es existiert kein gemeinsamer Kontext zwischen dem bestätigungsrelevanten System und Client.
