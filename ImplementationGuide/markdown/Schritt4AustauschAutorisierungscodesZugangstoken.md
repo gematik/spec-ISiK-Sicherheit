@@ -34,9 +34,9 @@ Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem S
 
 3. Der Client erzeugt ein JSON Web Token entsprechend der in [SMART App Launch - 5.0.5 - Authenticating to the Token endpoint](https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint) definierten Vorgaben und verwendet dies als "client_assertion".
 
-### HTTP Basic authentication:
+### HTTP Basic Authentication:
 
-Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Das Passwort MUSS das vorher ausgetauschte Client Secret verwendet werden.
+Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Als Passwort MUSS das vorher ausgetauschte Client Secret verwendet werden.
 
 ----
 
@@ -46,7 +46,7 @@ In Abschnitt [SMART App Launch - 2.0.10 - Obtain access token](https://hl7.org/f
 
 Alle verpflichtenden Implementierungsdetails aus [SMART App Launch - 2.0.10 - Obtain access token](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#obtain-access-token) MÜSSEN durch den Autorisierungsserver unterstützt werden.
 
-Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen um ein Token Revocation Mechanismus effizient implementieren zu können. Siehe {{pagelink:Schritt6RefreshToken, text:Schritt 6: Refresh Token & Revocation}}.
+Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen um einen Token Revocation Mechanismus effizient implementieren zu können. Siehe {{pagelink:Schritt6RefreshToken, text:Schritt 6: Refresh Token & Revocation}}.
 
 ----
 
