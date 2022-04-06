@@ -2,9 +2,9 @@
 
 ## Refresh Tokens
 
-Die Gültigkeitsdauer eines Access-Tokens kann beliebig durch das bestätigungsrelevante System gewählt werden. Mit Hinblick auf [RFC6819 -  OAuth 2.0 Threat Model and Security Considerations - Limited Access Token Lifetime](https://datatracker.ietf.org/doc/html/rfc6819#section-3.1.2) SOLLTE die Gültigkeitsdauer auf Minuten oder Stunden beschränkt werden. Das Gültigkeitsdatum wird im Access Token durch den Parameter "expires_in" angegeben. Alternativ kann die Gültigkeit des Tokens über den Introspection-Endpunkt abgefragt werden.
+Die Gültigkeitsdauer eines Access-Tokens kann beliebig durch das bestätigungsrelevante System gewählt werden. Mit Hinblick auf [RFC6819 - OAuth 2.0 Threat Model and Security Considerations - Limited Access Token Lifetime](https://datatracker.ietf.org/doc/html/rfc6819#section-3.1.2) SOLLTE die Gültigkeitsdauer auf Minuten oder Stunden beschränkt werden. Das Gültigkeitsdatum wird im Access Token durch den Parameter "expires_in" angegeben. Alternativ kann die Gültigkeit des Tokens über den Introspection-Endpunkt abgefragt werden.
 
-Um eine häufige Authentifizierung der Benutzer*in und/oder des Clients zu vermeiden MUSS das bestätigungsrelevante System die Ausstellung von Refresh Tokens unterstützen.
+Um eine häufige Authentifizierung der Benutzer:in und/oder des Clients zu vermeiden MUSS das bestätigungsrelevante System die Ausstellung von Refresh Tokens unterstützen.
 
 Folgende Anforderungen aus [SMART App Launch - 2.0.12 - Refresh access token](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#refresh-access-token) sind zu beachten:
 
@@ -26,11 +26,13 @@ Es MUSS sichergestellt werden, dass kein zeitlicher Verzug zwischen der Bestäti
 
 ----
 
-### Beispiel
-GET /fhir/Patient<br>
-Content-Type: application/x-www-form-urlencoded<br>
+### Beispiel`
+```
+GET /fhir/Patient
+Content-Type: application/x-www-form-urlencoded
 Host: server.example.com
 
-grant_type=refresh_token&<br>
-refresh_token=<Refresh Token aus Schritt 4>&<br>
+grant_type=refresh_token&
+refresh_token=<Refresh Token aus Schritt 4>&
 scope=<Scopes aus Schritt 2>
+```

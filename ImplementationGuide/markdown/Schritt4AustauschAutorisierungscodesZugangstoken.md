@@ -34,9 +34,9 @@ Die verwendeten JSON Web Keys SOLLTEN regelmäßig gewechselt werden, um einem S
 
 3. Der Client erzeugt ein JSON Web Token entsprechend der in [SMART App Launch - 5.0.5 - Authenticating to the Token endpoint](https://hl7.org/fhir/smart-app-launch/STU2/client-confidential-asymmetric.html#authenticating-to-the-token-endpoint) definierten Vorgaben und verwendet dies als "client_assertion".
 
-### HTTP Basic authentication:
+### HTTP Basic Authentication:
 
-Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Das Passwort MUSS das vorher ausgetauschte Client Secret verwendet werden.
+Der Client tauscht während der Registrierung (siehe {{pagelink:Schritt1RegistierungClient, text:Schritt 1 - Registrierung einer SMART App mit dem bestätigungsrelevanten System}}) ein Client Secret mit dem bestätigungsrelevanten System aus. Eine Authentifizierung des Clients erfolgt per [RFC7617 - The 'Basic' HTTP Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617). Als "username" MUSS die Client Id verwendet werden. Als Passwort MUSS das vorher ausgetauschte Client Secret verwendet werden.
 
 ----
 
@@ -46,7 +46,7 @@ In Abschnitt [SMART App Launch - 2.0.10 - Obtain access token](https://hl7.org/f
 
 Alle verpflichtenden Implementierungsdetails aus [SMART App Launch - 2.0.10 - Obtain access token](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#obtain-access-token) MÜSSEN durch den Autorisierungsserver unterstützt werden.
 
-Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen um ein Token Revocation Mechanismus effizient implementieren zu können. Siehe {{pagelink:Schritt6RefreshToken, text:Schritt 6: Refresh Token & Revocation}}.
+Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden keine Vorgaben bezüglich der Struktur oder des Inhalts des Zugangstokens enthalten. Die Verwendung eines Referenztokens wird empfohlen um einen Token Revocation Mechanismus effizient implementieren zu können. Siehe {{pagelink:Schritt6RefreshToken, text:Schritt 6: Refresh Token & Revocation}}.
 
 ----
 
@@ -88,7 +88,7 @@ Es sei explizit darauf hingewiesen, dass sowohl die SMART App Launch Spezifikati
 }
 ```
 
-3. Bereitstellung des JSON Web Key Sets unter einer ohne weitere Authtentifizierung erreichbare URL (https abgesichert) ODER Übermittelung des JSON Web Key Sets an den Authorisierungsserver (keine weiteren Vorgaben).
+3. Bereitstellung des JSON Web Key Sets unter einer ohne weitere Authtentifizierung erreichbare URL (https abgesichert) ODER Übermittelung des JSON Web Key Sets an den Autorisierungsserver (keine weiteren Vorgaben).
 
 4. Erzeugung eines JSON Web Tokens signiert mit dem oben genannten Private/Public Key Pair:
 
@@ -98,30 +98,37 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnV
 
 Dekodierte Form:
 
+Header:
 ```json
 {
   "typ": "JWT",
   "alg": "RS384"
-}.{
+}
+```
+Body:
+```json
+{
   "iss": "Example Issuer",
   "iat": null,
   "exp": 1643986970,
   "aud": "https://example.org/auth/token",
   "sub": "TestClientId",
   "jti": "76a5e086-e9a7-44fe-9728-7121615c6291"
-}.[Signature]
+}
 ```
 
-5. 
-
-POST /token HTTP/1.1<br>
-Content-Type: application/x-www-form-urlencoded<br>
-client_assertion_type: urn:ietf:params:oauth:client-assertion-type:jwt-bearer<br>
-client_assertion: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ<br>
+5. Access Token abrufen
+```
+POST /token HTTP/1.1
 Host: server.example.com
+Content-Type: application/x-www-form-urlencoded
 
-grant_type=authorization_code&<br>
-code=<Authorisierungscode aus Schritt 3>&<br>
-redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&<br>
-code_verifier=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&<br>
-client_id=TestClientId
+grant_type=authorization_code&
+code=<Autorisierungscode aus Schritt 3>&
+redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&
+code_verifier=2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b&
+client_id=TestClientId&
+client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&
+client_assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzM4NCJ9.eyJpc3MiOiJFeGFtcGxlIElzc3VlciIsImlhdCI6bnVsbCwiZXhwIjoxNjQzOTg2OTcwLCJhdWQiOiJodHRwczovL2V4YW1wbGUub3JnL2F1dGgvdG9rZW4iLCJzdWIiOiJUZXN0Q2xpZW50SWQiLCJqdGkiOiI3NmE1ZTA4Ni1lOWE3LTQ0ZmUtOTcyOC03MTIxNjE1YzYyOTEifQ.i_Hzfzuqquc7ouj0-CDxtddvsLxTr5RmcR-hlXYRFmAvxaAg6akf_EL6DAqRVLfW1u-FU9JJs015eTvtugYNNI0QPWdZVHJQ54TVIkVx8jsaf_RvbF3q4DpeiRdEXv1j34k_KrgNRTi6d1Rneem8qmTKIQRiWv1iYeNgENPHnL0SV69Pi7PoXr2s7JWFUO56HqWR0tmPweVm3aS24jeAaRGqISAbTPHuq-R8QVD7fMFqQBR_n6xSMCHUxZHBQDFg2c6leY8WlrwZUz9lJZnX5R76iHylfqZ-kAk38xHpnFtsmbF8YH4EUjYmSGT8SPn0y9RHKFI7LCm9p5DeVPPgYQ
+
+```
