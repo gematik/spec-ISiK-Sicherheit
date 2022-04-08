@@ -2,7 +2,7 @@
 
 ----
 
-Version: 1.0.0
+Version: 2.0.0
 
 Datum: 07.02.2022
 
