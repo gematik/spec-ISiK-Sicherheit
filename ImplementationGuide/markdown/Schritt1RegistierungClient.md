@@ -1,6 +1,6 @@
 # Schritt 1: Registrierung eines SMART Clients mit dem bestätigungsrelevanten System
 
-Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann MUSS der Client beim Autorisierungsserver des bestätigungsrelevanten Systems registriert werden. Per Abschnitt [SMART App Launch - 2.0.5 - Register App with EHR](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-1-register) ist er freigestellt wie diese Registrierung durchgeführt wird.
+Bevor ein Client eine EHR Launch Sequence oder Standalone Launch Sequence ausführen kann, MUSS der Client beim Autorisierungsserver des bestätigungsrelevanten Systems registriert werden. Per Abschnitt [SMART App Launch - 2.0.5 - Register App with EHR](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-1-register) ist er freigestellt wie diese Registrierung durchgeführt wird.
 
 Der Autorisierungsserver MUSS die [Anforderungen an die Registrierung von Launch Urls und Redirect Uris - SMART App Launch - 2.0.5.1 - Request](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#request) unterstützen. Es wird besonders auf die Anforderungen aus RFC8252 - Abschnitt [7.  Receiving the Authorization Response in a Native App](https://datatracker.ietf.org/doc/html/rfc8252#section-7) hingewiesen. Für Redirect Uris sind folgende Schemata zu unterstützen:
 
@@ -8,7 +8,7 @@ Der Autorisierungsserver MUSS die [Anforderungen an die Registrierung von Launch
 - Claimed "https" Scheme URI Redirection
 - Loopback Interface Redirection
 
-Durch die zuvor genannten Ausnahmen ergibt sich die Erfordernis, dass bei der Validierung der Redirect Urls (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
+Durch die zuvor genannten Ausnahmen ergibt sich das Erfordernis, dass bei der Validierung der Redirect Urls (während Schritt 3 - "Bestätigungsrelevantes System evaluiert die Autorisierungsanfrage, Authentifizierung der Endnutzer") nicht davon ausgegangen werden kann, dass diese einen statischen Wert besitzen.
 
 Der Autorisierungsserver vergibt auf Basis der Registrierung eine Client Id, welche zur eineindeutigen Identifizierung des Clients dient. Diese Client-Id MUSS während der Authentifizierung des Clients bei einer Access Token Anfrage (siehe Schritt 4 - Austausch des Autorisierungscodes für ein Zugangstoken) verwendet werden.
 
@@ -18,7 +18,7 @@ Die Verwendung von [RFC7591 - OAuth 2.0 Dynamic Client Registration Protocol](ht
 
 ## Beispiel
 
-Folgender Request stellt beispielhaft dar welche Parameter bei einer Anfrage an einen Dynamic-Client-Registration-Endpunkt vorhanden sein können:
+Folgender Request stellt beispielhaft dar, welche Parameter bei einer Anfrage an einen Dynamic-Client-Registration-Endpunkt vorhanden sein können:
 
 POST /register HTTP/1.1<br>
 Content-Type: application/json<br>

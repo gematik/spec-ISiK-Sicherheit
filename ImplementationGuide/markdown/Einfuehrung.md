@@ -10,6 +10,8 @@ Status: In Ballotierung
 
 Realm: Deutschland
 
+
+
 # Interoperabler Datenaustausch durch Informationssysteme im Krankenhaus (ISiK)
 
 Die gematik wurde vom Gesetzgeber beauftragt, im Benehmen mit der Deutschen Krankenhausgesellschaft (DKG) und den maßgeblichen Bundesverbänden der Industrie im Gesundheitswesen, verbindliche Standards für den Austausch von Gesundheitsdaten mit Informationssystemen im Krankenhaus zu erarbeiten. 
@@ -29,3 +31,10 @@ Herausgeber
 gematik GmbH
 
 [Impressum](https://www.gematik.de/impressum/)
+
+**Gender-Hinweis**
+
+Zugunsten des Leseflusses wird in dieser Publikation meist die
+männliche Form verwendet. Wir bitten, dies nicht als Zeichen einer
+geschlechtsspezifischen Wertung zu deuten. Diese Variante deckt auch alle
+weiteren Geschlechter, neben männlich und weiblich, ab.
