@@ -6,6 +6,10 @@ html, body {
   padding-bottom: 15px;
 }
 
+.nav .navbar{
+  margin-left: -35px !important;
+}
+
 #ig-viewer {
   position: relative;
   height: 100%; }
