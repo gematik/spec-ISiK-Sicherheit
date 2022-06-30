@@ -6,8 +6,12 @@ html, body {
   padding-bottom: 15px;
 }
 
-.navbar{
-  margin-left: -35px !important;
+@media (min-width: 768px) {
+
+  .navbar-nav {
+      margin-left: -35px !important;
+  }
+  
 }
 
 #ig-viewer {
