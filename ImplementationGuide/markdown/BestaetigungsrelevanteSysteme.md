@@ -1,7 +1,5 @@
 # Bestätigungsrelevante Systeme
 
-# Bestätigungsrelevante Systeme
-
 Hier folgt die Festlegung der Deutschen Krankenhausgesellschaft e. V. wie [hier](https://www.dkgev.de/themen/digitalisierung-daten/elektronische-datenuebermittlung/datenuebermittlung-nach-373-sgb-v-informationssysteme-im-krankenhaus/) aufgeführt
 
 ## Festlegung der Deutschen Krankenhausgesellschaft e. V. aus dem Jahr 2022
