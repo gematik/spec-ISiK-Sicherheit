@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung</title>
+
+        <link rel="icon" href="static/styles/common/favicon.ico" />
+
+        <script src="static/styles/common/jquery/jquery.min.js"></script>
+        <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/common/main.min.css" />
+        <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+        <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="static/project/ImplementationGuide/style/style.css?v=1d9469390588b00" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseMatrix.html">
+                                Release Matrix
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Smart App Launch <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-SmartAppLaunch.html">
+                                            Smart App Launch
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Schritt1RegistierungClient.html">
+                                            Schritt 1 - Registrierung Client
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Schritt2ClientAutorisierung.html">
+                                            Schritt 2 - Client Autorisierung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Schritt3EvaluierungAutorisierungsanfrage.html">
+                                            Schritt 3 - Evaluierung Autorisierungsanfrage
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Schritt4AustauschAutorisierungscodesZugangstoken.html">
+                                            Schritt 4 - Austausch - Autorisierungscodes Zugangstoken
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Schritt5FhirRestInteraktion.html">
+                                            Schritt 5 - FHIR Restful Interaktion
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Schritt6RefreshToken.html">
+                                            Schritt 6 - Refresh Token &amp; Revocation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-ScopesAndLaunchContext.html">
+                                Scopes &amp; Launch Context
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Conformance.html">
+                                Conformance
+                            </a>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <h1 id="kompatibilitat-zu-ihe-profilen">Kompatibilität zu IHE-Profilen</h1>
+<p>Das <a href="https://profiles.ihe.net/ITI/IUA/index.html">IHE Technical Framework Supplement &quot;Internet User Authorization (IUA)&quot;</a> bietet, ähnlich wie SMART on FHIR, Möglichkeiten zur Autorisierung von Transaktionen einer RESTful HTTP API.
+Nachfolgend werden Unterschiede zwischen SMART on FHIR und IHE IUA aufgelistet, um hervorzuheben, auf welche Details zu achten ist, sodass eine Implementierung konform zu beiden Standards ist.</p>
+<ul>
+<li><p><a href="https://profiles.ihe.net/ITI/IUA/index.html#34113-resource-server">IHE IUA - Abschnitt 34.1.1.3 Resource Server</a>: Der Ressourcen-Server MUSS im CapabilityStatement im Element &quot;CapabilityStatement.rest.security.service&quot; angegeben werden, dass IHE IUA unterstüzt wird.</p>
+</li>
+<li><p><a href="https://profiles.ihe.net/ITI/IUA/index.html#310342-authorization-server-metadata-response">IHE IUA - Abschnitt 3.103.2.1 Resource Server</a>: Im well-known Metadata Dokument SOLLTE das Element &quot;access_token_format&quot; angegeben werden, sodass der Client und/oder Ressourcen-Server die Struktur des Access-Tokens ermitteln kann. Die vorliegende Spezifikation empfiehlt in diesem Punkt die Verwendung des Introspection-Endpunktes.</p>
+</li>
+<li><p><a href="https://profiles.ihe.net/ITI/IUA/index.html#3714122-authorization-code-grant-type">IHE IUA - Abschnitt 3.71.4.1.2.2. Authorization Code grant type</a>: Anstelle der Verwendung des &quot;aud&quot;-Parameters im Schritt 2 - &quot;App bittet um Autorisierung&quot; - schlägt IHE IUA die Verwendung des Parameters &quot;resource&quot; vor. Siehe Diskussion in <a href="http://www.hl7.org/fhir/smart-app-launch/app-launch.html#obtain-authorization-code">SMART on FHIR - 2.0.9 - Obtain authorization code</a>.</p>
+</li>
+<li><p><a href="https://profiles.ihe.net/ITI/IUA/index.html#3714122-authorization-code-grant-type">IHE IUA - Abschnitt 3.71.4.1.2.2. Authorization Code grant type</a>: Die Verwendung des &quot;redirect_uri&quot;-Parameters ist in IHE IUA optional, wenn der Client genau eine redirect_uri beim Autorisierungsserver hinterlegt hat. In SMART on FHIR MUSS diese URI stets angegeben werden.</p>
+</li>
+<li><p><a href="https://profiles.ihe.net/ITI/IUA/index.html#3714122-authorization-code-grant-type">IHE IUA - Abschnitt 3.71.4.1.2.2. Authorization Code grant type</a>: Die Verwendung des &quot;scope&quot;-Parameters ist in IHE IUA optional. In SMART on FHIR MUSS die gesamte Menge der gewünschten Scopes stets angegeben werden.</p>
+</li>
+</ul>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
