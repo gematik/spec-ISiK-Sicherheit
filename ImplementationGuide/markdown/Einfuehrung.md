@@ -2,9 +2,9 @@
 
 ----
 
-Version: 2.0.0
+Version: 3.0.0-CC1
 
-Datum: 30.06.2022
+Datum: 30.06.2023
 
 Status: Aktiv
 
