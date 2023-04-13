@@ -47,18 +47,39 @@ Beide Launch-Sequenzen bedingen eine weitreichende Integration von Autorisierung
 
 ISiK-Autorisierung schreibt Mechanismen für de Austausch und die Kodierung von Autorisierungen fest. Die Autorisierungen selbst instanziieren im Krankenhaus vergebene Berechtigungen für einen Zugriff einer Person auf eine geschützte Ressource (z.B. "Der zugreifende Nutzer darf Observation-Ressourcen des Patienten mit der ID 123 suchen und abrufen."). Autorisierungen werden in dem ISiK-Sicherheit zugrunde liegenden Bild einer IT-Sicherheitsinfrastruktur durch einen Autorisierungsserver im Ergebnis der Prüfung festgelegter Berechtigungen vergeben. Diese Berechtigungen wiederum leiten sich aus Sicherheitspolitiken des Krankenhauses, Rollendefinitionen, durch Patienten gegebene Einwilligungen und weiteren Vorgaben ab. Im ISiK zugrundeliegenden Bild erfolgt die Verwaltung von Berechtigungen über einen Policy Administration Point.  
 
-ISiK-Autorisierung sieht für die Kodierung von Autorisierungen zwei miteinander kombinierbare Konzepte aus dem SMART-on-FHIR-Standard vor:
+ISiK-Autorisierung sieht für die Kodierung und Durchsetzung von Autorisierungen drei miteinander kombinierbare Konzepte aus FHIR bzw. SMART-on-FHIR vor:
+* Kontexte
 * Compartments (Launch Kontexte)
 * an FHIR-Ressourcen gebundene Zugriffsrechte
 
+## Kontexte
+
+Jeder Zugriff auf eine geschützte Ressource erfolgt im Kontext eines Patienten, eines Behandlungsfalls oder einer anderen Ressource. Der Kontext wird vom aufrufenden Client "mitgebracht" und stellt den Bezugspunkt für alle anderen Berechtigungsinformationen dar. Aus Sicht des Client stellt dieser Kontext den "aktuellen Patienten", den "aktuellen Fall", etc. dar.
+
+Beispiel: Der Nutzer hat in/aus der ISiK-Clientanwendung den Patient 123 geöffnet und möchte nun Daten zu diesem Patienten verarbeiten, zu deren Abruf eine Autorisierung erforderloch ist. Der Zugriffskontext der Autorisierung ist der Patient 123. Alle anwendbaren Compartments und Zugriffsrechte (s.u.) beziehen sich auf den Patienten 123. 
+
+ISiK-Autorisierung macht in der ISiK Stufe 3 keine Vorgabe, wie ein ISiK-Client in einen bestimmten Kontext gestellt wird (SMART-on-FHIR sieht hierfür z. B. die oben skizzierten Mechanismen eines EHR Launch bzw. eines Standalone Launch vor). Es wird jedoch verlangt, dass eine Kontextinformation zusammen mit dem Zugriffstoken (s.u.) beim Aufruf einer ReST-Schnittstelle eines ISiK-Ressourcenservers übergeben wird und dass der Ressourcenserver alle im Zugriffstoken kodierten Autorisierungsinformationen in diesem Kontext anwendet.
+
 ## Compartments
 
-Autorisierungen sollen oft an eine 'Fokus'-Ressource gebunden werden, z. B. eine Patient-Ressource ("Zugriff auf Daten zum Patienten 123") oder eine Encounter-Ressource ("Zugriff auf Daten zum Behandlungsfall 456"). Um die 'Fokus'-Ressource herum gruppieren sich weitere Ressourcen, die mit dieser in einer Beziehung stehen, z. B. im Fall der Patient-Ressource die dem Patienten zugeordneten Beobachtungen, Diagosen/Probleme, Termine, Behandlungspläne, etc. In FHIR werden diese Gruppierungen über die Ressource CompartmentDefinition festgelegt. Diese definiert die Elemente einer Ressource, die die Bindung zu der 'Fokus'-Ressource herstellen. 
+Autorisierungen können in FHIR an eine 'Fokus'-Ressource gebunden werden, z. B. eine Patient-Ressource ("Zugriff auf Daten zum Patienten 123") oder eine Encounter-Ressource ("Zugriff auf Daten zum Behandlungsfall 456"). Um die 'Fokus'-Ressource herum gruppieren sich weitere Ressourcen, die mit dieser in einer Beziehung stehen, z. B. im Fall der Patient-Ressource die dem Patienten zugeordneten Beobachtungen, Diagosen/Probleme, Termine, Behandlungspläne, etc. In FHIR werden diese Gruppierungen über die Ressource CompartmentDefinition festgelegt. Diese definiert die Elemente einer Ressource, die die Bindung zu der 'Fokus'-Ressource herstellen. 
 
-Beispiel: Für die Ressource Condition legt die CompartmentDefinition der Patient-Ressource die Elemente Condition.patient und Condition.participant-actor als verbindende Elemente fest. Eine Autorisierung für den Zugriff auf Daten des Patienten 123 umfasst damit grundsätzlich nur Condition-Ressourcen, deren subject- oder participant-actor-Element auf den Patienten 123 verweist.  
+Beispiel: Für die Ressource Condition legt die CompartmentDefinition der Patient-Ressource die Elemente Condition.patient und Condition.participant-actor als verbindende Elemente fest. Eine Autorisierung für den Zugriff auf Patientendaten im Kontext des Patienten 123 umfasst damit grundsätzlich nur Condition-Ressourcen, deren subject- oder participant-actor-Element auf den Patienten 123 verweist.  
 
-ISiK Autorisierung in der ISiK Stufe 3 verlangt von FHIR-Ressourcenservern, dass diese zumindest Autorisierungen mit Bezug zu Compartment-Definitionen der Ressourcen Patient und Encounter verarbeiten können.
+ISiK-Autorisierung in der ISiK Stufe 3 verlangt von FHIR-Ressourcenservern, dass diese zumindest Autorisierungen mit Bezug zu Compartment-Definitionen der Ressourcen Patient und Encounter verarbeiten können.
 
 ## Zugriffsrechte auf Ressourcen
+
+In dem von SMART-on-FHIR profilierten OAuth2-Standard legen sog. Scopes die spezifischen Aktionen und/oder Daten fest, auf die eine Client-Anwendung in Vertretung eines Benutzers zugreifen bzw. diese manipulieren kann. Z.B. kann ein Scope den Zugriff auf Observation-Ressourcen autorisieren oder die Möglichkeit gewähren, neue Condition-Ressourcen in einem System anzulegen.
+
+Scopes werden vom API-Anbieter - im Fall von ISiK dem FHIR-Ressourcenserver - definiert und von dem zugreifenden ISiK-Client während des Autorisierungsprozesses über den Autorisierungsserver angefordert. Sofern die Auswertung der anwendbaren Berechrtigungsregeln durch den Autorisierungsserver die angeforderten Scopes bestätigt, wird dem ISiK-Client ein Zugriffstoken (AccessToken)ausgestellt, das die anwendbaren Scopes enthält. Der ISiK-Client kann anschließend das Zugriffstoken verwenden, um im Rahmen der durch die Scopes bestätigten Autorisierung auf die geschützten Ressourcen eines ISiK-Ressourcenservers zuzugreifen.
+
+ISiK-Autorisierung in der ISiK Stufe 3 verlangt von FHIR-Ressourcenservern, dass diese die in SMART-on-FHIR definierte Syntax für die Bestätigung von Scopes verarbeiten können und die mit den Scopes verbundenen Autorisierungen zur Absicherung ihrer ReST-Schnittstellen anwenden können.
+
+## Zusammenspiel von Kontexten, Compartments und Zugriffsrechten auf Ressourcen
+
+Compartments grenzen ab, auf welche mit einer 'Fokus'-Ressource gruppierten Ressourcen ein ISiK-Client überhaupt zugreifen kann. Welche Ressource konkret den Fokus darstellt, wird über den Fokus bestimmt. Über Scopes bestätigte Zugriffsrechte grenzen ein, auf welchen der mit der 'Fokus'-Ressource gruppierten Ressourcen der ISiK-Client welche Operationen ausführen darf. 
+
+Beispiel: Der aus Sicht des ISiK-Clients aktuelle Patient ist der Patient 123. Dieser ist hiermit auch der Kontext der Autorisierung. Die Kombination aus der CompartmentDefinition für die Patient-Ressource und dem Zugriffsrecht patient/Observation.read fest, dass der ISiK-Client nur lesend und nur auf Observation-Ressourcen zugreifen darf, die über Observation.subject oder Observation.performer dem Patienten 123 zugeordnet sind.
 
 
