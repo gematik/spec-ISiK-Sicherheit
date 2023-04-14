@@ -12,7 +12,7 @@ Ein IT-System im Krankenhaus kann mehrere der genannten Rollen einnehmen. Beispi
 
 ISiK-Autorisierung basiert auf dem [HL7 Standard "Smart App Launch - v2.0.0"](https://hl7.org/fhir/smart-app-launch/STU2/index.html). Ziel ist, für ISiK-Autorisierung die bestehenden Best Practices zur Autorisierung von Zugriffen auf FHIR-Server wiederzuverwenden. Gleichzeitig werden für ISiK Stufe 3 keine normativen Festlegungen getroffen, die andere Profile auf dem OAuth2-Standard wie z. B. IHE IUA grundsätzlich ausschließen. Dies soll es Krankenhäusern erlauben, für die Absicherung gegen externe Zugriffe (z. B. ausgehend von einem Patientenportal) und für die Autorisierung interner Zugriffe (z. B. zur Implementierung der OH KIS) unterschiedliche Standardprodukte einzusetzen, die jeweils auf die spezifischen Anforderungen zugeschnitten sind.
 
-Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatiblen Autorisierungsserver zu erhalten, mittels dessen ein ISiK-Client eine FHIR Restful API Interaktion gegen einen ISiK-Ressourcenserver durchgeführen kann. Dies erfolgt unter Berücksichtigung der vorab festgelegten Zugriffsrechte der Benutzer, die sich z. B. aus deren Rollen oder anderen Nutzerattributen ableiten können. Um ein Zugangstoken zu erhalten und mit diesem als Autorisierungsnachweis auf einen Ressourcenserver zuzugreifen, sieht der Smart App Launch die in der nachfolgenden Tabelle aufgeführten Schritte vor. Die Kreuze geben an, welche der oben beschriebenen logischen Bausteine an dem jeweiligen Schritt beteiligt sind.
+Ziel des Smart App Launch ist es, ein Zugriffstoken von einem OAuth 2.0-kompatiblen Autorisierungsserver zu erhalten, mittels dessen ein ISiK-Client eine FHIR Restful API Interaktion gegen einen ISiK-Ressourcenserver durchgeführen kann. Dies erfolgt unter Berücksichtigung der vorab festgelegten Zugriffsrechte der Benutzer, die sich z. B. aus deren Rollen oder anderen Nutzerattributen ableiten können. Um ein Zugriffstoken zu erhalten und mit diesem als Autorisierungsnachweis auf einen Ressourcenserver zuzugreifen, sieht der Smart App Launch die in der nachfolgenden Tabelle aufgeführten Schritte vor. Die Kreuze geben an, welche der oben beschriebenen logischen Bausteine an dem jeweiligen Schritt beteiligt sind.
 
 | # | Schritt                                        | ISiK-Ressourceserver | ISiK-Client| Autorisierungsserver | ISiK-App-Launcher |
 |:-:|:-----------------------------------------------|:--------------------:|:----------:|:--------------------:|:-----------------:|
@@ -21,9 +21,9 @@ Ziel des Smart App Launch ist es, ein Zugangstoken von einem OAuth 2.0-kompatibl
 | 3 | Abruf der SMART-Konfiguration                  |            X         |      X     |            X         |                   |
 | 4 | Autorisierungsanfrage des Clients              |                      |      X     |            X         |                   |
 | 5 | Prüfung Anfrage und Ausgabe Autorisierungscode |                      |      X     |            X         |                   |
-| 6 | Austausch des Codes gegen ein Zugangstoken     |                      |      X     |            X         |                   |
+| 6 | Austausch des Codes gegen ein Zugriffstoken    |                      |      X     |            X         |                   |
 | 7 | Autorisierte ReST-Interaktion                  |            X         |      X     |           (X)        |                   |
-|(8)| Neu-Ausstellen eines Zugangstokens             |                      |      X     |            X         |                   |
+|(8)| Neu-Ausstellen eines Zugriffstokens            |                      |      X     |            X         |                   |
 
 Eine Übersicht des zusammenhängenden Smart App Launch ist dem Abschnitt [SMART App Launch - 2.0.3 - SMART authorization & FHIR access: overview](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#smart-authorization--fhir-access-overview) zu entnehmen.
 
@@ -39,7 +39,7 @@ Ein Client kann aus dem Kontext eines anderen Systems (das dann in der Rolle des
 - [SMART App Launch - Standalone Launch](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#launch-app-standalone-launch):
 Clients, welche außerhalb eines anderen Systems gestartet werden (z.B. Mobile Apps welche Daten von einem ISiK-Ressourcenserver abfragen möchten), müssen ihren Kontext explizit über eine Nutzerinteraktion gegen eine als ISiK-App-Launcher fungierende Komponente aufbauen. Dieses kann beispielsweise ein Widget zur Auswahl des zu aktivierenden Patientenkontextes sein (siehe z. B. "patient context picker" in der [Open Source Keycloak Erweiterung 'Alvearie'](https://github.com/Alvearie/keycloak-extensions-for-fhir)).
 
-Beide Launch-Sequenzen bedingen eine weitreichende Integration von Autorisierungsserver und App-Laucher, die gemeinsam den Launch-Kontext des ISiK-Clients bestimmmen und verwalten. Für den Standalone Launch muss zusätzlich ein interaktiver "context picker" integriert oder angebunden werden. Diese enge Bindung steht im Widerspruch zu den [Vorgaben für ISiK-Sicherheit in ISiK Stufe 3](Motivation.html) und erschwert die Nutzung von marktgängigen Standard-Produkten wie z. B. Keycloak, Auth0 und/oder NGINX zum Aufbau eines IAM-Subsystems. Daher werden in ISiK Stufe 3 im Modul ISiK-Sicherheit zunächst nur Interaktionen gegen Systeme in der Rolle eines ISiK-Ressourcenservers definiert. Die Vorgaben umfassen dabei insbesondere die SMART-Konfiguration (Schritt 3) sowie die Syntax und Semantik der über das Zugangstoken vermittelten Autorisierungen (Schritt 7). 
+Beide Launch-Sequenzen bedingen eine weitreichende Integration von Autorisierungsserver und App-Laucher, die gemeinsam den Launch-Kontext des ISiK-Clients bestimmmen und verwalten. Für den Standalone Launch muss zusätzlich ein interaktiver "context picker" integriert oder angebunden werden. Diese enge Bindung steht im Widerspruch zu den [Vorgaben für ISiK-Sicherheit in ISiK Stufe 3](Motivation.html) und erschwert die Nutzung von marktgängigen Standard-Produkten wie z. B. Keycloak, Auth0 und/oder NGINX zum Aufbau eines IAM-Subsystems. Daher werden in ISiK Stufe 3 im Modul ISiK-Sicherheit zunächst nur Interaktionen gegen Systeme in der Rolle eines ISiK-Ressourcenservers definiert. Die Vorgaben umfassen dabei insbesondere die SMART-Konfiguration (Schritt 3) sowie die Syntax und Semantik der über das Zugriffstoken vermittelten Autorisierungen (Schritt 7). 
 
 -------
 
@@ -83,3 +83,30 @@ Compartments grenzen ab, auf welche mit einer 'Fokus'-Ressource gruppierten Ress
 Beispiel: Der aus Sicht des ISiK-Clients aktuelle Patient ist der Patient 123. Dieser ist hiermit auch der Kontext der Autorisierung. Die Kombination aus der CompartmentDefinition für die Patient-Ressource und dem Zugriffsrecht patient/Observation.read fest, dass der ISiK-Client nur lesend und nur auf Observation-Ressourcen zugreifen darf, die über Observation.subject oder Observation.performer dem Patienten 123 zugeordnet sind.
 
 
+## Zugriffstoken: Beispiel
+
+Zugriffstoken werden als Base64-kodierte _JSON Web Token (JWT)_ ausgetauscht. 
+
+Beispiel:
+
+```
+eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJwYXRpZW50IjogIjg3YTMzOWQwLThjYWUtNDE4ZS04OWM3LTg2NTFlNmFhYjNjNiIsICJ0b2tlbl90eXBlIjogImJlYXJlciIsICJzY29wZSI6ICJwYXRpZW50L09ic2VydmF0aW9uLnJzIiwgImNsaWVudF9pZCI6ICJraHpnX3BvcnRhbCIsICJpYXQiOiAxNjU1MjYwMDAwLCAiZXhwIjogMTY1NTI2MDYwMH0.MrzWx4Ob7xuZLs9vG8A70sva21VzheQ0c3q0o8KtW-4
+```
+dekodiert:
+
+```
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+{
+  "patient": "87a339d0-8cae-418e-89c7-8651e6aab3c6",
+  "token_type": "bearer",
+  "scope": "patient/Observation.rs patient/Patient.rs",
+  "client_id": "khzg_portal",
+  "iat": 1655260000,
+  "exp": 1655260600
+}
+```
+
+Das Zugriffstoken in dem Beispiel gewährt Lese- und Such-Zugriffe auf die Patient-Ressource und Observation-Ressourcen des Patienten mit der _id_ '87a339d0-8cae-418e-89c7-8651e6aab3c6'. Das Token wurde am 14. April 2023 10:00 Uhr ausgestellt und ist ab diesem Zeitpunkt 10 Minuten lang gültig.
