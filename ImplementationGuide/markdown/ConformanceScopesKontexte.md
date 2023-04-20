@@ -22,9 +22,12 @@ Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN
 * [RelatedPerson](http://hl7.org/fhir/R4/compartmentdefinition-relatedperson.html)
 * [Device](http://hl7.org/fhir/R4/compartmentdefinition-device.html)
 
+
 Die Unterstützung eines Compartments umfasst, dass die Festlegungen in der _CompartmentDefinition_ 
-* die maximal zulässigen Berechtigungen eines Zugriffs auf die den angegebenen Kontext darstellende Ressource bestimmen und
+* alle für die angegebene Fokusressource relevanten Zugriffsberechtigungen auf in beziehunge stehende Ressourcen definiert
 * die Gruppierung von über _Scopes_ angegebenen Berechtigungen zu der als Kontext angegebenen Ressource bestimmen.
+
+Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN NICHT für alle in ISiK spezifizierten Ressourcen entsprechende Compartmentdefinitionen anlegen. Die HL7 Spezifikationen lassen keine eigenständige erweiterung der Compartmentdefinitionen zu. 
 
 Beispiel: Der gegebene Kontext ist der Patient "123". Die über einen _Scope_ angegebene Autorisierung ist 'patient/Observation.read'. Der ISiK-Ressourcenserver darf nur Anfragen ausführen, die lesend auf _Observation_-Ressourcen zugreifen, die über 'Observation.subject' oder 'Observation.performer' dem Patienten "123" zugeordnet sind.
 
@@ -41,9 +44,14 @@ SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einte
 * ["user"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#user-level-scopes): Alle FHIR Restful Interaktionen werden eingeschränkt hinsichtlich der definierten Zugriffe auf Ressourcen, die für bestimmte Benutzer sichtbar sind.
 * ["system"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#system-level-scopes): Alle FHIR Restful Interaktionen werden eingeschränkt hinsichtlich der definierten Zugriffe auf Ressourcen, die sichtbar sind für einen bestimmten (technischen) Client, unabhängig davon welcher Benutzer hiermit interagiert.
 
+
+**Autorisierungen in einem _"patient"-Level Scope_, die Ressourcen abfragen die über die in der Compartmentdefiniton definierten beziehungen zur Fokussressource des Patienten hinausgehen, MÜSSEN ignoriert werden.**
+
+**Autorisierungen in einem eigens definierten SMART on FHIR Launch Kontext bzw. Wildcard Scope, für die keine Compartmentdefinition existiert, dürfen nicht ignoriert werden. Zugriffe auf Instanzen dieser Ressourcentypen SOLLTEN über Autorisierungen in einem "user"- oder "system"-Level erfolgen. Bspw. launch/code oder launch/location**
+
 Autorisierungen in einem _"patient"-Level Scope_, die Ressourcentypen betreffen, zu denen keine 'CompartmentDefinition' existiert, MÜSSEN ignoriert werden. Zugriffe auf Instanzen deser Ressourcentypen MÜSSEN über Autorisierungen in einem "user"- oder "system"-Level erfolgen.
 
-Insbesondere mittels _"system"-Level Scopes_ MUSS ein Vollzugriff auf einen ISiK-Ressourcenserver möglich sein, soweit dieser keine weiteren Einschränkungen in der Sichtbarkeit von Inhalten konfiguriert. Bestätigungsrelevante Systeme MÜSSEN die Option anbieten, einen Vollzugriff zu erlauben.
+Insbesondere mittels _"system"-Level Scopes_ MUSS ein Vollzugriff auf die im ISIK- Kontext definieren Ressourcen auf einem ISiK-Ressourcenserver möglich sein, soweit dieser keine weiteren Einschränkungen in der Sichtbarkeit von Inhalten konfiguriert. Bestätigungsrelevante Systeme MÜSSEN die Option anbieten, einen Vollzugriff zu erlauben und SOLLTEN diesen Vollzugriff über einen _"system"-Level Scopes_ umsetzen.
 
 ### Ressourcetyp und Operationen
 Es MÜSSEN alle in ISiK Stufe 3 profilierten Ressourcentypen unterstützt werden. Sofern in ISiK-Stufe 3 auf einem Ressourcentyp als zulässig definiert, MÜSSEN alle in FHIR definierten lesenden und modifizierenden Operationen unterstützt werden:
