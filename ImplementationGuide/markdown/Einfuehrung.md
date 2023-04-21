@@ -3,11 +3,11 @@
 
 ----
 
-Version: 3.0.0-rc1
+Version: 3.0.0-rc2
 
-Datum: 30.06.2022
+Datum: 21.04.2023
 
-Status: Aktiv
+Status: Kommentierung
 
 Realm: Deutschland
 
