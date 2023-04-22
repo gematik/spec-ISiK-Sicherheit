@@ -49,7 +49,7 @@
         {
           "nameUrl": "ImplementationGuide/markdown/Uebersicht.md",
           "title": "Übersicht",
-          "generation": "markdown"
+          "generation": "markdown",
           "page": [
             {
               "nameUrl": "ImplementationGuide/markdown/ISiKAutorisierung.md",
@@ -69,7 +69,7 @@
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide/markdown/ScopesAndLaunchContext.md",
+              "nameUrl": "ImplementationGuide/markdown/ConformanceScopesKontexte.md",
               "title": "Scopes und Compartments",
               "generation": "markdown"
             }
