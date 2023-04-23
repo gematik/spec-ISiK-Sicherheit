@@ -31,20 +31,18 @@ Die Unterstützung eines Compartments umfasst, dass die Festlegungen in der _Com
 
 Beispiel: Der gegebene Kontext ist der Patient "123". Die über einen _Scope_ angegebene Autorisierung ist 'patient/Observation.r'. Der ISiK-Ressourcenserver darf nur Anfragen ausführen, die lesend auf _Observation_-Ressourcen zugreifen, die über 'Observation.subject' oder 'Observation.performer' dem Patienten "123" zugeordnet sind.
 
-## Berechtigungen auf Ressourcen
+## Berechtigungen auf Ressourcentypen
 
-Berechtigungen auf Ressourcen MÜSSEN sowohl in der _SMART Capabilities_ Datei als auch in den gegenüber dem ISiK-Ressourcenserver bestätigten _Scopes_ in der folgenden Syntax kodiert werden:
+Berechtigungen auf Ressourcentypen MÜSSEN sowohl in der _SMART Capabilities_ Datei als auch in den gegenüber dem ISiK-Ressourcenserver bestätigten _Scopes_ in der folgenden Syntax kodiert werden:
 
 ```(patient | user | system) \/ (_Ressourcetyp_ | \*) \. c?r?u?d?s? (\? (_param_\=_value_) (\& _param_\=_value_)* )?```
 
 ### Scope-Level
-SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einteilen:
+SMART-on-FHIR-Berechtigungen auf Ressourcen lassen sich in drei Kategorien einteilen, die alle durch ISiK-konforme Ressourcenserver unterstützt werden MÜSSEN:
 
-* ["patient"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes): Alle FHIR Restful Interaktionen werden auf die definierten Zugriffe auf eine als Kontext angegebene FHIR-Ressource, sowie damit über Compartments verknüpfte Ressourcen, eingeschränkt.  
-* ["user"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#user-level-scopes): Alle FHIR Restful Interaktionen werden eingeschränkt hinsichtlich der definierten Zugriffe auf Ressourcen, die für bestimmte Benutzer sichtbar sind.
-* ["system"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#system-level-scopes): Alle FHIR Restful Interaktionen werden eingeschränkt hinsichtlich der definierten Zugriffe auf Ressourcen, die sichtbar sind für einen bestimmten (technischen) Client, unabhängig davon welcher Benutzer hiermit interagiert.
-
-Autorisierungen in einem _"patient"-Level Scope_, die Ressourcentypen betreffen, zu denen keine per 'CompartmentDefinition' definierte Verknüpfung zu der als Kontext angegebenen Ressource existiert, MÜSSEN ignoriert werden (z. B. 'patient/CodeSystem.rs'). Zugriffe auf Instanzen deser Ressourcentypen MÜSSEN über Autorisierungen in einem _"user"_- oder _"system"-Level Scope_ erfolgen.
+* ["patient"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#patient-specific-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen im gewählten Patient-Compartment an den Client delegiert werden bzw. werden sollen.  
+* ["user"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#user-level-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen durch den Benutzer an den Client delegiert werden bzw. werden sollen.
+* ["system"-Level Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#system-level-scopes) geben an, welche verfügbaren Nutzerberechtigungen auf allen Ressourcen an einen (technischen) Client delegiert werden bzw. werden sollen, unabhängig davon welcher Benutzer hiermit interagiert.
 
 Autorisierungen in einem SMART-on-FHIR _Launch Kontext_, für den keine Compartment-Definition existiert (z. B. 'launch/location'), SOLLEN in einem _"user"_- oder _"system"-Level Scope_ erfolgen (z. B. 'user/Location.rs').
 
@@ -59,7 +57,7 @@ Es MÜSSEN alle in ISiK Stufe 3 profilierten Ressourcentypen unterstützt werden
 |d           |                               |                            |delete                          |
 |s           |search, history                |search, history             |                                |
 
-Berechtigungen MÜSSEN im _Scope_ in der dargestellten Reihenfolge ('cruds') angegeben sein. Bei einer falschen Reihenfolge SOLL der Ressourcenserver einen Zugriffsfehler auslösen.
+Berechtigungen werden im _Scope_ in der dargestellten Reihenfolge ('cruds') angegeben (vgl. https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#clinical-scope-syntax). Bei einer falschen Reihenfolge SOLL der Ressourcenserver einen Zugriffsfehler auslösen.
 
 Die Möglichkeit von [Wildcard-Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden.
 
