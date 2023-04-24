@@ -1,3 +1,3 @@
 # ISiK-Sicherheit
 
-Siehe https://simplifier.net/isik-sicherheit
+Siehe https://simplifier.net/spec-isik-sicherheit
