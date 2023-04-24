@@ -3,7 +3,7 @@
   "id": "ImplementationGuide-ISiK-Sicherheit",
   "url": "https://gematik.de/fhir/ISiK/Sicherheit/ImplementationGuide/ISiK-Sicherheit",
   "name": "Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung",
-  "status": "active",
+  "status": "draft",
   "fhirVersion": [
     "4.0.1"
   ],
