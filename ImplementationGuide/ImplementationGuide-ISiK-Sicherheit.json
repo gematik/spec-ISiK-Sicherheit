@@ -47,54 +47,36 @@
           ]
         },
         {
-          "nameUrl": "ImplementationGuide/markdown/SmartAppLaunch.md",
-          "title": "Smart App Launch",
+          "nameUrl": "ImplementationGuide/markdown/Uebersicht.md",
+          "title": "Übersicht",
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide/markdown/Schritt1RegistierungClient.md",
-              "title": "Schritt 1 - Registrierung Client",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/markdown/Schritt2ClientAutorisierung.md",
-              "title": "Schritt 2 - Client Autorisierung",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/markdown/Schritt3EvaluierungAutorisierungsanfrage.md",
-              "title": "Schritt 3 - Evaluierung Autorisierungsanfrage",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/markdown/Schritt4AustauschAutorisierungscodesZugangstoken.md",
-              "title": "Schritt 4 - Austausch - Autorisierungscodes Zugangstoken",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/markdown/Schritt5FhirRestInteraktion.md",
-              "title": "Schritt 5 - FHIR Restful Interaktion",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/markdown/Schritt6RefreshToken.md",
-              "title": "Schritt 6 - Refresh Token & Revocation",
+              "nameUrl": "ImplementationGuide/markdown/ISiKAutorisierung.md",
+              "title": "ISiK Autorisierung",
               "generation": "markdown"
             }
-          ]
-        },
-        {
-          "nameUrl": "ImplementationGuide/markdown/ScopesAndLaunchContext.md",
-          "title": "Scopes & Launch Context",
-          "generation": "markdown"
+          ]          
         },
         {
           "nameUrl": "ImplementationGuide/markdown/Conformance.md",
-          "title": "Conformance",
-          "generation": "markdown"
+          "title": "ISiK-Konformität",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide/markdown/ConformanceSmartCapabilities.md",
+              "title": "SMART Capabilities",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/markdown/ConformanceScopesKontexte.md",
+              "title": "Scopes und Compartments",
+              "generation": "markdown"
+            }
+          ]
         }
-      ]
+      ]  
     }
   }
-}
+}  
 
