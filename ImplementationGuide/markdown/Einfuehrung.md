@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/master-isik-stufe-2/Material/Gematik_Logo_Flag.png" alt="gematik logo" width="400"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-Sicherheit/main-Stufe-3/Material/Gematik_Logo_Flag.png" alt="gematik logo" width="400"/>
 
 ----
 

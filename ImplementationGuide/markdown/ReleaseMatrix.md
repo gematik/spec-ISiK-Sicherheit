@@ -22,6 +22,6 @@ Folgende Tabelle zeigt Abhängigkeiten zwischen den verschiedenen Modulen von IS
 
 
 Folgendes Schema für das ISiK Release-Management dient dem Verständnis der Fristen; entscheidend für die (prognostizierte) Abkündigung ("Gültig bis") ist nicht der Release-Zeitpunkt, sondern das rechtlich bindende Umsetzungsdatum ("Verpflichtend ab" / "Verpflichtender Einsatz"):
-![Schema für das ISiK Releasemanagement](ISiK_Releasemanagement.png)
+![Schema für das ISiK Releasemanagement](/ImplementationGuide/Images/ISiK_Releasemanagement.png)
 
 Weitere Abhängigkeiten zu externen Packages sind unter den jeweiligen Simplifier-Projekten in der View "Dependencies" zu finden.
