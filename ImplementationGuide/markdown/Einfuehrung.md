@@ -2,9 +2,9 @@
 
 ----
 
-Version: 3.0.0-rc2
+Version: 3.0.0-rc3
 
-Datum: 24.04.2023
+Datum: 25.04.2023
 
 Status: Kommentierung
 
