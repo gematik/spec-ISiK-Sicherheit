@@ -1,3 +1,5 @@
+> **NOTE:** Ich würde hier mehr den gewählten Technologiestack herausarbeiten (REST, JOSE, OAUTH, OIDC, SmartOnFhir), als alle möglichen Technologien aufzuzählen (SAML, SYSLOG, UMA, XACML). Eventuell sollten hier die Technolgien noch garnicht beannt werden.
+
 <img src="https://github.com/gematik/spec-ISiK-Sicherheit/blob/3.0.0-rc/ImplementationGuide/Material/Gematik_Logo_Flag.png?raw=true" alt="gematik logo" width="400"/>
 
 ----

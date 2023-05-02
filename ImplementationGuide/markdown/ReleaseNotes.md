@@ -1,3 +1,5 @@
+> **NOTE:** kein Kommenator
+
 # Release Notes
 
 Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://semver.org/lang/de/) verwendet.

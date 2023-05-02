@@ -1,3 +1,7 @@
+> **NOTE:** 
+> * Dadurch das man SmartOnFhir für den ResourceSerbver profiliert, definiert man Vorgaben auch für die anderen Komponenten. Ich befürchte die gemachte Beschränkung läßt sich nicht aufrechterhalten bzw. wird die Implementierung nicht befördern.
+> * Das Kapitel vermischt "Scope" und "Permissions" und sollte dahingehend überarbeitet werden. Der Scope definiert Beschränkungen für die App. Der Scope ist immer App bezogen. Permissions (Berechtigungen) sind nutzerbezogen und vom ResourceServer unter Beachtung des jeweiligen Kontexts durchzusetzen. Dementsprechend werden nicht Nutzerberechtigungen delegiert, sondern der Eigentümer definiert mit Scopes, was die App in seinem Namen mit den Resourcen machen darf. 
+
 # ISiK-Ressourcenserver
 
 Die Vorgaben von ISiK-Sicherheit betreffen in ISiK Stufe 3 ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers:

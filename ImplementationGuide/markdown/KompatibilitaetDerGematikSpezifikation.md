@@ -1,3 +1,6 @@
+> **NOTE:** Der Mehrwert dieses Kapitels erschließt sich mir nicht. Es sei denn, es gibt eine explizite Forderung, dass die Lösung konfrom zu den genannten Standards sein muss. Die maßgeblichen Spezifikationen sind OAUTH2 und OIDC sowie die SMART-Profilierung.
+
+
 # Kompatibilität zu IHE-Profilen
 
 Das [IHE Technical Framework Supplement "Internet User Authorization (IUA)"](https://profiles.ihe.net/ITI/IUA/index.html) bietet, ähnlich wie SMART on FHIR, Möglichkeiten zur Autorisierung von Transaktionen einer RESTful HTTP API.

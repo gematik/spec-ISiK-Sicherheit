@@ -1,3 +1,7 @@
+> **NOTE:** "Für Häuser mit bestehenden IHE-orientierten Infrastrukturen kann hingegen eine Ausrichtung der weiteren Ausgestaltung von ISiK-Sicherheit an dem IHE-Profil Internet User Authorization sinnvoll sein, um hierbei z. B. von dem dadurch unterstützten Zusammenspiel mit gemäß IHE BPPC umgesetzten Einwilligungen zu profitieren."
+> * Was bedeutet das konkret? Wo widerspricht OAUTH2 IHE IUA? Wenn ja - welchen Sinn macht es, sich von einem weit verbreiteten Standard abzusetzen?
+> * The document sharing infrastructure provided by XD* allow for the publication and use of clinical documents associated with a patient. This profile (**BPPC**) allows for a Patient Privacy Policy Domain (e.g., an XDS Affinity Domain to have a number of Patient Privacy Policies that can be acknowledged (aka consent). Das sollte separat diskutiert werden, vielleicht in einem alternativen IHE-ISiK Dokument (XDS, XUA, ...)  
+
 
 ## ISiK-Sicherheit
 

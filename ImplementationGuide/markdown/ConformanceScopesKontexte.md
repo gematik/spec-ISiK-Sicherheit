@@ -1,3 +1,7 @@
+> **NOTE:**
+> * Das Kapitel vermischt "Scope" und "Permissions" und sollte dahingehend überarbeitet werden. Der Scope definiert Beschränkungen für die App. Der Scope ist immer App bezogen. Permissions (Berechtigungen) sind nutzerbezogen und vom ResourceServer unter Beachtung des jeweiligen Kontexts durchzusetzen. Dementsprechend werden nicht Nutzerberechtigungen delegiert, sondern der Eigentümer definiert mit Scopes, was die App in seinem Namen mit den Resourcen machen darf.
+
+
 # Conformance: Scopes und Kontexte
 
 Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können.

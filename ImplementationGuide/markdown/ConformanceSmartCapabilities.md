@@ -1,3 +1,9 @@
+> **NOTE:** Hier hat sich SmartOnFhir offensichtlich weiterentwickelt. Allerdings sollten einige Festlegungen meines Erachtens hinterfragt werden:
+> * Die verpflichtenden Capabilities überschneiden sich mit den Capabilities des Auth-Servers. Predence klären?
+> * Alter Capability Set (integriert in Capability Statement): https://fhir-resource-dev.lab.gematik.de:8080/hspc-reference-api/data/metadata
+> * OIDC Meta Data: http://connect2id-dev.lab.gematik.de:8080/c2id/.well-known/openid-configuration
+> * Oauth2 Meta Data: http://connect2id-dev.lab.gematik.de:8080/c2id/.well-known/oauth-authorization-server  
+
 # Conformance: SMART Capabilities
 
 Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN eine _SMART Capabilities_ JSON-Datei als '.well-known'-Dokument (vgl. [RFC5785](https://datatracker.ietf.org/doc/html/rfc5785)) anbieten. ISiK-Clients können auf diese Art und Weise u.a. abfragen, welche Kontexte und _Scopes_ seitens des ISiK-Ressourcenservers unterstützt werden.

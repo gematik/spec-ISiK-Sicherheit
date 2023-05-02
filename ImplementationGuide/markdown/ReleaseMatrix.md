@@ -1,3 +1,5 @@
+> **NOTE:** kein Kommenator
+
 Folgende Tabelle zeigt Abhängigkeiten zwischen den verschiedenen Modulen von ISiK und ISiP auf.
 
 | **Modul**                  | **Releasedatum des Moduls**   | **Version** | **Releasedatum Version** |**Gültig bis\*** | **Verpflichtend ab** | **Abkündigungsdatum** | **Abhängigkeiten** |

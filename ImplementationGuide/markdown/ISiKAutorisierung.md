@@ -1,3 +1,13 @@
+> **NOTE**
+> * Warum ist IHE IUA Kompatibität erforderlich und wie wird Kompatibilität der Auth-Server sichergestellt.
+> * Vertrauensbeziehung zwischen ResourceServer und Autorisierungsserver fehlt.
+> * Patient Context Picker ist ein schlechtes Beispiel für eine Standalone App
+> * "Diese enge Bindung steht im Widerspruch zu den formulierten Vorgaben für ISiK-Sicherheit in ISiK Stufe 3" ist nicht nachvollziehbar. Staddessen sollten die Anforderungen an den Oauth2 Server definiert werden.
+> * Verweise auf konkrete Produkte sollten gelöscht werden. Übrigens würde ich Keycloak nicht empfehlen.
+> * "Encounter-Ressource ("Zugriff auf Daten zum Behandlungsfall 456")" ???
+> * Zugriffsrechtebeschreibung sollte noch einaml detailliert diskutiert werden. Scopes werden durch den ResourceOwner gewährt.
+> * Das Beipsiel zeigt einen "Self Contained Token". An anderer Stelle wird Introspection gefordert. Was ist richtig?
+
 # Übersicht ISiK Autorisierung
 
 Am Baustein "ISiK-Autorisierung" von ISiK-Sicherheit teilnehmende Systeme können eine oder mehrere der folgenden Rollen einnehmen:

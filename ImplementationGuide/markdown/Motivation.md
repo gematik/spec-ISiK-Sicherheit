@@ -1,3 +1,10 @@
+> **NOTE:**
+> * Das Kapitel vermischt "Scope" und "Permissions" und sollte dahingehend überarbeitet werden. Der Scope definiert Beschränkungen für die App. Der Scope ist immer App bezogen. Permissions (Berechtigungen) sind nutzerbezogen und vom ResourceServer unter Beachtung des jeweiligen Kontexts durchzusetzen. Dementsprechend werden nicht Nutzerberechtigungen delegiert, sondern der Eigentümer definiert mit Scopes, was die App in seinem Namen mit den Resourcen machen darf.
+> * Meines Erachtens wäre eine nutzerbezogene Motivation verständlicher:
+>> * Das ISiK-Modul 'Sicherheit' soll die Möglichkeit des sicheren Zugriffs des Patienten auf seine Daten schaffen,
+>> * den authorisierten Zugriff aller in seine Versorgung involvierter Akteure innerhalb des Krankenhauses sicherstellen und
+>> * seine Resourcen vor dem Zugriff unberechtigter Dritter sicher schützen.
+> * Die Beispiele für Standardlösungen sind ungünstig. Konkrete Produkte sollten nicht geannnt werden. Die Konformität zu den relevanten Standards sollte stattdessen unterstrichen werden.
 # Motivation
 
 Innerhalb des [ISiK Basismoduls](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/ImplementationGuide-markdown-Einfuehrung?version=current) erfolgt eine Erörterung der [Motivation für den Einsatz einer ISiK-konformen Schnittstelle](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/ImplementationGuide-markdown-Motivation?version=current). Ein entsprechender Fokus liegt hierbei auf der Integration von spezialisierten Subsystemen, welche entweder Informationen am Krankenhausinformationssystem (KIS) oder Klinischen Arbeitsplatzsystem (KAS) abrufen oder Informationen an die zuvor genannten Systeme zurückliefern. Hervorgehoben sei hier die Integration von mobilen Anwendungen und Web-Portalen. 
