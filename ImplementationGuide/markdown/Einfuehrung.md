@@ -29,7 +29,7 @@ ISiK-Sicherheit konkretisiert in der aktuellen Stufe 3 zunächst nur die Anforde
 
 Die in ISiK Stufe 3 vorgenommene Profilierung des SMART-on-FHIR-API fokussiert auf die Absicherung der bereits in ISiK Stufe 2 betrachteten FHIR-Ressourcen wie z. B. _Patient_, _Encounter_ oder _Observation_, macht den Herstellern und Krankenhäusern hierbei aber weder Vorgaben zu konkreten Berechtigungsmodellen/-regeln oder dem Zuschnitt der zum Identitäts- und Berechtigungsmanagement (IAM) einzusetzenden Produkte. 
 
-Hersteller von bereits in ISiK Stufe 2 bestätigungsrelevanten Systemen sollen durch diesen Leitfaden in die Lage versetzt werden, eine konforme Erweiterung der bestehenden Implementierung zu erstellen und das Bestätigungsverfahren der gematik für ISiK-Sicherheit in ISiK STufe 3 erfolgreich zu absolvieren.
+Hersteller von bereits in ISiK Stufe 2 bestätigungsrelevanten Systemen sollen durch diesen Leitfaden in die Lage versetzt werden, eine konforme Erweiterung der bestehenden Implementierung zu erstellen und das Bestätigungsverfahren der gematik für ISiK-Sicherheit in ISiK Stufe 3 erfolgreich zu absolvieren.
 
 
 **Kontakt**
