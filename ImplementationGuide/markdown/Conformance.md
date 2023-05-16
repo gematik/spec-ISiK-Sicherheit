@@ -1,8 +1,8 @@
+# ISiK-Ressourcenserver
+
 ---
 ### Normativ
 ---
-
-# ISiK-Ressourcenserver
 
 Die Vorgaben von ISiK-Sicherheit betreffen in ISiK Stufe 3 ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers:
 * Bestätigungsrelevante ISiK-Ressourcenserver MÜSSEN ausgewählte der in SMART-on-FHIR definierten _Scopes_ unterstützen. Diese _Scopes_ legen Syntax und Semantik für die an den ISiK-Client delegierten Zugriffsrechte auf FHIR-Ressourcen fest.

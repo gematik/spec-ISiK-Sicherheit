@@ -1,8 +1,8 @@
+# Schritt 6: Refresh Token & Revocation
+
 ---
 ### Informativ
 ---
-
-# Schritt 6: Refresh Token & Revocation
 
 ## Refresh Tokens
 
