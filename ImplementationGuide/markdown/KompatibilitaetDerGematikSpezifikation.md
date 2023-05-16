@@ -1,3 +1,7 @@
+---
+### Normativ
+---
+
 # Kompatibilität zu IHE-Profilen
 
 Das [IHE Technical Framework Supplement "Internet User Authorization (IUA)"](https://profiles.ihe.net/ITI/IUA/index.html) bietet, ähnlich wie SMART on FHIR, Möglichkeiten zur Autorisierung von Transaktionen einer RESTful HTTP API.

@@ -1,3 +1,7 @@
+---
+### Normativ
+---
+
 # Motivation
 
 Innerhalb des [ISiK Basismoduls](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/ImplementationGuide-markdown-Einfuehrung?version=current) erfolgt eine Erörterung der [Motivation für den Einsatz einer ISiK-konformen Schnittstelle](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/ImplementationGuide-markdown-Motivation?version=current). Ein entsprechender Fokus liegt hierbei auf der Integration von spezialisierten Subsystemen, welche entweder Informationen am Krankenhausinformationssystem (KIS) oder Klinischen Arbeitsplatzsystem (KAS) abrufen oder Informationen an die zuvor genannten Systeme zurückliefern. Hervorgehoben sei hier die Integration von mobilen Anwendungen und Web-Portalen. 

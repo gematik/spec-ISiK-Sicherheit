@@ -1,5 +1,8 @@
-
 ## ISiK-Sicherheit
+
+---
+### Normativ
+---
 
 Das Modul ISiK-Sicherheit fokussiert in der aktuellen Stufe 3 auf die Autorisierung von Zugriffen menschlicher Nutzer auf geschützte FHIR-Ressourcen. Es schafft damit die Voraussetzungen für eine interoperable Integration von ISiK-Ressourcenservern in eine bestehenden Sicherheitsinfrastruktur im Krankenhaus. Hierbei werden über die generelle Absicherung von FHIR-ReST-Aufrufen hinaus keine Annahmen zu Anwendungsfällen oder den Deployments der logischen Komponenten des Autorisierungssystems gemacht. 
 

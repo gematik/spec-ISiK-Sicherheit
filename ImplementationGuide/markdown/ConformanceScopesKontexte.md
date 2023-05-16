@@ -1,3 +1,7 @@
+---
+### Normativ
+---
+
 # Conformance: Scopes und Kontexte
 
 Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können.
