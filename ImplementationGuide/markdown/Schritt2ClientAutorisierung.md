@@ -58,6 +58,10 @@ Hieraus folgt, dass die angeforderten Scopes nur die Kategorien an Rechten repr�
 
 Der Autorisierungsserver MUSS eine Konfiguration der erlaubten Scopes pro Client unterstützen.
 
+## Hinweise zu Sektoralen IDPs der Gematik
+
+Perspektivisch sollen für die Authentisierung von Patienten in Krankenhäuser die [_Sektoralen IDPs_](https://fachportal.gematik.de/hersteller-anbieter/komponenten-dienste/identity-provider-idp) der Gematik unterstützt werden. Diese basieren wie das Modul ISiK-Sicherheit auf den Standards OAuth2 und OpenID  Connect. Wie in der Übersicht des Moduls ISiK-Sicherheit dargestellt, werden in dieser Spezifikation keine Vorgaben bezüglich der einzusetzenden Authentisierungsdienste getroffen. Ein Support der Sektoralen IDPs ist perspektivisch jedoch unerlässlich. Um diesen Support herstellen zu können, muss das Header Parameter *ISS_IDP* unterstützt werden. In diesem Parameter wird Definiert welcher Authorisierungsdienst anzusprechen ist. Wenn beim Aufruf des Ressourcenservers der Parameter ISS-IDP UND der Ressourcenserver die Autorisierung auslöst, muss dieser Parameter beim Aufruf übergeben werden.
+
 ----
 
 ## Beispiel
@@ -69,7 +73,7 @@ Host: server.example.com
 ```
 response_type=code&
 client_id=TestClientId&
-redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&
+redirect_uri=https://example.org/redirect_uri/fhir/client/exampleId&iss_idp
 scope=user/*.rs openid fhirUser&
 state=df01f5f8-5bf2-45ea-ab7a-706361da0515&
 aud=http://example.org/fhir/&

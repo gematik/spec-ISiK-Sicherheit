@@ -5,11 +5,16 @@
 ---
 
 Um die Entscheidung zu treffen, ob eine Autorisierungsanfrage eines Clients zu akzeptieren oder abzulehnen ist, KANN der Autorisierungsserver eine Authentifizierung der Benutzer verlangen.
-Sowohl die Smart App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden, legen keine Vorgaben diesbezüglich fest. Es ist darauf zu achten, dass bei einer fehlgeschlagenen Authentifizierung dem Endnutzer ein eindeutiger Fehlerhinweis angezeigt wird. Ein Redirect zum Client mit einem entsprechenden Fehlercode ist optional.
+Sowohl die Smart App Launch Spezifikation, als auch der vorliegende Implementierungsleitfaden, legen keine Vorgaben diesbezüglich fest. Es ist darauf zu achten, dass bei einer fehlgeschlagenen Authentifizierung dem Endnutzer ein eindeutiger Fehlerhinweis angezeigt wird. Ein Redirect zum Client mit einem entsprechenden Fehlercode ist optional. 
+
+Das in der redirect_uri übergebene Parameter ISS_IDP muss vom Autorisierunggserver interpretiert werden können und gibt den Sektoralen IDP an welcher für die Authentifizierung des Clients verwendet werden soll.
 
 Im Falle einer erfolgreichen Authentifizierung, MUSS der Autorisierungsserver die Parameter, welche unter [SMART App Launch - 2.0.9 - Obtain authorization code](https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-4-authorization-code) dokumentiert sind, an den Client zurückliefern. Die Hinweise zur Gültigkeitsdauer des Autorisierungscodes MÜSSEN eingehalten werden.
 
+
+
 Als Ergebnis dieses Schritts erhält der Client einen einmalig gültigen Autorisierungscode, welcher im weiteren Verlauf gegen ein Autorisierungstoken getauscht werden kann.
+
 
 ----
 
