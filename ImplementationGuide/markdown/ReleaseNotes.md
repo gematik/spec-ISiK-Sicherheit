@@ -4,6 +4,14 @@ Im Rahmen der ISiK-Veröffentlichungen wird das [Semantic Versioning](https://se
 
 Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von Releases. Die dritte Ziffer Y (Release x.0.y) bezeichnet eine technische Korrektur und versioniert kleinere Änderungen (Packages) während eines Jahres, z. B. 1.0.1.
 
+Version: 3.0.0-rc4
+
+Datum: 29.05.2023
+
+* Die über die Interaktion mit dem Ressourcenserver hinausgehenden Teile von ISiK-Sicherheit aus ISiK Stufe 2 wurden als informative Erläuterungen wieder hinzugefügt. Hersteller oder Krankenhäuser, die SMART on FHIR vollständig umsetzen wollen, erhalten so Hinweise, wie dieses kongruet zu den sonstigen ISiK-Vorgaben möglich ist.
+* Die Hinweise zu einem "break-the-glass" Szenario wurden gestrichen, da hier die regulativen Rahmenbedingungen in Deutschland deutlich von den Annahmen in den referenzierten, auf das amerikanische Gesundheitssystem fokussierenden Quellen abweichen.
+* Hinweis auf den Aufrufparameter ISS_IDP hinzugefügt, der für die Unterstützung der sektoralen IdP relevant ist.
+
 Version: 3.0.0-rc3
 
 Datum: 25.04.2023

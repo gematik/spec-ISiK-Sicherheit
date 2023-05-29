@@ -1,15 +1,10 @@
-## ISiK-Sicherheit
-
----
-### Normativ
----
+# ISiK-Sicherheit
 
 Das Modul ISiK-Sicherheit fokussiert in der aktuellen Stufe 3 auf die Autorisierung von Zugriffen menschlicher Nutzer auf geschützte FHIR-Ressourcen. Es schafft damit die Voraussetzungen für eine interoperable Integration von ISiK-Ressourcenservern in eine bestehenden Sicherheitsinfrastruktur im Krankenhaus. Hierbei werden über die generelle Absicherung von FHIR-ReST-Aufrufen hinaus keine Annahmen zu Anwendungsfällen oder den Deployments der logischen Komponenten des Autorisierungssystems gemacht. 
 
-Um in einer nächsten Stufe auch eine Interoperabilität von ISiK-Clients mit einer (bestehenden) Sicherheitsinfrastruktur im Krankenhaus herzustellen, werden jedoch bestimmte Annahmen zum Einsatzkontext und zur Ablaufintegration dieser ISiK-Clients unumgänglich sein. Beispielsweise stellt der _EHR Launch_ aus SMART-on-FHIR einen für Patientenportale interessanten Ansatz dar, da er einen sehr modularen Aufbau solcher Portale unter Nutzung von standardisierten, funktionalen Bausteinen unterstützt.  Dieses wirkt aber unmittelbar auf die Anforderungen an die Bindung von ISiK-Client und Autorisierungsserver und verlangt zwingend die Integration mit Systemen, die eine Anwendung in einen bestehenden oder neu aufgebauten Kontext stellen können. Für Häuser mit bestehenden IHE-orientierten Infrastrukturen kann hingegen eine Ausrichtung der weiteren Ausgestaltung von ISiK-Sicherheit an dem [IHE-Profil _Internet User Authorization_](https://profiles.ihe.net/ITI/IUA/index.html) sinnvoll sein, um hierbei z. B. von dem dadurch unterstützten Zusammenspiel mit gemäß [_IHE BPPC_](https://profiles.ihe.net/ITI/TF/Volume1/ch-19.html) umgesetzten Einwilligungen zu profitieren. Sie das Modul ISiK-Sicherheit stellt BPPC eine eigene OAuht2 Profilierung dar. ISiK-Sicherheit soll durch seine modulare Ausrichtung keine anderen Profilierungen wie BPPC ausschließen sondern eine Integration mit diesen Profielen ermöglichen. Alternative Profilierungen zu BPPC werden in Stufe 4 von ISiK-Sicherheit betrachtet und kommentiert.
+## Aufbau von ISiK-Sicherheit in ISiK Stufe 3
+ISiK-Sicherheit setzt auf dem HL7-Standard _SMART on FHIR_ auf, der u. a. das Zusammenspiel der Standards FHIR und OAuth2 für die Weitergabe von Zugriffskontexten zum sicheren Zugriff auf FHIR-Ressourcen beschreibt. Wie in der [Motivation](Motivation.md) beschrieben, umfassen die normativen Vorgaben von ISiK-Sicherheit jedoch nur eine Untermenge des SMART-on-FHIR-API. Entsprechend gliedert sich ISiK-Sicherheit in ISiK Stufe 3 in einen normativen und einen informativen Teil:
+* Der Abschnitt [Autorisierung](ISiKAutorisierung.md) gibt einen Überblick über den Standard 'SMART on FHIR' und beschreibt, welche Teile des Standards normative Vorgaben für ISiK-Sicherheit darstellen. Diese Teile werden im Kapitel [Konformität](Conformance.md) in Form einer technischen Spezifikation für ISiK profiliert
+* Im Abschnitt [SMART on FHIR](ISiKundSMART) wird skizziert, wie eine vollständige Umsetzung des SMART-on-FHIR-Standards im Kontext von ISiK aussehen kann. Dieser Abschnitt ist informativ, d. h. in ISiK Stufe 3 nicht Gegenstand des Konformitätsfeststellungsverfahrens.
 
-Ein Beispiel für den eingangs skizzierten _EHR-Launch_ ist die vereinfachte Integration von SMART-Apps für Patienten. Die Unterstützung von SMART-on-FHIR-API durch KIS Systeme kann es Patienten perspektivisch ermöglichen verschiedene Apps im Krankenhauskontext mit ihren Daten anzureichern bzw. ihre Daten durch diese Appikationen auswerten zu lassen. 
-
-Ein weiterer perspktivisch zu unterstützender Use Cases ist die Integration der Sektoralen IDPs der Gematik. Durch diese soll es Patienten/Versicherten vereinfachten werden sich im Krankenhauskontext zu Authentifizieren.
-
-Es wird angestrebt, Festlegungen zur weiteren Entwicklung von ISiK-Sicherheit in enger Abstimmung mit Herstellern und Krankenhäusern zu treffen. Hierbei sollen auch die weiteren Entwicklungen zur TI 2.0 - z. B. Anforderungen aus dem Zusammenspiel mit sektoralen Identitätsdiensten - berücksichtigt werden.
+Alle nicht-normativen Bestandteile der technischen Ausführungen zu ISik-Sicherheit sind mit dem Label 'Informativ' im Seitenkopf gekennzeichnet.

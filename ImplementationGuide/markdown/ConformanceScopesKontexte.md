@@ -1,9 +1,5 @@
 # Conformance: Scopes und Kontexte
 
----
-### Normativ
----
-
 Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in der Rolle eines ISiK-Ressourcenservers. Diese Systeme MÜSSEN die auf dieser Seite beschriebenen Autorisierungsinformationen bei jedem Zugriffsversuch auf FHIR-Ressourcen verarbeiten können.
 
 ## Kontexte 
@@ -11,9 +7,6 @@ Die Vorgaben von ISiK-Sicherheit betreffen aktuell ausschließlich Systeme in de
 Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers DÜRFEN KEINE Zugriffstoken (_Access Token_) akzeptieren, in denen kein Kontext als Bezugspunkt für die gewährten Zugriffsrechte angegeben ist bzw. per _Introspection_ ermittelt werden kann. 
 
 Es MÜSSEN alle Kontexte unterstützt werden, für die eine FHIR _CompartmentDefinition_ existiert. Der Name des Kontexts entspricht dem kleingeschriebenen Wert des Elements 'CompartmentDefinition.code' ("patient", "encounter", etc.).
-
-Bestätigungstelevante Systeme in der Rolle eines ISiK-Ressourcenserver DÜRFEN KEINE eigenen _CompartmentDefinitionen_ definieren da eine Definition von CompartmentDefinitionen alleinig durch HL7 erfolgen darf. Sollten eigene CompartmentDefinitionen notwendig sein, sind diese über HL7 zu definieren und in einem neuen FHIR Release zu publizieren.
-
 
 Beispiele: 
 
@@ -25,14 +18,16 @@ Beispiele:
 
 Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN bei der Durchsetzungen von Autorisierungen die Festlegungen zum [_Compartment Patient_](http://hl7.org/fhir/R4/compartmentdefinition-patient.html) unterstützen. 
 
-Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN die CompartmentDefinitionen im [_CapabilityStatemnt_](https://www.hl7.org/fhir/capabilitystatement.html) des ISiK-Ressourcenservers referenzieren.
-
 Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers SOLLEN bei der Durchsetzungen von Autorisierungen die Festlegungen zum [_Compartment Encounter_](http://hl7.org/fhir/R4/compartmentdefinition-encounter.html) unterstützen. 
 
 Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers KÖNNEN weitere der in FHIR vorgegbenen [_CompartmentDefinition_](http://hl7.org/fhir/R4/compartmentdefinition.html)-Festlegungen unterstützen:
 * [Practitioner](http://hl7.org/fhir/R4/compartmentdefinition-practitioner.html)
 * [RelatedPerson](http://hl7.org/fhir/R4/compartmentdefinition-relatedperson.html)
 * [Device](http://hl7.org/fhir/R4/compartmentdefinition-device.html)
+
+Bestätigungstelevante Systeme in der Rolle eines ISiK-Ressourcenserver DÜRFEN KEINE eigenen _CompartmentDefinitionen_ definieren da eine Definition von CompartmentDefinitionen alleinig durch HL7 erfolgen darf. 
+
+Bestätigungsrelevante Systeme in der Rolle eines ISiK-Ressourcenservers MÜSSEN die unterstützten _Compartment_-Definitionen in ihrem [_CapabilityStatement_](https://www.hl7.org/fhir/capabilitystatement.html) benennen.
 
 Die Unterstützung eines Compartments umfasst, dass die Festlegungen in der _CompartmentDefinition_ 
 * die Gruppierung von über _Scopes_ angegebenen Berechtigungen zu der als Kontext angegebenen Ressource bestimmen und
@@ -71,7 +66,7 @@ Berechtigungen werden im _Scope_ in der dargestellten Reihenfolge ('cruds') ange
 Die Möglichkeit von [Wildcard-Scopes](https://hl7.org/fhir/smart-app-launch/STU2/scopes-and-launch-context.html#wildcard-scopes) MUSS unterstützt werden.
 
 ### Filter
-Alle in ISiK STufe 3 für den Ressourcetyp unterstützten Suchparameter inkl. Modifier und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden.
+Alle in ISiK Stufe 3 für den Ressourcetyp unterstützten Suchparameter inkl. Modifier und Kombinationsmöglichkeiten MÜSSEN als Teil eines _Scopes_ unterstützt werden.
 
 ### Beispiele
 

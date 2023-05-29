@@ -1,8 +1,4 @@
-# Übersicht ISiK-Sicherheit
-
----
-### Normativ
----
+# ISiK-Sicherheit: Autorisierung
 
 Am Baustein Autorisierung von ISiK-Sicherheit teilnehmende Systeme können eine oder mehrere der folgenden Rollen einnehmen:
 * ISiK-Ressourcenserver: IT-Systeme stellen in dieser Rolle geschützte Ressourcen über ISiK-konforme FHIR-ReST-Endpunkte bereit oder nehmen geschützte Ressourcen über ISiK-konforme FHIR-ReST-Endpunkte entgegen.
@@ -14,9 +10,9 @@ Ein IT-System im Krankenhaus kann mehrere der genannten Rollen einnehmen. Beispi
 
 ## SMART App Launch
 
-Ziel von ISiK-Sicherheit Teil: Autorisierung (im folgenden ISiK-Sicherheit) ist, bestehende Best Practices zur Autorisierung von Zugriffen auf FHIR-Server aufzugreifen und - unter Berücksichtigung der Weiterentwicklung der Telematikinfrastruktur - für die Gegebenheiten deutscher Krankenhäuser zu profilieren. 
+Ziel von ISiK-Sicherheit in ISiK Stufe 3 ist, bestehende Best Practices zur Autorisierung von Zugriffen auf FHIR-Server aufzugreifen und - unter Berücksichtigung der Weiterentwicklung der Telematikinfrastruktur - für die Gegebenheiten deutscher Krankenhäuser zu profilieren. 
 
-ISiK-Sicherheit soll durch eine wie oben skizzierte Integration verschiedener Systemrollen eine Umsetzung des als Teil des SMART-on-FHIR-API definierten [HL7 Implementierungsleitfadens _Smart App Launch - v2.0.0_](https://hl7.org/fhir/smart-app-launch/STU2/index.html) ermöglichen. Für ISiK Stufe 3 werden jedoch keine normativen Festlegungen getroffen, die andere Profile auf dem _OAuth2_-Standard wie z. B. _IHE IUA_ grundsätzlich ausschließen. Dies soll es Krankenhäusern erlauben, für die Absicherung gegen externe Zugriffe (z. B. ausgehend von einem Patientenportal) und für die Autorisierung interner Zugriffe (z. B. zur Implementierung der OH KIS) unterschiedliche Standardprodukte einzusetzen, die jeweils auf die spezifischen Anforderungen zugeschnitten sind.
+ISiK-Sicherheit soll durch eine wie oben skizzierte Integration verschiedener Systemrollen eine Umsetzung des als Teil des SMART-on-FHIR-API definierten [HL7 Implementierungsleitfadens _Smart App Launch - v2.0.0_](https://hl7.org/fhir/smart-app-launch/STU2/index.html) ermöglichen. Für ISiK Stufe 3 werden jedoch keine normativen Festlegungen getroffen, die andere Profile auf dem _OAuth2_-Standard wie z. B. _IHE IUA_ grundsätzlich ausschließen. Dies soll es Krankenhäusern erlauben, für die Absicherung gegen externe Zugriffe (z. B. ausgehend von einem Patientenportal) und für die Autorisierung interner Zugriffe (z. B. zur Implementierung der OH KIS) unterschiedliche Standardprodukte einzusetzen, die jeweils auf die spezifischen Anforderungen zugeschnitten sind. 
 
 Ziel des _Smart App Launch_ ist es, ein Zugriffstoken von einem OAuth2-kompatiblen Autorisierungsserver zu erhalten, mittels dessen ein ISiK-Client eine FHIR RESTful API-Interaktion gegen einen ISiK-Ressourcenserver durchführen kann. Dies erfolgt unter Berücksichtigung der vorab festgelegten Zugriffsrechte der Benutzer, die sich z. B. aus deren Rollen oder anderen Nutzerattributen ableiten können. Um ein Zugriffstoken zu erhalten und mit diesem als Autorisierungsnachweis auf einen Ressourcenserver zuzugreifen, sieht der _Smart App Launch_ die in der nachfolgenden Tabelle aufgeführten Schritte vor. Die Kreuze geben an, welche der oben beschriebenen logischen Bausteine an dem jeweiligen Schritt beteiligt sind.
 
@@ -35,7 +31,7 @@ Eine Übersicht des zusammenhängenden _SMART App Launch_ ist dem Abschnitt [SMA
 
 -------
 
-## ISiK-Sicherheit Teil: Autorisierung in ISiK Stufe 3
+## Vorgaben zur Autorisierung in ISiK Stufe 3
 
 Wie aus der Tabelle zu ersehen, betrifft das Gros der SMART-on-FHIR-Spezifikation das Zusammenspiel der Systeme in den Rollen des ISiK-Clients und des Autorisierungsservers. Dieses wird zusätzlich stark geprägt durch den Kontext aus welchem bzw. in welchen der Client - d. h. die wiederverwendbare, austauschbare, modulare Anwendung - dynamisch gestartet wird:
 
@@ -46,6 +42,7 @@ Ein Client kann aus dem Kontext eines anderen Systems (das dann in der Rolle des
 Clients, welche außerhalb eines anderen Systems gestartet werden (z.B. Mobile Apps welche Daten von einem ISiK-Ressourcenserver abfragen möchten), müssen ihren Kontext explizit über eine Nutzerinteraktion gegen eine als ISiK-App-Launcher fungierende Komponente aufbauen. Dieses kann beispielsweise ein Widget zur Auswahl des zu aktivierenden Patientenkontextes sein (siehe z. B. "patient context picker" in der [Open Source Keycloak-Erweiterung _Alvearie_](https://github.com/Alvearie/keycloak-extensions-for-fhir)).
 
 Beide Launch-Sequenzen bedingen eine weitreichende Integration von Autorisierungsserver und App-Laucher, die gemeinsam den Launch-Kontext des ISiK-Clients bestimmmen und verwalten. Diese enge Bindung steht im Widerspruch zu den formulierten [Vorgaben für ISiK-Sicherheit in ISiK Stufe 3](Motivation.md) und erschwert die Nutzung von marktgängigen Produkten oder open Source bibliotheken zum Aufbau eines IAM-Subsystems. Daher werden in ISiK Stufe 3 im Modul ISiK-Sicherheit zunächst nur Interaktionen gegen Systeme in der Rolle eines ISiK-Ressourcenservers definiert. Die Vorgaben umfassen dabei insbesondere die SMART-Konfiguration (Schritt 3) sowie die Syntax und Semantik der über das Zugriffstoken vermittelten Autorisierungen (Schritt 6). 
+Hersteller und/oder Krankenhäuser, die über ISiK Stufe 3 hinaus weitere Betandteile des SMART-on-FHIR _SMART App Launch_ umsetzen wollen, finden in dem (informativen) Abschnitt [ISiK und SMART on FHIR](ISiKundSMART.md) entsprechende Hinweise.
 
 -------
 
@@ -66,7 +63,7 @@ Jeder Zugriff auf eine geschützte Ressource erfolgt im Kontext eines Patienten,
 
 Beispiel: Der Nutzer hat in/aus der ISiK-Clientanwendung den Patient "123" geöffnet und möchte nun Daten zu diesem Patienten verarbeiten, zu deren Abruf eine Autorisierung erforderlich ist. Der Zugriffskontext der Autorisierung ist der Patient "123". Alle anwendbaren Zugriffsrechte (s.u.) beziehen sich auf den Patienten "123". Das _Patient_-Compartment beschreibt, wie der Ressourcenserver validieren kann, dass eine Ressource (z. B. eine _Observation_) im Kontext des Patient "123" steht.
 
-ISiK-Sicherheit macht in der ISiK Stufe 3 keine Vorgabe, wie ein ISiK-Client in einen bestimmten Kontext gestellt wird (SMART-on-FHIR sieht hierfür z. B. die oben skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt werden und kann dabei weiter eingeschränkt werden kann). Es wird jedoch verlangt, dass eine Kontextinformation als Teil des Zugriffstokens (s.u.) beim Aufruf eineS RESTful API eines ISiK-Ressourcenservers übergeben wird und dass der Ressourcenserver alle im Zugriffstoken kodierten Autorisierungsinformationen in diesem Kontext anwendet.
+ISiK-Sicherheit macht in der ISiK Stufe 3 keine Vorgabe, wie ein ISiK-Client in einen bestimmten Kontext gestellt wird (SMART-on-FHIR sieht hierfür z. B. die oben skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann). Es wird von ISiK-konformen Ressourcenservern jedoch verlangt, dass diese beim Aufruf eineS RESTful API in einem Zugriffstoken empfangene Kontext- und Autorisierungsinformationen auswerten und anwenden können.
 
 ## Compartments
 
@@ -74,7 +71,7 @@ Autorisierungen können in FHIR an eine 'Fokus'-Ressource gebunden werden, z. B.
 
 Beispiel: Für den Ressourcentyp [_Condition_](http://hl7.org/fhir/condition.html) legt die [_CompartmentDefinition_ der _Patient_-Ressource](http://hl7.org/fhir/compartmentdefinition-patient.html) die Elemente 'Condition.patient' und 'Condition.participant-actor' als verbindende Elemente fest. Eine Autorisierung für den Zugriff auf Patientendaten im Kontext des Patienten "123" umfasst damit grundsätzlich nur _Condition_-Ressourcen, deren 'subject'- oder 'participant-actor'-Element auf den Patienten "123" verweist.  
 
-ISiK-Sicherheit in der ISiK Stufe 3 verlangt von FHIR-Ressourcenservern, dass diese zumindest Autorisierungen mit Bezug zu der in FHIR definierten _Compartment_-Definition für patientenbezogene Daten verarbeiten können.
+ISiK-Sicherheit in der ISiK Stufe 3 verlangt von Ressourcenservern, dass diese zumindest Autorisierungen mit Bezug zu der in FHIR definierten _Compartment_-Definition für _Patient_-Ressourcen verarbeiten können.
 
 ## Zugriffsrechte auf Ressourcen
 
