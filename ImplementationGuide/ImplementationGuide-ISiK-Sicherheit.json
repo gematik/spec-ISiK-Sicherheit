@@ -67,7 +67,7 @@
               "generation": "markdown",
               "page": [
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt1RegistierungClient.md",
+                  "nameUrl": "ImplementationGuide/markdown/Schritt1RegistrierungClient.md",
                   "title": "Schritt 1 - Registrierung Client",
                   "generation": "markdown"
                 },
@@ -77,7 +77,7 @@
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt3EvaluierungAutorisierungsanfrage.md",
+                  "nameUrl": "ImplementationGuide/markdown/Schritt3EvaluierungAutorisierungsanfragen.md",
                   "title": "Schritt 3 - Evaluierung Autorisierungsanfrage",
                   "generation": "markdown"
                 },
