@@ -33,7 +33,4 @@ Die Änderungen sind folgende:
 *	Für die Kodierung der Scopes wurde in ISiK Stufe 2 die Unterstützung der SMART on FHIR Syntax in den Versionen 1 und 2 verpflichtend vorgegeben. In Stufe 3 ist nur noch die v2-Syntax verpflichtend. Hiermit sollen Deployments vereinfacht werden, bei denen die Durchsetzung der (delegierten)     Berechtigungen über ein vorgelagertes API-Gateway bzw.- einen Reverse Proxy erfolgt.
 
 
-**Full Changelog**: https://github.com/gematik/spec-ISiK-Sicherheit/compare/1.0.0...v.3.0.0-rc2
-
-
 ----
