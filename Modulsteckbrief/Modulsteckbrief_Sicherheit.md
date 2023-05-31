@@ -81,5 +81,5 @@ System-Level-Scopes:
 
 ### Testing
 
-Das Testing-Backend muss um einen Autorisierungsserver erweitert werden, der ISiK-konforme _Access Token_ ausstellt. Hersteller sollen alternativ in der Testkonfiguration angeben können, dass sie einen eigene Autorisierungsserver nutzen. Die _Endpunkte müssen zur Laufzeit des Tests über die _SmartConfiguration_ des zu testenden ISiK-Ressourcenservers abfragbar sein.
+Das Testing-Backend muss um einen Autorisierungsserver erweitert werden, der ISiK-konforme _Access Token_ ausstellt. Hersteller sollen alternativ in der Testkonfiguration angeben können, dass sie einen eigene Autorisierungsserver nutzen. Die Endpunkte müssen zur Laufzeit des Tests über die _SmartConfiguration_ des zu testenden ISiK-Ressourcenservers abfragbar sein.
   
