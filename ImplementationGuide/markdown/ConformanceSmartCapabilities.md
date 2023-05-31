@@ -13,7 +13,7 @@ Im Rahmen des Bestätigungsverfahrens für ISiK-Sicherheit in ISiK Stufe 3 werde
   * Der _Grant Type_ ```refresh_token``` SOLL unterstützt werden. Wenn dieser _Grant Type_ angegeben ist, MUSS eine Erneuerung des _Access Token_ über ein _Refresh Token_ möglich sein.
 * ```token_endpoint```: Es MUSS die URL des Token-Endpunkts des _OAuth2_-Autorisierungsservers angegeben sein, über die ein Zugriffstoken zur Bestätigung einer Autorisierung zum Zugriff auf geschützte Ressourcen des ISiK-Ressourcenservers abgerufen werden kann.
 * ```code_challenge_methods_supported```: Es MÜSSEN die vom Autorisierungsserver unterstützten PKCE-Code-Challenge-Methoden angegeben sein. Die Methode ```S256``` MUSS unterstützt werden. Die Methode ```plain``` DARF NICHT unterstützt werden.
-* ```scopes_supported```: siehe [Scopes und Kontexte](ConformanceScopesKontexte.md). Der ISiK-Ressourcenserver MUSS alle aufgeführten _Scopes_ unterstützen. Er KANN weitere Scopes unterstützen. 
+* ```scopes_supported```: siehe [Scopes und Kontexte](ConformanceScopesKontexte.md). Der ISiK-Ressourcenserver MUSS alle aufgeführten _Scopes_ unterstützen. Er KANN weitere _Scopes_ unterstützen. 
 * ```capabilities```
   * ```permission-v2```: ISiK-Ressourcenserver MÜSSEN die SMARTv2-Syntax für die Kodierung von _Scopes_ unterstützen. Sie KÖNNEN zusätzlich auch die grobranulare Syntax von SMARTv1 unterstützen (```permission-v1```)
 

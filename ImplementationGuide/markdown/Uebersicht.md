@@ -4,7 +4,7 @@ Das Modul ISiK-Sicherheit fokussiert in der aktuellen Stufe 3 auf die Autorisier
 
 ## Aufbau von ISiK-Sicherheit in ISiK Stufe 3
 ISiK-Sicherheit setzt auf dem HL7-Standard _SMART on FHIR_ auf, der u. a. das Zusammenspiel der Standards FHIR und OAuth2 für die Weitergabe von Zugriffskontexten zum sicheren Zugriff auf FHIR-Ressourcen beschreibt. Wie in der [Motivation](Motivation.md) beschrieben, umfassen die normativen Vorgaben von ISiK-Sicherheit jedoch nur eine Untermenge des SMART-on-FHIR-API. Entsprechend gliedert sich ISiK-Sicherheit in ISiK Stufe 3 in einen normativen und einen informativen Teil:
-* Der Abschnitt [ISiK-Sicherheit: Autorisierung](ISiKAutorisierung.md) gibt einen Überblick über den Standard 'SMART on FHIR' und beschreibt, welche Teile des Standards normative Vorgaben für ISiK-Sicherheit darstellen. Diese Teile werden im Kapitel [ISiK-Konformität](Conformance.md) in Form einer technischen Spezifikation für ISiK profiliert
+* Der Abschnitt [ISiK-Sicherheit: Autorisierung](ISiKAutorisierung.md) gibt einen Überblick über den Standard _SMART on FHIR_ und beschreibt, welche Teile des Standards normative Vorgaben für ISiK-Sicherheit darstellen. Diese Teile werden im Kapitel [ISiK-Konformität](Conformance.md) in Form einer technischen Spezifikation für ISiK profiliert.
 * Im Abschnitt [SMART on FHIR](ISiKundSMART) wird skizziert, wie eine vollständige Umsetzung des SMART-on-FHIR-Standards im Kontext von ISiK aussehen kann. Dieser Abschnitt ist informativ, d. h. in ISiK Stufe 3 nicht Gegenstand des Konformitätsfeststellungsverfahrens.
 
 Alle nicht-normativen Bestandteile der technischen Ausführungen zu ISik-Sicherheit sind mit dem Label 'Informativ' im Seitenkopf gekennzeichnet.
