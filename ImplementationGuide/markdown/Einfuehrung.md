@@ -2,11 +2,11 @@
 
 ----
 
-Version: 3.0.0-rc3
+Version: 3.0.0-rc4
 
-Datum: 25.04.2023
+Datum: 01.06.2023
 
-Status: Kommentierung
+Status: Benehmensherstellung
 
 Realm: Deutschland
 
