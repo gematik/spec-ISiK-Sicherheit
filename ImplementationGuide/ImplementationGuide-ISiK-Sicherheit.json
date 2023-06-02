@@ -20,11 +20,6 @@
           "generation": "markdown"
         },
         {
-          "nameUrl": "ImplementationGuide/markdown/ReleaseMatrix.md",
-          "title": "Release Matrix",
-          "generation": "markdown"
-        },
-        {
           "nameUrl": "ImplementationGuide/markdown/Motivation.md",
           "title": "Motivation",
           "generation": "markdown"
@@ -58,8 +53,45 @@
           "page": [
             {
               "nameUrl": "ImplementationGuide/markdown/ISiKAutorisierung.md",
-              "title": "ISiK Autorisierung",
+              "title": "ISiK-Sicherheit: Autorisierung",
               "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/markdown/ISiKundSMART.md",
+              "title": "SMART on FHIR",
+              "generation": "markdown",
+              "page": [
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Schritt1RegistrierungClient.md",
+                  "title": "Schritt 1 - Registrierung Client",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Schritt2ClientAutorisierung.md",
+                  "title": "Schritt 2 - Client Autorisierung",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Schritt3EvaluierungAutorisierungsanfragen.md",
+                  "title": "Schritt 3 - Evaluierung Autorisierungsanfrage",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Schritt4AustauschAutorisierungscodesZugangstoken.md",
+                  "title": "Schritt 4 - Austausch - Autorisierungscodes Zugangstoken",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Schritt5FhirRestInteraktion.md",
+                  "title": "Schritt 5 - FHIR Restful Interaktion",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/markdown/Schritt6RefreshToken.md",
+                  "title": "Schritt 6 - Refresh Token & Revocation",
+                  "generation": "markdown"
+                }
+              ]
             }
           ]          
         },
