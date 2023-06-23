@@ -6,6 +6,16 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Eine Gesamtübersicht zu den Releases der ISiK Module ist über die [Release-Tabelle](https://github.com/gematik/spec-ISiK-Releasematrix/blob/main/ReleaseMatrix.md) möglich.
 
+
+----
+Version: 3.0.0
+
+Datum: 1.7.2023
+
+* Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
+
+
+----
 Version: 3.0.0-rc5
 
 Datum: 21.06.2023
