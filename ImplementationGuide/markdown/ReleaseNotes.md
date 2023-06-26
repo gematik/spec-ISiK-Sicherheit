@@ -19,7 +19,7 @@ Version: 3.0.0-rc5
 
 Datum: 21.06.2023
 
-* Umsetzung von https://service.gematik.de/browse/PTDATA-369: Beschränkung der normativen Berücksichtigung von CompartmentDefinitions auf das Patient Compartment und klarere Formulierungen zum Zusammenspiel von Scopes und Compartments
+* Beschränkung der normativen Berücksichtigung von CompartmentDefinitions auf das Patient Compartment und klarere Formulierungen zum Zusammenspiel von Scopes und Compartments
 
 ----
 Version: 3.0.0-rc4
