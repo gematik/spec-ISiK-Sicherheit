@@ -6,12 +6,22 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Eine Gesamtübersicht zu den Releases der ISiK Module ist über die [Release-Tabelle](https://github.com/gematik/spec-ISiK-Releasematrix/blob/main/ReleaseMatrix.md) möglich.
 
+
+----
+Version: 3.0.0
+
+Datum: 01.07.2023
+
+* Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
+
+----
 Version: 3.0.0-rc5
 
 Datum: 21.06.2023
 
-* Umsetzung von https://service.gematik.de/browse/PTDATA-369: Beschränkung der normativen Berücksichtigung von CompartmentDefinitions auf das Patient Compartment und klarere Formulierungen zum Zusammenspiel von Scopes und Compartments
+* Beschränkung der normativen Berücksichtigung von CompartmentDefinitions auf das Patient Compartment und klarere Formulierungen zum Zusammenspiel von Scopes und Compartments
 
+----
 Version: 3.0.0-rc4
 
 Datum: 01.06.2023
@@ -20,13 +30,14 @@ Datum: 01.06.2023
 * Die Hinweise zu einem break-the-glass-Szenario wurden gestrichen, da hier die regulativen Rahmenbedingungen in Deutschland deutlich von den Annahmen in den referenzierten, auf das amerikanische Gesundheitssystem fokussierenden Quellen abweichen.
 * Hinweis auf den Aufrufparameter "ISS_IDP" hinzugefügt, der für die Unterstützung der sektoralen IdP relevant ist.
 
+----
 Version: 3.0.0-rc3
 
 Datum: 25.04.2023
 
 * ReleaseNotes added
 
-
+----
 Version: 3.0.0-rc2
 
 Datum: 24.04.2023
