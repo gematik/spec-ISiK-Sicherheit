@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung</title>
+
+        <link rel="icon" href="static/styles/common/favicon.ico" />
+
+        <script src="static/styles/common/jquery/jquery.min.js"></script>
+        <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/common/main.min.css" />
+        <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+        <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1d9a8dca3e36700" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bersicht <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Uebersicht.html">
+                                            &#xDC;bersicht
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            ISiK-Sicherheit: Autorisierung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                ISiK-Konformit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            ISiK-Konformit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <h1 id="isik-sicherheit">ISiK-Sicherheit</h1>
+<p>Sicherheit hat im Zusammenhang mit einem interoperablen Datenaustausch in und mit Krankenhäusern viele Facetten: Nutzer müssen authentifiziert sein, Berechtigungen müssen definiert und durchgesetzt werden, Daten müssen gegen Verfälschung geschützt und verfügbar sein, Datenänderungen müssen nachvollziehbar sein etc. Hierzu können Technologien wie z. B. <a href="http://saml.xml.org/saml-specifications"><em>SAML</em></a> oder <a href="https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html"><em>UMA</em></a> genutzt werden. Diese Technologien basieren auf einem etablierten und erprobten Stack aus Standards wie [<em>ReST Representational State Transfer</em>] (<a href="https://restfulapi.net/">https://restfulapi.net/</a>), <a href="https://oauth.net/2/"><em>OAuth2</em></a> oder , <a href="https://openid.net/developers/specs/"><em>OpenID Connect</em></a>. Diese Standards sind domänenunabhängig spezifiziert und müssen daher für den Einsatz im deutschen Gesundheitswesen und ggf. auch für das Zusammenspiel mit dem HL7 FHIR-Standard profiliert werden. FHIR bietet hierzu unterstützende Ressourcen wie z. B. <a href="http://hl7.org/fhir/consent.html"><em>Consent</em></a>, <a href="http://hl7.org/fhir/auditevent.html"><em>AuditEvent</em></a> oder <a href="http://hl7.org/fhir/compartmentdefinition.html"><em>CompartmentDefinition</em></a> an, die eine Bindung zwischen FHIR und dedizierten Sicherheitsstandards herstellen können. Im Fall von ISiK sind zusätzlich im deutschen Gesundheitswesen bereits definierte Bausteine der Gesundheitstelematik wie z. B. sektorale Identitätsdienste oder Konnektoren/TI-Gateways zu berücksichtigen, die idealerweise für die Authentifizierung an Patienten- und Zuweiserportalen, dem Schutz von Gesundheitsdaten im Krankenhaus, einem Ende-zu-Ende gesicherten Datenaustausch mit Niedergelassenen und anderen potenziell ISiK-relevanten Themen genutzt werden sollen.</p>
+<p><strong>Autorisierung von Zugriffen auf FHIR Ressourcen</strong></p>
+<p>Ziel der vorliegenden Spezifikation ist es, per FHIR RESTful API formulierte Anfragen an einen Ressourcenserver unter Nutzung eines zuverlässigen und sicheren Autorisierungsprotokolls - und damit unter Berücksichtigung von vergebenen Berechtigungen und formulierten Sicherheitsmechanismen - zu beantworten. Hierzu werden Teile des von <em>SMART Health IT</em> und <em>Boston Childrens Hospital</em> auf Basis des OAuth2-Standards definierten, von HL7 als Teil des FHIR-Standards übernommenen <a href="https://smarthealthit.org/smart-on-fhir-api/"><em>'SMART on FHIR' API</em></a> profiliert, so dass diese im Kontext der bestehenden ISiK-Festlegen nutzbar sind. Das SMART-on-FHIR-API soll die Weiterentwicklung von <em>Electronic Health Records</em> (EHR) zu Plattformen befördern, bei denen - analog zu mobilen Plattformen wie IOS oder Android - Anwendungen aus einem <em>Store</em> in eine solche Plattform eingebracht und dort in einer sicheren Umgebung ausgeführt werden (<em>&quot;SMART App Launch&quot;</em>).</p>
+<h3 id="smart-on-fhir">SMART on FHIR</h3>
+<p>Technische Systeme können in einer SMART-on-FHIR-konformen Umsetzung eines Autorisierungssystems eine oder mehrere der folgenden Rollen einnehmen:</p>
+<ul>
+<li>Ressourcenserver: IT-Systeme stellen in dieser Rolle geschützte Ressourcen über FHIR-RESTful-Endpunkte bereit oder nehmen geschützte Ressourcen über FHIR-RESTful-Endpunkte entgegen.</li>
+<li>Client: IT-Systeme in dieser Rolle fragen geschützte Ressourcen von Ressourcenservern ab oder senden geschützte Ressourcen an Ressourcenserver.</li>
+<li>Autorisierungsserver: IT-Systeme in dieser Rolle stellen für authentifizierte Nutzer Sicherheitstoken aus, die einen Zugang zu auf Ressourcenservern verwalteten FHIR Ressourcen autorisieren.</li>
+<li>App-Launcher: IT-Systeme in dieser Rolle können einen Client aus ihrem eigenen Sicherheitskontext initialisieren oder in einen neu aufgesetzten Kontext stellen. Der Kontext kann z. B. der aktuell ausgewählte Patient oder Behandlungsfall sein.</li>
+</ul>
+<p>Ein IT-System im Krankenhaus kann mehrere der genannten Rollen einnehmen. Beispielsweise kann ein KIS selbst Ressourcen bereitstellen (&quot;Ressourcenserver&quot;), Ressourcen von spezialisierten Subsystemen abrufen (&quot;Client&quot;), die Autorisierung von Nutzern durchführen (&quot;Autorisierungsserver&quot;) und weitere Anwendungen aus dem aktuellen Nutzer- und/oder Patientenkontext heraus starten (&quot;App-Launcher&quot;). Durch eine solche Integration verschiedener Rollen kann ein KIS einen <em>Electronic Health Record</em> im Sinne von <em>SMART on FHIR</em> darstellen und damit als Plattform für wiederverwendbare, austauschbare und dynamisch startbare Anwendungen (<em>SMART Apps</em>) fungieren.</p>
+<h3 id="smart-app-launch">SMART App Launch</h3>
+<p>ISiK-Sicherheit soll durch eine wie oben skizzierte Integration verschiedener Systemrollen eine Umsetzung des als Teil des SMART-on-FHIR-API definierten <a href="https://hl7.org/fhir/smart-app-launch/STU2/index.html">HL7 Implementierungsleitfadens <em>Smart App Launch</em></a> ermöglichen. Für ISiK Stufe 3 werden jedoch keine normativen Festlegungen getroffen, die andere Profile auf dem <em>OAuth2</em>-Standard wie z. B. <em>IHE IUA</em> grundsätzlich ausschließen. Dies soll es Krankenhäusern erlauben, für die Absicherung gegen externe Zugriffe (z. B. ausgehend von einem Patientenportal) und für die Autorisierung interner Zugriffe (z. B. zur Implementierung der OH KIS) unterschiedliche Standardprodukte einzusetzen, die jeweils auf die spezifischen Anforderungen zugeschnitten sind.</p>
+<p>Ziel des <em>Smart App Launch</em> ist es, ein Zugriffstoken von einem OAuth2-kompatiblen Autorisierungsserver zu erhalten, mittels dessen ein Client eine FHIR-RESTful-Interaktion gegen einen Ressourcenserver durchführen kann. Dies erfolgt unter Berücksichtigung der vorab festgelegten Zugriffsrechte der Benutzer, die sich z. B. aus deren Rollen oder anderen Nutzerattributen ableiten können. Um ein Zugriffstoken zu erhalten und mit diesem als Autorisierungsnachweis auf einen Ressourcenserver zuzugreifen, sieht der <em>Smart App Launch</em> die in der nachfolgenden Tabelle aufgeführten Schritte vor. Die Kreuze geben an, welche der oben beschriebenen logischen Bausteine an dem jeweiligen Schritt beteiligt sind.</p>
+<table class="regular">
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">Schritt</th>
+<th style="text-align: center;">Ressourcenserver</th>
+<th style="text-align: center;">Client</th>
+<th style="text-align: center;">Autorisierungsserver</th>
+<th style="text-align: center;">App-Launcher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Aufsetzen Vertrauensbeziehungen</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Starten des Clients aus/in einen Launch-Kontext</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">(X)</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Abruf der SMART-Konfiguration</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4a</td>
+<td style="text-align: left;">Autorisierungsanfrage des Clients</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4b</td>
+<td style="text-align: left;">Prüfung Anfrage und Ausgabe Autorisierungscode</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Austausch des Codes gegen ein Zugriffstoken</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Autorisierte ReST-Interaktion</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">(X)</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">(7)</td>
+<td style="text-align: left;">Neu-Ausstellen eines Zugriffstokens</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Eine Übersicht des zusammenhängenden <em>SMART App Launch</em> ist dem Abschnitt <a href="https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#smart-authorization--fhir-access-overview">SMART App Launch - 2.0.3 - SMART authorization &amp; FHIR access: overview</a> des SMART-on-FHIR-Standards zu entnehmen. Darauf aufbauende informative Hinweise zur Umsetzung des vollständigen <em>SMART App Launch</em> im Krankenhaus sind auf der Seite <a href="ISiKundSMART.md">&quot;SMART on FHIR&quot;</a> zusammengefasst-</p>
+<h2 id="vorgaben-zur-autorisierung-in-isik-stufe-3">Vorgaben zur Autorisierung in ISiK Stufe 3</h2>
+<p>Wie aus der Tabelle zu ersehen, betrifft das Gros der SMART-on-FHIR-Spezifikation das Zusammenspiel der Systeme in den Rollen des Clients und des Autorisierungsservers. Dieses wird zusätzlich stark geprägt durch den Kontext aus welchem bzw. in welchen der Client - d. h. die wiederverwendbare, austauschbare, modulare Anwendung - dynamisch gestartet wird:</p>
+<ul>
+<li><p><a href="https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#step-2-launch-ehr">SMART App Launch - EHR Launch</a>:
+Ein Client kann aus dem Kontext eines anderen Systems (das dann in der Rolle des App-Launchers agiert) direkt innerhalb einer bestehenden <em>User Session</em> gestartet werden, beispielsweise indem der eingeloggte Benutzer den Client startet und dieser durch das System in einer neuen Browserinstanz oder einem eingebetteten <em>iframe</em> geöffnet wird.</p>
+</li>
+<li><p><a href="https://hl7.org/fhir/smart-app-launch/STU2/app-launch.html#launch-app-standalone-launch">SMART App Launch - Standalone Launch</a>:
+Clients, welche außerhalb eines anderen Systems gestartet werden (z.B. Mobile Apps welche Daten von einem ISiK-Ressourcenserver abfragen möchten), müssen ihren Kontext explizit über eine Nutzerinteraktion gegen eine als ISiK-App-Launcher fungierende Komponente aufbauen. Dieses kann beispielsweise ein Widget zur Auswahl des zu aktivierenden Patientenkontextes sein.</p>
+</li>
+</ul>
+<p>Beide Launch-Sequenzen bedingen eine weitreichende Integration von Autorisierungsserver und App-Laucher, die gemeinsam den Launch-Kontext des Clients bestimmen und verwalten. Diese enge Bindung steht im Widerspruch zu den formulierten <a href="Motivation.md">Vorgaben für ISiK-Sicherheit in ISiK Stufe 3</a> und erschwert die Nutzung von marktgängigen Produkten oder Open-Source-Bibliotheken zum Aufbau eines IAM-Subsystems. <strong>Daher werden in ISiK Stufe 3 im Modul ISiK-Sicherheit zunächst nur Interaktionen gegen Systeme in der Rolle eines Ressourcenservers definiert, der ISiK-relevante FHIR RESTful APIs anbietet. Diese Ressourcenserver sind in ISiK Stufe 3 für ISiK-Sicherheit bestätigungsrelevant und werden im Folgenden als 'ISiK-Ressourcenserver' bezeichnet.</strong> Die Vorgaben umfassen dabei insbesondere die SMART-Konfiguration (Schritt 3) sowie die Syntax und Semantik der über das Zugriffstoken vermittelten Autorisierungen (Schritt 6).</p>
+<p>Diese in ISiK Stufe 3 vorgenommene Profilierung des SMART-on-FHIR-API fokussiert somit auf die Absicherung der bereits in ISiK Stufe 2 betrachteten FHIR-Ressourcen wie z. B. <em>Patient</em>, <em>Encounter</em> oder <em>Observation</em>, macht den Herstellern und Krankenhäusern hierbei aber weder Vorgaben zu konkreten Berechtigungsmodellen/-regeln oder dem Zuschnitt der zum Identitäts- und Berechtigungsmanagement (IAM) einzusetzenden Produkte. Hersteller von bereits in ISiK Stufe 2 bestätigungsrelevanten Systemen werden durch die vorliegende Spezifikation in die Lage versetzt werden, eine konforme Erweiterung der bestehenden Implementierung zu erstellen und das Bestätigungsverfahren der gematik für ISiK-Sicherheit in ISiK Stufe 3 erfolgreich zu absolvieren, ohne dass hierzu tiefgreifende systemische Änderungen an der bestehenden Autorisierungs- und Authentifizierungsinfrastruktur erforderlich sind.</p>
+<h2 id="informative-hinweise-zur-weitergehenden-umsetzung-von-smart-on-fhir">Informative Hinweise zur weitergehenden Umsetzung von SMART on FHIR</h2>
+<p>Für Hersteller von Autorisierungsservern, <em>SMART Client-Apps</em>, KIS sowie Patienten- und Zuweiserportalen kann es attraktiv sein, ihre Lösungen über die in ISiK Stufe 3 normativen API-Aufrufe gegenüber ISiK-Ressourcenservern hinaus am SMART-on-FHIR-Standard auszurichten. Auch Krankenhäuser können von den grundlegenden Ideen hinter <em>SMART on FHIR</em> profitieren, z. B. indem funktionale Module von Drittherstellern über einen <em>Smart App Launch</em> einfacher in bestehende Systemlandschaften integriert werden können.</p>
+<p>ISiK Sicherheit in der Stufe 3 unterstützt dieses, indem die Integration der bestätigungsrelevanten Systeme und Schnittstellen in das gesamte SMART-on-FHIR-Ökosystem als informative Ergänzung zu ISiK 3 beschrieben wird. Im Abschnitt <a href="ISiKundSMART.md">&quot;SMART on FHIR&quot;</a> werden die kompletten Interaktionen zwischen EHR (KIS, Portal), <em>SMART Apps</em>, Autorisierungsserver und Ressourcenservern auf Basis der aktuellen Fassung des SMART-on-FHIR-Standards beschrieben. Diese Beschreibungen sind informativ, da sie aktuell nicht Gegenstand der ISiK-Konformitätsfeststellungen sind und da sie - zumindest in Teilen - auch über den Standard hinausgehende Good Pracitices beinhalten. Um den Lesern dieser Spezifikation die Unterscheidung zwischen normativen und informativen Bestandteilen von ISiK Sicherheit zu erleichtern, sind alle Seiten mit informativen Inhalten deutlich mit dem Label &quot;Informativ&quot; im Seitenkopf gekennzeichnet.</p>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

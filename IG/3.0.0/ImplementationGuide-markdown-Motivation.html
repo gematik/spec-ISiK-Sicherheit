@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung</title>
+
+        <link rel="icon" href="static/styles/common/favicon.ico" />
+
+        <script src="static/styles/common/jquery/jquery.min.js"></script>
+        <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/common/main.min.css" />
+        <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+        <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1d9a8dca3e36700" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Methodik.html">
+                                            Methodik
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-KompatibilitaetDerGematikSpezifikation.html">
+                                            Kompatibilit&#xE4;t der gematik-Spezifikation
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bersicht <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Uebersicht.html">
+                                            &#xDC;bersicht
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKAutorisierung.html">
+                                            ISiK-Sicherheit: Autorisierung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ISiKundSMART.html">
+                                            SMART on FHIR
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                ISiK-Konformit&#xE4;t <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Conformance.html">
+                                            ISiK-Konformit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ConformanceSmartCapabilities.html">
+                                            SMART Capabilities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-ConformanceScopesKontexte.html">
+                                            Scopes und Compartments
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <h1 id="motivation">Motivation</h1>
+<p>Innerhalb des <a href="https://simplifier.net/guide/implementierungsleitfadenisik-basismodul-stufe-3/ImplementationGuide-markdown-Einfuehrung?version=current">ISiK Basismoduls</a> erfolgt eine Erörterung der <a href="https://simplifier.net/guide/implementierungsleitfadenisik-basismodul-stufe-3/ImplementationGuide-markdown-Motivation?version=current">Motivation für den Einsatz einer ISiK-konformen Schnittstelle</a>. Ein entsprechender Fokus liegt hierbei auf der Integration von spezialisierten Subsystemen, welche entweder Informationen am Krankenhausinformationssystem (KIS) oder Klinischen Arbeitsplatzsystem (KAS) abrufen oder Informationen an die zuvor genannten Systeme zurückliefern. Hervorgehoben sei hier die Integration von mobilen Anwendungen und Web-Portalen.</p>
+<h2 id="gegenstand-von-isik-sicherheit-in-isik-stufe-3">Gegenstand von ISiK-Sicherheit in ISiK Stufe 3</h2>
+<p>Das ISiK-Modul 'Sicherheit' (im Folgenden 'ISiK-Sicherheit') legt in ISiK Stufe 3 die Anforderungen an eine Autorisierung für die über ISiK-Ressourcenserver realisierten FHIR-Endpunkte fest, so dass alle Systeme im Krankenhaus in der Lage sind, die Zugriffsrechte eines Benutzers an einen Client (z.B. klinische Subsysteme, Patientenportale, Terminverwaltungsysteme, mobile Apps zur Erfassung von Messwerten) zu delegieren. ISiK-Sicherheit ermöglicht es damit Krankenhäusern, Zugriffe auf FHIR-Schnittstellen und darüber zugreifbare Daten in standardisierter Form abzusichern und so die Schutzziele Vertraulichkeit und Integrität angemessen zu erfüllen. Das ISiK-Modul 'Sicherheit' macht hierbei keine Vorgaben zu den definierten Berechtigungen, sondern fokussiert auf den interoperablen Austausch von relevanten Autorisierungsinformationen für einen gewünschten Zugriff. Im Krankenhaus bestehende Rollen- und Rechtekonzepte können so ISiK-konform weiterverwendet werden.</p>
+<h2 id="integration-von-isik-sicherheit-in-eine-krankenhaus-it-infrastruktur">Integration von ISiK-Sicherheit in eine Krankenhaus-IT-Infrastruktur</h2>
+<p>ISiK-Sicherheit versucht in der ISiK Stufe 3 einen Ausgleich zwischen Interoperabilität durch Standardisierung einerseits und Umsetzbarkeit durch Ausrichtung an bestehenden Produkten andererseits herzustellen. Als Blaupause sollen die in <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-162.pdf">NIST SP 800-162</a> definierten logischen Systembausteine zur Verwaltung, Validierung und Durchsetzung von Berechtigungen dienen, die Basis vieler bestehender Produktlösungen sind.</p>
+<p>ISiK-Sicherheit ist soweit wie möglich technologieagnostisch definiert, so es über bereits in Krankenhäusern im Einsatz befindliche Standardlösungen umgesetzt werden kann. In dem ISiK-Sicherheit zugrundeliegenden Bild sind die logischen Bausteine einer Krankenhaus-Sicherheitsinfrastruktur weitgehend voneinander entkoppelt, um ein flexibles Deployment derselben im Krankenhaus zu erlauben. Insbesondere werden Sicherheitsfunktionen wie Identifizierung, Authentifizierung, Autorisierung und Verschlüsselung als eigene logische Blöcke angesehen, die weitgehend unabhängig voneinander auf technische Bausteine abbildbar sind.</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p><strong>Es ist zu beachten, dass durch das Erlangen einer Bestätigung für das vorliegende ISiK-Modul keine Aussagen über die Sicherheit der Implementierung im jeweiligen bestätigungsrelevanten System abgeleitet werden können. Die Bestätigung bezieht sich alleinig auf die Konformität zu der Spezifikation. Weitere Sicherheit-Audits werden ausdrücklich empfohlen.</strong></p>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

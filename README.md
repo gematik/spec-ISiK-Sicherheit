@@ -1,6 +1,4 @@
 ## Modul "Sicherheit" 
 
 
-Dieser Branch enthält .html Versionen der ImplementationGuides vorangegangener Versionen. 
-
-- Stufe 1: https://gematik.github.io/spec-ISiK-Sicherheit/index.html
+Dieser Branch enthält ImplementationGuides vorangegangener Versionen, die hier gerendert werden: https://gematik.github.io/spec-ISiK-Sicherheit/index.html
