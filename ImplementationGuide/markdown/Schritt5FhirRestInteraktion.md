@@ -10,7 +10,7 @@ Bestätigungsrelevant sind die Anforderungen nach [SMART App Launch - 2.0.11 - A
 
 ## Break The Glass
 
-In klinischen Notfällen kann es erforderlich sein, dass ein Benutzer auf die Daten des bestätigungsrelevanten Systems zugreifen muss, ohne entsprechende Rechte hierfür zu besitzen, um die Sicherheit der Patienten zu gewährleisten. Die vorliegende Spezifikation macht diesbezüglich keine Vorgaben und verweist auf die [FHIR Kernspezifikation - Break The Glass](https://www.hl7.org/fhir/security-labels.html#break-the-glass). Eine grundlegende Betrachtung der resultierenden Problemstellung findet sich in ["Healthcare Requirements for Emergency Access"](http://www.hl7.org/search/viewSearchResult.cfm?search_id=393442&search_result_url=%2Fdocumentcenter%2Fpublic%2Fwg%2Fsecure%2FHL7%20Emergency%20Access%2Edoc).
+In klinischen Notfällen kann es erforderlich sein, dass ein Benutzer auf die Daten des bestätigungsrelevanten Systems zugreifen muss, ohne entsprechende Rechte hierfür zu besitzen, um die Sicherheit der Patienten zu gewährleisten. Die vorliegende Spezifikation macht diesbezüglich keine Vorgaben und verweist auf die [FHIR Kernspezifikation - Break The Glass](https://www.hl7.org/fhir/R4/security-labels.html#break-the-glass). Eine grundlegende Betrachtung der resultierenden Problemstellung findet sich in ["Healthcare Requirements for Emergency Access"]https://www.hl7.org/search/viewSearchResult.cfm?search_id=393442&search_result_url=%2Fdocumentcenter%2Fpublic%2Fwg%2Fsecure%2FHL7%20Emergency%20Access%2Edoc).
 
 ----
 
