@@ -23,11 +23,11 @@ Kein direkter Bezug zum KHZG
 * Endandwender der bestätigungsrelevanten Systeme in den Krankenhäusern
 
 ## Relevante Spezifikationen
-* [SMART App Launch Framework](http://hl7.org/fhir/smart-app-launch/index.html)
+* [SMART App Launch Framework]https://hl7.org/fhir/smart-app-launch/index.html)
 * [SMART Backend Services: Authorization Guide](https://hl7.org/fhir/uv/bulkdata/authorization/index.html)
 * [IHE IUA](https://profiles.ihe.net/ITI/IUA/index.html)
 * [RFC7591](https://tools.ietf.org/html/rfc7591)
-* [Validated Healthcare Directory Implementation Guide](http://hl7.org/fhir/uv/vhdir/2018Jan/index.html)
+* [Validated Healthcare Directory Implementation Guide]https://hl7.org/fhir/uv/vhdir/2018Jan/index.html)
 
 ## Datenobjekte/FHIR-Ressourcen
 
