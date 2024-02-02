@@ -1,12 +1,12 @@
-# ISiK-Sicherheit: Autorisierung
+# ISiK-Connect: Autorisierung
 
-ISiK-Sicherheit konkretisiert in der aktuellen Stufe 3 von ISiK die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcenserver, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcenserver'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Sicherheitsthemen wie z. B. Protokollierung und Authentisierung spezifiziert. 
+ISiK-Connect konkretisiert in der aktuellen Stufe 3 von ISiK die Anforderungen an eine Autorisierung zur Absicherung eines ISiK-konformen FHIR-Endpunkts. Die normativen Vorgaben beschränken sich zunächst auf Ressourcenserver, die ein ISiK-relevantes FHIR RESTful API bereitstellen ('ISiK-Ressourcenserver'), d. h. die auch bereits für andere Teile von ISiK bestätigungsrelevant sind. In zukünftigen Ausbaustufen werden weitere Bausteine zur Umsetzung eines vollständigen Autorisierungssystems sowie zu weiteren Themen der Konnektivität wie z. B. Protokollierung und Authentisierung spezifiziert. 
 
 # Zugriffsrechte und Compartments
 
-ISiK-Sicherheit schreibt Mechanismen für den Austausch und die Kodierung von Autorisierungen fest. Die Autorisierungen selbst instanziieren im Krankenhaus vergebene Berechtigungen für einen Zugriff einer Person auf eine geschützte Ressource (z.B. "Der zugreifende Nutzer darf Observation-Ressourcen des Patienten mit der ID 123 suchen und abrufen."). Autorisierungen werden in dem ISiK-Sicherheit zugrunde liegenden Bild einer IT-Sicherheitsinfrastruktur durch einen Autorisierungsserver im Ergebnis der Prüfung festgelegter Berechtigungen vergeben. Diese Berechtigungen wiederum leiten sich aus generellen Sicherheitsregeln des Krankenhauses, Rollendefinitionen, durch Patienten gegebene Einwilligungen und weiteren Vorgaben ab. Im ISiK zugrundeliegenden Bild erfolgt die Verwaltung von Berechtigungen über einen _Policy Administration Point_.  
+ISiK-Connect schreibt Mechanismen für den Austausch und die Kodierung von Autorisierungen fest. Die Autorisierungen selbst instanziieren im Krankenhaus vergebene Berechtigungen für einen Zugriff einer Person auf eine geschützte Ressource (z.B. "Der zugreifende Nutzer darf Observation-Ressourcen des Patienten mit der ID 123 suchen und abrufen."). Autorisierungen werden in dem ISiK-Connect zugrunde liegenden Bild einer IT-Connectsinfrastruktur durch einen Autorisierungsserver im Ergebnis der Prüfung festgelegter Berechtigungen vergeben. Diese Berechtigungen wiederum leiten sich aus generellen Sicherheitsregeln des Krankenhauses, Rollendefinitionen, durch Patienten gegebene Einwilligungen und weiteren Vorgaben ab. Im ISiK zugrundeliegenden Bild erfolgt die Verwaltung von Berechtigungen über einen _Policy Administration Point_.  
 
-ISiK-Sicherheit nutzt für die Kodierung und Durchsetzung von Autorisierungen drei Konzepte aus FHIR bzw. _SMART on FHIR_:
+ISiK-Connect nutzt für die Kodierung und Durchsetzung von Autorisierungen drei Konzepte aus FHIR bzw. _SMART on FHIR_:
 * Kontext
 * _Compartment_ 
 * _Scope_
@@ -21,7 +21,7 @@ Beispiel: Der Nutzer hat in/aus der ISiK-Clientanwendung den Patienten "123" ge�
 
 ISiK-konforme Ressourcenservern MÜSSEN die beim Aufruf eines RESTful API in einem Zugriffstoken empfangene Kontext- und Autorisierungsinformationen auswerten und anwenden können.
 
-ISiK-Sicherheit macht in der ISiK Stufe 3 keine Vorgabe, wie ein Client in einen bestimmten Kontext gestellt wird (_SMART on FHIR_ sieht hierfür z. B. die auf der Seite ["Übersicht"](Uebersicht.md) skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann). 
+ISiK-Connect macht in der ISiK Stufe 3 keine Vorgabe, wie ein Client in einen bestimmten Kontext gestellt wird (_SMART on FHIR_ sieht hierfür z. B. die auf der Seite ["Übersicht"](Uebersicht.md) skizzierten Mechanismen eines _EHR Launch_ bzw. eines _Standalone Launch_ vor, bei dem ein Kontext als _Launch Context_ an eine andere Anwendung übergeben/vererbt wird und dabei weiter eingeschränkt werden kann). 
 
 ## _Compartments_
 

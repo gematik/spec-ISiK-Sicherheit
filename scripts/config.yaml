@@ -21,6 +21,6 @@ Einfuehrung.md:
   - type: date
     regex: '(Datum:\s*)(\d+\.\d+\.\d+.*)()'
     format: '%d.%m.%Y'
-ImplementationGuide-ISiK-Sicherheit.json:
+ImplementationGuide-ISiK-Connect.json:
   - type: version
     regex: '("version":\s*")(\d+\.\d+\.\d+.*)(",)'

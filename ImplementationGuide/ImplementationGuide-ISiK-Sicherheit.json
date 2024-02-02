@@ -1,13 +1,13 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "ImplementationGuide-ISiK-Sicherheit",
-  "url": "https://gematik.de/fhir/isik/v3/Sicherheit/ImplementationGuide/ISiK-Sicherheit",
-  "name": "Implementierungsleitfaden ISiK-Sicherheit - Rechtedelegation und Client-Authentifizierung",
+  "id": "ImplementationGuide-ISiK-Connect",
+  "url": "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Connect",
+  "name": "Implementierungsleitfaden ISiK-Connect - Rechtedelegation und Client-Authentifizierung",
   "status": "active",
   "fhirVersion": [
     "4.0.1"
   ],
-  "packageId": "de.gematik.isik-sicherheit",
+  "packageId": "de.gematik.isik-connect",
   "definition": {
     "page": {
       "nameUrl": "ImplementationGuide/markdown/Einfuehrung.md",
@@ -58,7 +58,7 @@
           "page": [
             {
               "nameUrl": "ImplementationGuide/markdown/ISiKAutorisierung.md",
-              "title": "ISiK-Sicherheit: Autorisierung",
+              "title": "ISiK-Connect: Autorisierung",
               "generation": "markdown"
             },
             {

@@ -6,7 +6,7 @@
 
 Im nachfolgenden Schritt wird durch den Client an dem "authorize"-Endpunkt des Autorisierungsservers ein Autorisierungscode angefragt, welcher innerhalb eines Authorization Code Flows (vgl. [RFC6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)) durch ein OAuth 2.0 Access Token ersetzt werden kann.
 
-Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_ (siehe ['ISiK-Sicherheit: Autorisierung'](ISiKAutorisierung.md)) gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Autorisierungscodes.
+Abhängig davon, ob der Client durch einen _EHR Launch_ oder _Standalone Launch_ (siehe ['ISiK-Connect: Autorisierung'](ISiKAutorisierung.md)) gestartet wird, existieren unterschiedliche Schritte für die Anfrage eines Autorisierungscodes.
 
 ----
 
@@ -20,7 +20,7 @@ Es sei darauf hingewiesen, dass jeder EHR Launch mit einem eindeutigen Launch Pa
 
 ## Standalone Launch Sequence
 
-Aufgrund des fehlenden Kontexts zwischen Client und dem System, kann der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden müssen. Beispielsweise kann, äquivalent zum EHR Launch, der Patienten- und/oder Kontakt/Fall-Kontext angefordert werden. Die Kodierung der Scopes ist im normativen Teil von ISiK-Sicherheit auf der Seite ['Scopes und Kontexte'](ConformanceScopesKontexte.md) beschrieben. 
+Aufgrund des fehlenden Kontexts zwischen Client und dem System, kann der Client durch Angabe von gewünschten Smart Launch Scopes bestimmen, welche Details durch den Autorisierungsserver in der Access Token Response bereitgestellt werden müssen. Beispielsweise kann, äquivalent zum EHR Launch, der Patienten- und/oder Kontakt/Fall-Kontext angefordert werden. Die Kodierung der Scopes ist im normativen Teil von ISiK-Connect auf der Seite ['Scopes und Kontexte'](ConformanceScopesKontexte.md) beschrieben. 
 
 ----
 
