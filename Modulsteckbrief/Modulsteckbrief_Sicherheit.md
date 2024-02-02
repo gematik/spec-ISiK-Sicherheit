@@ -1,6 +1,14 @@
 # Modul-Name Sicherheit
 
 ## Kurzbeschreibung
+Das Modul ISiK Connect ermöglicht eine Verbindung zwischen verschiedenen Systemen im Krankenhaus. Der Fokus liegt dabei auf der reibungslosen Integration spezialisierter Subsysteme, die entweder Informationen aus dem Krankenhausinformationssystem (KIS) oder dem Patientendatenmanagementsystem (PDMS) abrufen oder relevante Daten an diese Systeme zurücksenden. Ziel ist es auch, die Integration von leichtgewichtigen sowie mobilen Anwendungen und Web-Portalen durch das ISiK Connect Modul zu erleichtern.
+
+ISiK Connect definiert innerhalb des ISiK Ökosystems klare Anforderungen an die Autorisierung von FHIR-Endpunkten. Dies ermöglicht allen Krankenhaussystemen, die Zugriffsrechte eines Benutzers sicher an verschiedene Clients zu delegieren, darunter klinische Subsysteme, Patientenportale, Terminverwaltungssysteme, Fragebögen und Zustimmungsformulare sowie allgemein, mobile Anwendungen zur Betrachtung bzw. Erhebung von Daten. Das Modul zielt darauf ab, den interoperablen Austausch von relevanten Autorisierungsinformationen für einen gewünschten Zugriff zu erleichtern, ohne dabei konkrete Berechtigungen vorzugeben. Bestehende Rollen- und Rechtekonzepte in Krankenhäusern können nahtlos und ISiK-konform weiterverwendet werden.
+
+Die Integration von Anwendungen in die Krankenhaus-IT-Infrastruktur mit Hilfe von ISiK Connect orientiert sich an bewährten Standards. Die Praktikabilität des Moduls wird durch einen Ausgleich zwischen Interoperabilität durch Standardisierung und Umsetzbarkeit durch Anpassung an bestehende Produkte erreicht. Eine Grundlage bilden die logischen Systembausteine aus NIST SP 800-162, die bereits in vielen Produktlösungen implementiert sind. Andererseits ist ISiK Connect bewusst produkt-agnostisch konzipiert, um eine weitreichende Umsetzbarkeit in Krankenhäusern mit bestehenden Standardlösungen zu gewährleisten. Die logischen Bausteine einer Krankenhaus-Sicherheitsinfrastruktur sind dabei so entkoppelt, dass ein flexibles Deployment im Krankenhausumfeld ermöglicht wird. Insbesondere werden Schlüsselfunktionen wie Identifizierung, Authentifizierung und Autorisierung als eigenständige logische Blöcke betrachtet, die unabhängig voneinander auf verschiedene technische Bausteine abbildbar sind.
+
+## Anwendungsbereich
+
 Das Modul Sicherheit umfasst zwei verschiedene Use Cases die eine Authentifizierung und Autorisierung von verschiedenen Akteueren innerhalb des Krankenhauses ermöglichen, sodass gesichert Daten von einem IsiK-FHIR-Endpunkt gelesen bzw. dort gespeichert werden können.
 
 1. Benutzer einer Drittanbieter-Software (Patient, Leistungserbringer etc.) möchte Zugang zum einem IsiK-FHIR-Endpunkt erhalten (Lese- und/oder Schreibrechte).
