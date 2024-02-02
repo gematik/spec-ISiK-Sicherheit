@@ -30,17 +30,22 @@
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide/markdown/Methodik.md",
+              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen.md",
+              "title": "Festlegungen der Basis",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide/markdow/UebergreifendeFestlegungen/Methodik.md",
               "title": "Methodik",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide/markdown/BestaetigungsrelevanteSysteme.md",
+              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/BestaetigungsrelevanteSysteme.md",
               "title": "Bestätigungsrelevante Systeme",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide/markdown/KompatibilitaetDerGematikSpezifikation.md",
+              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/KompatibilitaetDerGematikSpezifikation.md",
               "title": "Kompatibilität der gematik-Spezifikation",
               "generation": "markdown"
             }
@@ -62,32 +67,32 @@
               "generation": "markdown",
               "page": [
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt1RegistrierungClient.md",
+                  "nameUrl": "ImplementationGuide/markdown/ISiKundSMART/Schritt1RegistrierungClient.md",
                   "title": "Schritt 1 - Registrierung Client",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt2ClientAutorisierung.md",
+                  "nameUrl": "ImplementationGuide/markdown/ISiKundSMART/Schritt2ClientAutorisierung.md",
                   "title": "Schritt 2 - Client Autorisierung",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt3EvaluierungAutorisierungsanfragen.md",
+                  "nameUrl": "ImplementationGuide/markdown/ISiKundSMART/Schritt3EvaluierungAutorisierungsanfragen.md",
                   "title": "Schritt 3 - Evaluierung Autorisierungsanfrage",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt4AustauschAutorisierungscodesZugangstoken.md",
+                  "nameUrl": "ImplementationGuide/markdown/ISiKundSMART/Schritt4AustauschAutorisierungscodesZugangstoken.md",
                   "title": "Schritt 4 - Austausch - Autorisierungscodes Zugangstoken",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt5FhirRestInteraktion.md",
+                  "nameUrl": "ImplementationGuide/markdown/ISiKundSMART/Schritt5FhirRestInteraktion.md",
                   "title": "Schritt 5 - FHIR Restful Interaktion",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/markdown/Schritt6RefreshToken.md",
+                  "nameUrl": "ImplementationGuide/markdown/ISiKundSMART/Schritt6RefreshToken.md",
                   "title": "Schritt 6 - Refresh Token & Revocation",
                   "generation": "markdown"
                 }
@@ -101,12 +106,12 @@
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide/markdown/ConformanceSmartCapabilities.md",
+              "nameUrl": "ImplementationGuide/markdown/Conformance/ConformanceSmartCapabilities.md",
               "title": "SMART Capabilities",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide/markdown/ConformanceScopesKontexte.md",
+              "nameUrl": "ImplementationGuide/markdown/Conformance/ConformanceScopesKontexte.md",
               "title": "Scopes und Compartments",
               "generation": "markdown"
             }
