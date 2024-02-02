@@ -1,4 +1,4 @@
-<img src="https://github.com/gematik/spec-ISiK-Sicherheit/blob/main-Stufe-3/ImplementationGuide/Material/Gematik_Logo_Flag.png?raw=true" alt="gematik logo" width="400"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Sicherheit/main-stufe-3/Material/images/Gematik_Logo_Flag.svg" alt="gematik logo" width="400"/>
 
 ----
 
