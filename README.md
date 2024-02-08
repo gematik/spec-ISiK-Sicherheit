@@ -18,7 +18,7 @@
 
 ## About The Project
 
-For full information and details, see [Simplifier Project Page for ISiK Sicherheit Stufe 3](https://simplifier.net/isik-sicherheit-v3)
+For full information and details, see [Simplifier Project Page for ISiK Connect Stufe 4](https://simplifier.net/isik-connect-v4)
 
 ### Release Notes
 See [ReleaseNotes.md](/ImplementationGuide/markdown/ReleaseNotes.md) for all information regarding the (newest) releases.
