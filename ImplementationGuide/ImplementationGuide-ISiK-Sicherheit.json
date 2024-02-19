@@ -25,15 +25,10 @@
           "generation": "markdown"
         },
         {
-          "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen.md",
+          "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen.md",
           "title": "Übergreifende Festlegungen",
           "generation": "markdown",
           "page": [
-            {
-              "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen.md",
-              "title": "Festlegungen der Basis",
-              "generation": "markdown"
-            },
             {
               "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/Methodik.md",
               "title": "Methodik",
