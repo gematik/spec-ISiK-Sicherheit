@@ -2,7 +2,8 @@
   "resourceType": "ImplementationGuide",
   "id": "ImplementationGuide-ISiK-Connect",
   "url": "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Connect",
-  "name": "Implementierungsleitfaden ISiK-Connect - Rechtedelegation und Client-Authentifizierung",
+  "version": "4.0.0",
+  "name": "Implementierungsleitfaden ISiK-Connect",
   "status": "active",
   "fhirVersion": [
     "4.0.1"
@@ -15,14 +16,16 @@
       "generation": "markdown",
       "page": [
         {
-          "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
-          "title": "Release Notes",
-          "generation": "markdown"
-        },
-        {
           "nameUrl": "ImplementationGuide/markdown/Motivation.md",
           "title": "Motivation",
-          "generation": "markdown"
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide/markdown/ReleaseNotes.md",
+              "title": "ReleaseNotes",
+              "generation": "markdown"
+            }
+          ]
         },
         {
           "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen/UebergreifendeFestlegungen.md",
